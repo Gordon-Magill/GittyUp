@@ -18,6 +18,9 @@ Submission.init(
     description: {
       type: DataTypes.STRING,
     },
+    content: {
+      type: DataTypes.STRING,
+    },
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
