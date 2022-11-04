@@ -1,0 +1,17 @@
+
+<!-- Loop over each code snippet in the code-snippets array -->
+{{#each snippet as |snippet| }}
+<div class="row mb-4 snippet">
+  <div class="col-md-5">
+    <h2>
+      <a href="/snippet/{{snippet.id}}">{{snippet.name}}</a>
+    </h2>
+    <p>Created by {{snippet.user.name}} on {{format_date snippet.date_created}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{snippet.description}}
+    </p>
+  </div>
+</div>
+{{/each}}
