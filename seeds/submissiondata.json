@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Sparks McGee",
+    "email": "sparky_face@gmail.com",
+    "password": "fgdys5rthtrh"
+   },
+   {
+    "id": 2,
+    "name": "Pendleton Goomba",
+    "email": "pennyg@yahoo.com",
+    "password": "fdgxtrhythjnjjk"
+   },
+   {
+    "id": 3,
+    "name": "Darius Kombucha",
+    "email": "fermente-d@aol.com",
+    "password": "kjhikukutfdhfdzvwe"
+   },
+   {
+    "id": 4,
+    "name": "A dude",
+    "email": "dudex@me.com",
+    "password": "vcxvyjhr5647umkdm"
+   },
+   {
+    "id": 5,
+    "name": "Princess Consuela",
+    "email": "bananahammok@live.net",
+    "password": "sdf4tetgsg5uj"
+   }
+]
