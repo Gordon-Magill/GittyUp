@@ -8,18 +8,18 @@
   <div class="col-md-6">
     <h3>Submit a New Code Share:</h3>
 
-    <form class="form new-snippet-form">
+    <form class="form new-submission-form">
       <div class="form-group">
-        <label for="snippet-name">snippet name:</label>
-        <input class="form-input" type="text" id="snippet-name" name="snippet-name" />
+        <label for="submission-name">submission name:</label>
+        <input class="form-input" type="text" id="submission-name" name="submission-name" />
       </div>
       <div class="form-group">
-        <label for="snippet-content">content:</label>
-        <textarea class="form-input" id="snippet-content" name="snippet-content"></textarea>
+        <label for="submission-content">content:</label>
+        <textarea class="form-input" id="submission-content" name="submission-content"></textarea>
       </div>
       <div class="form-group">
-        <label for="snippet-desc">description:</label>
-        <textarea class="form-input" id="snippet-desc" name="snippet-desc"></textarea>
+        <label for="submission-desc">description:</label>
+        <textarea class="form-input" id="submission-desc" name="submission-desc"></textarea>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
@@ -27,17 +27,17 @@
     </form>
   </div>
 
-  {{#if snippets.length}}
-  <div class="col-md-6 snippet-list">
+  {{#if submissions.length}}
+  <div class="col-md-6 submission-list">
     <h3>Your Code Shares:</h3>
 
-    {{#each snippets as |snippet|}}
+    {{#each submissions as |submission|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/snippet/{{snippet.id}}">{{snippet.name}}</a></h4>
+        <h4><a href="/submission/{{submission.id}}">{{submission.name}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{snippet.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{submission.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
