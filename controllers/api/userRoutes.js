@@ -1,2 +1,3 @@
 const router = require('express').Router();
-const { User } = require('../../User.js');
+// Pull in model info from parent index file in models to descure depencencies' definitions
+const { User } = require('../../models/index');
