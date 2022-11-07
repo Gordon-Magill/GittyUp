@@ -1,8 +1,14 @@
 const router = require('express').Router();
+const {User, Submission} = require('../models/index')
 
 // Homepage / browse
 router.get('/', async (req,res) => {
-    res.render('homepage',{})
+    const allSubmissions = await Submission.findAll()
+    const plainSubmissions = allSubmissions.map(row => row.get({plain: true}))
+    console.log(plainSubmissions)
+    res.render('homepage',{
+        plainSubmissions
+    })
 })
 
 // Dashboard for posting new content + seeing stats
