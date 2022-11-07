@@ -5,6 +5,7 @@ const {User, Submission} = require('../models/index')
 router.get('/', async (req,res) => {
     const allSubmissions = await Submission.findAll()
     const plainSubmissions = allSubmissions.map(row => row.get({plain: true}))
+    console.log(plainSubmissions)
     res.render('homepage',{
         plainSubmissions
     })
