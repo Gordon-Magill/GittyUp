@@ -3,6 +3,6 @@ const submissionRoutes = require('./submissionRoutes');
 const userRoutes = require('./userRoutes');
 
 router.use('/submission', submissionRoutes);
-router.use('/user', userRoutes);
+router.use('/users', userRoutes);
 
 module.exports = router;
