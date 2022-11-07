@@ -28,17 +28,23 @@ router.get('/dashboard', async (req,res) => {
 
 // Login/signup page
 router.get('/login', async (req,res) => {
-    res.render('login',{})
+    res.render('login',{
+        session: req.session,
+    })
 })
 
 // Single submission page
 router.get('/submission/:id', async (req,res) => {
-    res.render('submission',{})
+    res.render('submission',{
+        session: req.session,
+    })
 })
 
 // 404
 router.get('/404', async (req,res) => {
-    res.render('404',{})
+    res.render('404',{
+        session: req.session,
+    })
 })
 
 module.exports = router;
