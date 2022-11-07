@@ -35,8 +35,15 @@ router.get('/login', async (req,res) => {
 
 // Single submission page
 router.get('/submission/:id', async (req,res) => {
+    const singleSubmission = Submission.findOne({
+        where: {
+            id: req.params.id
+        }
+    })
+    const submission = singleSubmission.get({plain: true})
     res.render('submission',{
         session: req.session,
+        submission
     })
 })
 
