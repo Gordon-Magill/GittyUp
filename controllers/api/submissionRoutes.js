@@ -5,7 +5,24 @@ const { Submission } = require('../../models/index');
 
 // Create new submission
 router.post('/create', async (req, res) => {
+    try {
+        // Get the info needed 
+        const submissionBody = {
+            name: req.body.name,
+            description: req.body.description,
+            content: req.body.content,
+            date_created: Date.now(),
+            user_id: req.session.userID
+        };
+    
+        console.log('submissionBody: ',submissionBody)
+        const newSubmission = Submission.create(submissionBody);
 
+        res.status(200).json(newSubmission)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json(err)
+    }
 })
 
 // Get all submissions

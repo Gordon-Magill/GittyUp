@@ -13,8 +13,8 @@ router.get('/', async (req,res) => {
     const submissions = allSubmissions.map(row => row.get({plain: true}))
 
     // Diagnostic logs of what's actually going to be rendered
-    console.log(submissions)
-    console.log(req.session)
+    console.log('submissions: ',submissions)
+    console.log('session: ',req.session)
 
     // Render the page with data needed for the handlebars template
     res.render('homepage',{
@@ -44,8 +44,8 @@ router.get('/dashboard', auth, async (req,res) => {
     const submissions = userSubmissions.map(row => row.get({plain:true}))
 
     // Diagnostic logs of what's actually going to be rendered
-    console.log(submissions)
-    console.log(req.session)
+    console.log('submissions: ',submissions)
+    console.log('session: ',req.session)
 
     // Render the page with data needed for the handlebars template
     res.render('dashboard',{
@@ -58,7 +58,7 @@ router.get('/dashboard', auth, async (req,res) => {
 router.get('/login', async (req,res) => {
 
     // Diagnostic logs of what's actually going to be rendered
-    console.log(req.session)
+    console.log('session: ',req.session)
 
     // Render the page with data needed for the handlebars template
     res.render('login',{
@@ -81,8 +81,8 @@ router.get('/submission/:id', async (req,res) => {
     const submission = singleSubmission.get({plain: true})
 
     // Diagnostic logs of what's actually going to be rendered
-    console.log(submission)
-    console.log(req.session)
+    console.log('submission: ',submission)
+    console.log('session: ',req.session)
 
     // Render the page with data needed for the handlebars template
     res.render('submission',{
@@ -95,7 +95,7 @@ router.get('/submission/:id', async (req,res) => {
 router.get('/404', async (req,res) => {
 
     // Diagnostic logs of what's actually going to be rendered
-    console.log(req.session)
+    console.log('session: ',req.session)
 
     // Render the page with data needed for the handlebars template
     res.render('404',{
