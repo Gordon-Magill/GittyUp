@@ -24,3 +24,5 @@ router.get('/submission/:id', async (req,res) => {
 router.get('/404', async (req,res) => {
     res.render('404',{})
 })
+
+module.exports = router;
