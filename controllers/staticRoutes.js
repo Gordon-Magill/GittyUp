@@ -5,6 +5,11 @@ router.get('/', async (req,res) => {
 
 })
 
+// Dashboard for posting new content + seeing stats
+router.get('/dashboard', async (req,res) => {
+
+})
+
 // Login page
 router.get('/login', async (req,res) => {
 
