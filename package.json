@@ -1,4 +1,25 @@
 {
+  "name": "code-share",
+  "version": "1.0.0",
+  "description": "A 'social' site for sharing frontend components, ranked by other developers!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "start:dev": "nodemon server",
+    "seed": "node seeds/seed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gordon-Magill/Code-Share.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gordon-Magill/Code-Share/issues"
+  },
+  "homepage": "https://github.com/Gordon-Magill/Code-Share#readme",
   "dependencies": {
     "anime": "^0.1.2",
     "bcrypt": "^5.1.0",
