@@ -6,6 +6,7 @@ router.get('/', async (req,res) => {
     const allSubmissions = await Submission.findAll()
     const submissions = allSubmissions.map(row => row.get({plain: true}))
     console.log(submissions)
+    console.log(req.session)
     res.render('homepage',{
         session: req.session,
         submissions
@@ -20,6 +21,8 @@ router.get('/dashboard', async (req,res) => {
         }
     })
     const submissions = userSubmissions.map(row => row.get({plain:true}))
+    console.log(submissions)
+    console.log(req.session)
     res.render('dashboard',{
         session: req.session,
         submissions
@@ -28,6 +31,7 @@ router.get('/dashboard', async (req,res) => {
 
 // Login/signup page
 router.get('/login', async (req,res) => {
+    console.log(req.session)
     res.render('login',{
         session: req.session,
     })
@@ -41,6 +45,8 @@ router.get('/submission/:id', async (req,res) => {
         }
     })
     const submission = singleSubmission.get({plain: true})
+    console.log(submission)
+    console.log(req.session)
     res.render('submission',{
         session: req.session,
         submission
