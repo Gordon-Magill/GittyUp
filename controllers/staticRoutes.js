@@ -1,9 +1,13 @@
 const router = require('express').Router();
 const {User, Submission} = require('../models/index')
+const auth = require('../utils/auth')
 
 // Homepage / browse
 router.get('/', async (req,res) => {
-    const allSubmissions = await Submission.findAll()
+    // Get all submissions from all users
+    const allSubmissions = await Submission.findAll({
+        include: [{model: User}]
+    })
     const submissions = allSubmissions.map(row => row.get({plain: true}))
     console.log(submissions)
     console.log(req.session)
@@ -14,11 +18,12 @@ router.get('/', async (req,res) => {
 })
 
 // Dashboard for posting new content + seeing stats
-router.get('/dashboard', async (req,res) => {
+router.get('/dashboard', auth, async (req,res) => {
     const userSubmissions = await Submission.findAll({
         where: {
             id: req.session.userID
-        }
+        },
+        include: [{model: User}]
     })
     const submissions = userSubmissions.map(row => row.get({plain:true}))
     console.log(submissions)
@@ -42,7 +47,8 @@ router.get('/submission/:id', async (req,res) => {
     const singleSubmission = Submission.findOne({
         where: {
             id: req.params.id
-        }
+        },
+        include: [{model: User}]
     })
     const submission = singleSubmission.get({plain: true})
     console.log(submission)
