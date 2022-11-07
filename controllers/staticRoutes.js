@@ -4,13 +4,19 @@ const auth = require('../utils/auth')
 
 // Homepage / browse
 router.get('/', async (req,res) => {
-    // Get all submissions from all users
+    // Get all submissions from all users, including associated users
     const allSubmissions = await Submission.findAll({
         include: [{model: User}]
     })
+
+    // Strip out the extra sequelize content
     const submissions = allSubmissions.map(row => row.get({plain: true}))
+
+    // Diagnostic logs of what's actually going to be rendered
     console.log(submissions)
     console.log(req.session)
+
+    // Render the page with data needed for the handlebars template
     res.render('homepage',{
         session: req.session,
         submissions
@@ -19,15 +25,29 @@ router.get('/', async (req,res) => {
 
 // Dashboard for posting new content + seeing stats
 router.get('/dashboard', auth, async (req,res) => {
+
+    // If the user isn't logged in, send them to the login page
+    if (!req.session.logged_in) {
+        res.status(304).redirect('/login')
+        return;
+    }
+
+    // Get all submissions from the logged in user
     const userSubmissions = await Submission.findAll({
         where: {
             id: req.session.userID
         },
         include: [{model: User}]
     })
+
+    // Strip out extra sequelize content
     const submissions = userSubmissions.map(row => row.get({plain:true}))
+
+    // Diagnostic logs of what's actually going to be rendered
     console.log(submissions)
     console.log(req.session)
+
+    // Render the page with data needed for the handlebars template
     res.render('dashboard',{
         session: req.session,
         submissions
@@ -36,7 +56,11 @@ router.get('/dashboard', auth, async (req,res) => {
 
 // Login/signup page
 router.get('/login', async (req,res) => {
+
+    // Diagnostic logs of what's actually going to be rendered
     console.log(req.session)
+
+    // Render the page with data needed for the handlebars template
     res.render('login',{
         session: req.session,
     })
@@ -44,23 +68,36 @@ router.get('/login', async (req,res) => {
 
 // Single submission page
 router.get('/submission/:id', async (req,res) => {
+
+    // Get specified submission based on the req params
     const singleSubmission = Submission.findOne({
         where: {
             id: req.params.id
         },
         include: [{model: User}]
     })
+
+    // Strip out extra sequelize content
     const submission = singleSubmission.get({plain: true})
+
+    // Diagnostic logs of what's actually going to be rendered
     console.log(submission)
     console.log(req.session)
+
+    // Render the page with data needed for the handlebars template
     res.render('submission',{
         session: req.session,
         submission
     })
 })
 
-// 404
+// 404 Page
 router.get('/404', async (req,res) => {
+
+    // Diagnostic logs of what's actually going to be rendered
+    console.log(req.session)
+
+    // Render the page with data needed for the handlebars template
     res.render('404',{
         session: req.session,
     })
