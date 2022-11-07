@@ -4,16 +4,26 @@ const {User, Submission} = require('../models/index')
 // Homepage / browse
 router.get('/', async (req,res) => {
     const allSubmissions = await Submission.findAll()
-    const plainSubmissions = allSubmissions.map(row => row.get({plain: true}))
-    console.log(plainSubmissions)
+    const submissions = allSubmissions.map(row => row.get({plain: true}))
+    console.log(submissions)
     res.render('homepage',{
-        plainSubmissions
+        session: req.session,
+        submissions
     })
 })
 
 // Dashboard for posting new content + seeing stats
 router.get('/dashboard', async (req,res) => {
-    res.render('dashboard',{})
+    const userSubmissions = await Submission.findAll({
+        where: {
+            id: req.session.userID
+        }
+    })
+    const submissions = userSubmissions.map(row => row.get({plain:true}))
+    res.render('dashboard',{
+        session: req.session,
+        submissions
+    })
 })
 
 // Login/signup page
