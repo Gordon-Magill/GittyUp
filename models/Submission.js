@@ -19,7 +19,7 @@ Submission.init(
       type: DataTypes.STRING,
     },
     content: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT('long'),
     },
     date_created: {
       type: DataTypes.DATE,
