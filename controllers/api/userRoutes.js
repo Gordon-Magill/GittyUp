@@ -30,6 +30,7 @@ router.post('/login', async (req, res) => {
           email: req.body.email,
         },
       });
+      
   
       if (!dbUserData) {
         res
@@ -49,6 +50,9 @@ router.post('/login', async (req, res) => {
   
       req.session.save(() => {
         req.session.loggedIn = true;
+        req.session.userID = dbUserData.id;
+        req.session.userEmail = req.body.email;
+
   
         res
           .status(200)
