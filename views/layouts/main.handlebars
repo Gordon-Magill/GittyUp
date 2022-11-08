@@ -13,18 +13,8 @@
 </head>
 
 <body>
+  {{> nav}}
   <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if session.loggedIn}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-    </header>
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
