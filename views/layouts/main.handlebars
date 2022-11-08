@@ -17,7 +17,7 @@
     <header class="display-flex justify-space-between align-center p-2">
       <nav>
         <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
+        {{#if session.loggedIn}}
         <a href="/profile">profile</a> |
         <button class="no-button" id="logout">logout</button>
         {{else}}
