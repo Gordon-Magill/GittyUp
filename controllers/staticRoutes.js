@@ -67,6 +67,7 @@ router.get("/login", async (req, res) => {
 // Single submission page
 router.get("/submission/:id", async (req, res) => {
   // Get specified submission based on the req params
+  console.log('\n**********\nsubmission rendering page called\n**********\n')
   const singleSubmission = await Submission.findOne({
     where: {
       id: req.params.id,
