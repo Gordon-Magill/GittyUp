@@ -1,9 +1,8 @@
-window.onload = function customOnload() {
-    const animatedElement = $(".animated");
-    anime({
-        targets: animatedElement,
-        translateX: 250,
-      });
-}
 
-console.log('At least this script works')
+anime({
+    targets: '.submission',
+    translateX: [-3000, 0],
+    delay: anime.stagger(50,{from:'last'}),
+    duration: 1000,
+  });
+
