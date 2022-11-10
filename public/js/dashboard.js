@@ -1,14 +1,16 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
 
-    const name = document.querySelector('#submission-name').value.trim();
-    const description = document.querySelector('#submission-desc').value.trim();
-    const content = document.querySelector('#submission-content').value.trim();
+  const name = document.querySelector('#submission-name').value.trim();
+  const description = document.querySelector('#submission-desc').value.trim();
+  const content = document.querySelector('#submission-content').value.trim();
+  const language = document.querySelector('#submission-language').value.trim();
 
-    if (name && content && description) {
+
+    if (name && content && description && language) {
       const response = await fetch(`/api/submission/create`, {
         method: 'POST',
-        body: JSON.stringify({ name, content, description }),
+        body: JSON.stringify({ name, content, description, language }),
         headers: {
           'Content-Type': 'application/json',
         },
