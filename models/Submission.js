@@ -24,6 +24,9 @@ Submission.init(
     content: {
       type: DataTypes.TEXT('long'),
     },
+    language: {
+      type: DataTypes.TEXT,
+    },
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
