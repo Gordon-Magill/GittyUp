@@ -18,6 +18,9 @@ Submission.init(
     description: {
       type: DataTypes.STRING,
     },
+    language: {
+      type: DataTypes.STRING,
+    },
     content: {
       type: DataTypes.TEXT('long'),
     },
