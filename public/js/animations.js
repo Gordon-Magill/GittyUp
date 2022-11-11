@@ -1,7 +1,7 @@
 
 // console.log($(".animatedPopIn"));
 bgContainer = $('.backgroundBodyGrid')
-for (i=0; i<100; i++) {
+for (i=0; i<300; i++) {
   let newEl = $('<div>')
   newEl.addClass('backgroundEl')
   bgContainer.append(newEl)
