@@ -38,5 +38,5 @@ async function downvote(event) {
     }
 }
 
-const downButtons = $('.downButton')
+const downButtons = $('.downvoteButton')
 downButtons.on('click', down)

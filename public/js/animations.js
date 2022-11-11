@@ -18,9 +18,10 @@ anime({
   delay: anime.stagger(5),
   scale: [{value:1.5, easing:'easeInOutSine', duration:6000}],
   rotateZ: 360*5,
-  duration: 10000*5,
+  duration: 10000*6,
   loop: true,
   direction: 'alternate',
+  // easing: "linear"
   easing: "easeInOutSine"
 })
 
@@ -29,10 +30,10 @@ anime({
   targets: ".animatedPopIn",
   translateX: [-2000, 0],
   delay: anime.stagger(15),
-  duration: 2000,
+  // duration: 100,
   // loop: true,
   // direction: 'alternate',
-  easing: "easeOutElastic",
+  easing: 'spring(1, 80, 20, 0)',
 }).finished.then(() => {
   anime({
     targets: '.animatedPopIn',

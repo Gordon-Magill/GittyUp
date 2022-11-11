@@ -147,7 +147,7 @@ router.put('/upvote/:id', async (req,res) => {
   }
 })
 
-// Decrements a post's points value up by one
+// Decrements a post's points value down by one
 router.put('/downvote/:id', async (req,res) => {
   try {
     const post = Submission.findOne({
