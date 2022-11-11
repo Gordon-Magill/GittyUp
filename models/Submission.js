@@ -35,6 +35,11 @@ Submission.init(
         model: 'user',
         key: 'id',
       },
+      points: {
+        type: DataTypes.INTEGER,
+        defaultValue: 0,
+      },
+  
     },
   },
   {
