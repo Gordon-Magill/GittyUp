@@ -41,7 +41,9 @@ html {
   -moz-tab-size: 4;
   /* 3 */
   -o-tab-size: 4;
-     tab-size: 4;
+
+  tab-size: 4;
+
   /* 3 */
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
@@ -82,7 +84,9 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 
 abbr:where([title]) {
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+
+  text-decoration: underline dotted;
+
 }
 
 /*
@@ -351,6 +355,16 @@ textarea {
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
 
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+
 input::-moz-placeholder, textarea::-moz-placeholder {
   opacity: 1;
   /* 1 */
@@ -419,7 +433,12 @@ video {
   display: none;
 }
 
-*, ::before, ::after {
+
+*,
+::before,
+::after {
+
+
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -429,16 +448,18 @@ video {
   --tw-skew-y: 0;
   --tw-scale-x: 1;
   --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
+
+  --tw-pan-x: ;
+  --tw-pan-y: ;
+  --tw-pinch-zoom: ;
   --tw-scroll-snap-strictness: proximity;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
+  --tw-ordinal: ;
+  --tw-slashed-zero: ;
+  --tw-numeric-figure: ;
+  --tw-numeric-spacing: ;
+  --tw-numeric-fraction: ;
+  --tw-ring-inset: ;
+
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
   --tw-ring-color: rgb(59 130 246 / 0.5);
@@ -446,24 +467,26 @@ video {
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
+
+  --tw-blur: ;
+  --tw-brightness: ;
+  --tw-contrast: ;
+  --tw-grayscale: ;
+  --tw-hue-rotate: ;
+  --tw-invert: ;
+  --tw-saturate: ;
+  --tw-sepia: ;
+  --tw-drop-shadow: ;
+  --tw-backdrop-blur: ;
+  --tw-backdrop-brightness: ;
+  --tw-backdrop-contrast: ;
+  --tw-backdrop-grayscale: ;
+  --tw-backdrop-hue-rotate: ;
+  --tw-backdrop-invert: ;
+  --tw-backdrop-opacity: ;
+  --tw-backdrop-saturate: ;
+  --tw-backdrop-sepia: ;
+
 }
 
 ::backdrop {
@@ -476,16 +499,18 @@ video {
   --tw-skew-y: 0;
   --tw-scale-x: 1;
   --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
+
+  --tw-pan-x: ;
+  --tw-pan-y: ;
+  --tw-pinch-zoom: ;
   --tw-scroll-snap-strictness: proximity;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
+  --tw-ordinal: ;
+  --tw-slashed-zero: ;
+  --tw-numeric-figure: ;
+  --tw-numeric-spacing: ;
+  --tw-numeric-fraction: ;
+  --tw-ring-inset: ;
+
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
   --tw-ring-color: rgb(59 130 246 / 0.5);
@@ -493,187 +518,26 @@ video {
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-}
 
-.container {
-  width: 100%;
-}
+  --tw-blur: ;
+  --tw-brightness: ;
+  --tw-contrast: ;
+  --tw-grayscale: ;
+  --tw-hue-rotate: ;
+  --tw-invert: ;
+  --tw-saturate: ;
+  --tw-sepia: ;
+  --tw-drop-shadow: ;
+  --tw-backdrop-blur: ;
+  --tw-backdrop-brightness: ;
+  --tw-backdrop-contrast: ;
+  --tw-backdrop-grayscale: ;
+  --tw-backdrop-hue-rotate: ;
+  --tw-backdrop-invert: ;
+  --tw-backdrop-opacity: ;
+  --tw-backdrop-saturate: ;
+  --tw-backdrop-sepia: ;
 
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-  }
-}
-
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1536px;
-  }
-}
-
-.collapse {
-  visibility: collapse;
-}
-
-.absolute {
-  position: absolute;
-}
-
-.col-auto {
-  grid-column: auto;
-}
-
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
-.mt-5 {
-  margin-top: 1.25rem;
-}
-
-.block {
-  display: block;
-}
-
-.flex {
-  display: flex;
-}
-
-.grid {
-  display: grid;
-}
-
-.hidden {
-  display: none;
-}
-
-.h-0\.5 {
-  height: 0.125rem;
-}
-
-.h-0 {
-  height: 0px;
-}
-
-.w-8 {
-  width: 2rem;
-}
-
-.transform {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-@keyframes pulse {
-  50% {
-    opacity: .5;
-  }
-}
-
-.animate-pulse {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-.flex-col {
-  flex-direction: column;
-}
-
-.justify-between {
-  justify-content: space-between;
-}
-
-.justify-around {
-  justify-content: space-around;
-}
-
-.space-x-8 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(2rem * var(--tw-space-x-reverse));
-  margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
-.space-y-2 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
-}
-
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-gray-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
-}
-
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-red-800 {
-  --tw-text-opacity: 1;
-  color: rgb(153 27 27 / var(--tw-text-opacity));
-}
-
-.text-blue-500 {
-  --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 
 .backgroundBodyGrid {
@@ -692,12 +556,7 @@ video {
   /* border: 1px solid rgba(0, 0, 0, 0.069); */
 }
 
-@media (min-width: 1024px) {
-  .lg\:flex {
-    display: flex;
-  }
 
-  .lg\:hidden {
-    display: none;
-  }
-}
+/* body{
+    background-color: rgb(214,214,214);
+} */
