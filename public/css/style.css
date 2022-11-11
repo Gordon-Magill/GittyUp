@@ -515,3 +515,20 @@ video {
     --tw-backdrop-saturate: ;
     --tw-backdrop-sepia: ;
 }
+
+.backgroundBodyGrid {
+    display: flex;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    z-index:-1;
+
+}
+
+.backgroundEl {
+    width: 10vw;
+    height: 10vw;
+    border: 1px solid rgba(0, 0, 0, 0.069);
+}
