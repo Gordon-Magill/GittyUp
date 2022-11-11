@@ -4,6 +4,7 @@
   "description": "A 'social' site for sharing frontend components, ranked by other developers!",
   "main": "server.js",
   "scripts": {
+    "tailwindcss": "npx tailwindcss -i ./public/css/style.css -o ./public/css/styletw.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "start:dev": "nodemon server",
