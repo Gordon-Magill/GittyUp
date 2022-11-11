@@ -13,7 +13,7 @@ router.post("/create", async (req, res) => {
   
       console.log("commentBody: ", commentBody);
 
-      const newcomment = await comment.create(commentBody);
+      const newcomment = await Comment.create(commentBody);
   
       res.status(200).json(newcomment);
     } catch (err) {
