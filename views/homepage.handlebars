@@ -1,14 +1,14 @@
 
 <!-- Loop over each code submission in the code-submissions array -->
 {{#each submissions as |submission| }}
-<div class="columns-2 mb-4 submission animatedPopIn">
-  <div>
+<div class="mb-4 submission animatedPopIn">
+  <div class="columns-3">
     <h2>
       <a href="/submission/{{submission.id}}">{{submission.name}}</a>
     </h2>
-    <p>Created by {{submission.user.name}} on {{format_date submission.date_created}}</p>
-  </div>
-  <div>
+    <p>
+      Created by {{submission.user.username}} on {{format_date submission.date_created}}
+    </p>
     <p>
       {{submission.description}}
     </p>
