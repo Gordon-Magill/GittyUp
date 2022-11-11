@@ -1,6 +1,6 @@
 const commentSubmit = async (event) => {
     event.preventDefault();
-    console.log("8===D")
+    console.log("commentSubmit event occured")
     const commentBody = document.querySelector('#comment-body').value.trim();
 
     if(commentBody){
