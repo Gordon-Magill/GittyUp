@@ -520,15 +520,19 @@ video {
     display: flex;
     flex-wrap: wrap;
     position: fixed;
-    top: 0%;
-    left: 0%;
-    width: 100%;
+    top: -5%;
+    left: -5%;
+    width: 105%;
     z-index:-1;
 
 }
 
 .backgroundEl {
-    width: 10vw;
-    height: 10vw;
-    border: 1px solid rgba(0, 0, 0, 0.069);
+    width: 5vw;
+    height: 5vw;
+    /* border: 1px solid rgba(0, 0, 0, 0.069); */
 }
+
+/* body{
+    background-color: rgb(214,214,214);
+} */
