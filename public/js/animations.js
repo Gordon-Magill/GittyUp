@@ -8,25 +8,25 @@
 // });
 console.log($(".animatedPopIn"));
 
-// anime({
-//   targets: ".animatedPopIn",
-//   translateX: [-2000, 0],
-//   delay: anime.stagger(15),
-//   duration: 2000,
-//   // loop: true,
-//   // direction: 'alternate',
-//   easing: "easeOutElastic",
-// }).finished.then(() => {
-//   anime({
-//     targets: '.animatedPopIn',
-//     translateX: [0, 15],
-//     delay: anime.stagger(200),
-//     duration: 4000,
-//     loop: true,
-//     direction: "alternate",
-//     easing: "easeInOutSine",
-//   });
-// });
+anime({
+  targets: ".animatedPopIn",
+  translateX: [-2000, 0],
+  delay: anime.stagger(15),
+  duration: 2000,
+  // loop: true,
+  // direction: 'alternate',
+  easing: "easeOutElastic",
+}).finished.then(() => {
+  anime({
+    targets: '.animatedPopIn',
+    translateX: [0, 15],
+    delay: anime.stagger(200),
+    duration: 4000,
+    loop: true,
+    direction: "alternate",
+    easing: "easeInOutSine",
+  });
+});
 
 anime({
   targets: '.backgroundEl',
@@ -35,4 +35,5 @@ anime({
   duration: 10000,
   loop: true,
   direction: 'alternate',
+  easing: 'easeInOutSine',
 })
