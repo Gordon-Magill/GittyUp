@@ -1,12 +1,12 @@
-// let tl = anime.timeline({});
 
-// tl.add({
-//   targets: ".animatedPopIn",
-//   translateX: [-3000, 0],
-//   delay: anime.stagger(50, { from: "last" }),
-//   duration: 1000,
-// });
-console.log($(".animatedPopIn"));
+// console.log($(".animatedPopIn"));
+bgContainer = $('.backgroundBodyGrid')
+for (i=0; i<100; i++) {
+  let newEl = $('<div>')
+  newEl.addClass('backgroundEl')
+  bgContainer.append(newEl)
+}
+
 
 anime({
   targets: ".animatedPopIn",
@@ -31,8 +31,9 @@ anime({
 anime({
   targets: '.backgroundEl',
   // delay: anime.stagger(25),
-  rotateZ: 180,
-  duration: 10000,
+  rotateZ: 360,
+  duration: 20000,
   loop: true,
   direction: 'alternate',
+  easing: "easeInOutSine"
 })
