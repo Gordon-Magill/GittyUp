@@ -126,4 +126,47 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
+// Increments a post's points value up by one
+router.put('/upvote/:id', async (req,res) => {
+  try {
+    const post = Submission.findOne({
+      where: {
+        id: req.params.id
+      }
+    })
+
+    // Instance method to update the point count
+    post.upvote()
+
+    res.status(200).json(post)
+
+  } catch (err) {
+    // Log and send the error
+    console.log(err)
+    res.status(400).json(err)
+  }
+})
+
+// Decrements a post's points value up by one
+router.put('/downvote/:id', async (req,res) => {
+  try {
+    const post = Submission.findOne({
+      where: {
+        id: req.params.id
+      }
+    })
+
+    // Instance method to update the point count
+    post.downvote()
+
+    res.status(200).json(post)
+
+  } catch (err) {
+    // Log and send the error
+    console.log(err)
+    res.status(400).json(err)
+  }
+})
+
+
 module.exports = router;

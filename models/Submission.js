@@ -1,7 +1,15 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Submission extends Model {}
+class Submission extends Model {
+  upvote() {
+    this.points++
+  }
+
+  downvote() {
+    this.points--
+  }
+}
 
 Submission.init(
   {
