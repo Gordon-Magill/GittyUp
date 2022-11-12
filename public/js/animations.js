@@ -14,19 +14,27 @@ for (i=0; i<1200; i++) {
   bgContainer.append(newEl)
 }
 
+// Create a random starting position for the background squares
+anime.set('.backgroundEl', {
+  scale: function() { return anime.random(1, 1.9); },
+  rotateZ: function() { return anime.random(0, 360); },
+});
+
 // Animating the background squares
 anime({
   targets: '.backgroundEl',
-  delay: anime.stagger(5),
-  scale: [{value:1.9, easing:'easeInOutSine', duration:6000}],
-  rotateZ: 360*5,
-  duration: 10000*6,
+  delay: anime.stagger(3),
+  // scale: [{value:1.9, easing:'easeInOutSine', duration:6000}],
+  rotateZ: 360,
+  duration: 5000,
   loop: true,
   direction: 'alternate',
   // delay: anime.stagger(5, {grid: [100, 10], from: 'center'}),
   // easing: "linear"
   easing: "easeInOutSine"
 })
+
+
 
 // Pop in of elements from off screen (homepage)
 anime({
