@@ -1,10 +1,12 @@
 // Background rotating squares creation and individual styling
 bgContainer = $('.backgroundBodyGrid')
-for (i=0; i<1000; i++) {
+for (i=0; i<1200; i++) {
   let newEl = $('<div>')
   newEl.addClass('backgroundEl')
   // Pink + teal gradient
-  newEl.css({'background': `rgb(${Math.min(0.5*i,255)},${Math.abs(255-0.5*i)},255,0.25)`})
+  // newEl.css({'background': `rgb(${Math.min(0.5*i,255)},${Math.abs(255-0.5*i)},255,0.25)`})
+  // Pink + teal gradient
+  newEl.css({'background': `rgb(${Math.min(0.25*i,255)},${Math.abs(255-0.25*i)},255,0.25)`})
   // Hot garbage
   // newEl.css({'background': `rgb(${Math.sin(i)*255},${Math.cos(i)*255},${Math.tan(i)*255},0.5)`})
   // Light teals
