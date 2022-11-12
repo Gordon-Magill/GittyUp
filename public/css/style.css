@@ -22,7 +22,7 @@
   background: rgb(255, 255, 255);
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 1) 19%,
+    rgba(255, 255, 255, 0.8491771708683473) 57%,
     rgba(255, 255, 255, 0) 100%
   );
   border-radius: 10px;
@@ -30,8 +30,9 @@
   padding-right: 10px;
   margin-left: 10px;
   margin-bottom: 10px;
-}
+  text-shadow: 0px 0px 5px white, 0px 0px 5px white, 0px 0px 5px white, 0px 0px 5px white;
 
+}
 
 .titleAccent {
   color: #0055ff;
