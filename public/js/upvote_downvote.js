@@ -1,11 +1,16 @@
 // Upvotes a post
 // Requires that the button for updating the post encodes the associated post ID
 async function upvote(event) {
+    console.log('Upvote event called')
     let clickedButton = event.currentTarget
     let associatedPost = clickedButton.getAttribute('data-post-id')
 
-    let upvoteRequest = await fetch(`/api/submissionRoutes/upvote/${associatedPost}`,{
-        method: 'PUT'
+    let upvoteRequest = await fetch(`/api/submission/upvote/${associatedPost}`,{
+        method: 'PUT',
+        // body: JSON.stringify({}),
+        // headers:{
+        //     "Content-Type": "application/json",
+        // }
     })
 
     if (upvoteRequest.ok) {
@@ -26,8 +31,8 @@ async function downvote(event) {
     let clickedButton = event.currentTarget
     let associatedPost = clickedButton.getAttribute('data-post-id')
 
-    let downvoteRequest = await fetch(`/api/submissionRoutes/downvote/${associatedPost}`,{
-        method: 'PUT'
+    let downvoteRequest = await fetch(`/api/submission/downvote/${associatedPost}`,{
+        method: 'PUT',
     })
 
     if (downvoteRequest.ok) {
@@ -39,4 +44,4 @@ async function downvote(event) {
 }
 
 const downButtons = $('.downvoteButton')
-downButtons.on('click', down)
+downButtons.on('click', downvote)
