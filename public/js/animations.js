@@ -16,7 +16,7 @@ for (i=0; i<1200; i++) {
 
 // Create a random starting position for the background squares
 anime.set('.backgroundEl', {
-  scale: function() { return anime.random(1, 1.9); },
+  scale: function() { return anime.random(1, 3); },
   rotateZ: function() { return anime.random(0, 360); },
 });
 
