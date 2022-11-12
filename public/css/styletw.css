@@ -419,6 +419,7 @@ video {
   display: none;
 }
 
+
 [type='text'],[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -780,11 +781,13 @@ select {
 
 .fixed {
   position: fixed;
+
 }
 
 .absolute {
   position: absolute;
 }
+
 
 .top-0 {
   top: 0px;
@@ -807,6 +810,7 @@ select {
   margin-right: auto;
 }
 
+
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -814,6 +818,7 @@ select {
 .mb-4 {
   margin-bottom: 1rem;
 }
+
 
 .mt-1 {
   margin-top: 0.25rem;
@@ -845,6 +850,7 @@ select {
 
 .inline-flex {
   display: inline-flex;
+
 }
 
 .grid {
@@ -854,6 +860,7 @@ select {
 .hidden {
   display: none;
 }
+
 
 .h-6 {
   height: 1.5rem;
@@ -884,6 +891,7 @@ select {
   flex-direction: column;
 }
 
+
 .flex-wrap {
   flex-wrap: wrap;
 }
@@ -907,6 +915,7 @@ select {
 .justify-around {
   justify-content: space-around;
 }
+
 
 .space-x-7 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
@@ -1123,8 +1132,8 @@ select {
   position: fixed;
   top: -5%;
   left: -5%;
-  width: 105%;
-  z-index:-1;
+  width: 120%;
+  z-index: -1;
 }
 
 .backgroundEl {
@@ -1132,6 +1141,7 @@ select {
   height: 5vw;
   /* border: 1px solid rgba(0, 0, 0, 0.069); */
 }
+
 
 .hover\:bg-gray-light:hover {
   --tw-bg-opacity: 1;
