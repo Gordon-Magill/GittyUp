@@ -18,7 +18,7 @@ for (i=0; i<1200; i++) {
 anime({
   targets: '.backgroundEl',
   delay: anime.stagger(5),
-  scale: [{value:1.5, easing:'easeInOutSine', duration:6000}],
+  scale: [{value:2, easing:'easeInOutSine', duration:6000}],
   rotateZ: 360*5,
   duration: 10000*6,
   loop: true,
