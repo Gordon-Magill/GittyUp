@@ -1,44 +1,47 @@
 
+
 {{!-- {{Login Screen: Unauthenticated user}} --}}
-<div class="row">
-  <div class="col-md-6">
-    <h2>Login</h2>
-
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
+<form class="login-form">
+      <div>
+        <label for="email-login" class="block text-sm font-medium">Email</label>
+        <div class="mt-1">
+          <input id="email-login" type="text" class="px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-gray-light">
       </div>
-      <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
+      <div class="mt-6">
+        <label for="password-login" class="block text-sm font-medium text-slate-700">Password</label>
+        <div class="mt-1">
+          <input type="password" id="password-login"
+            class="px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-gray-light">
+        </div>
       </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <h2>Signup</h2>
-
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="name-signup">name:</label>
-        <input class="form-input" type="text" id="name-signup" />
-      </div>
-      <div class="form-group">
-        <label for="email-signup">email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
+      <div class="mt-6 text-right">
+        <button class="bg-gray px-5 py-2.5 text-md leading-5 rounded-md font-semibold text-white" type="submit">Log In</button>
       </div>
     </form>
-  </div>
-</div>
+
+    <form class="signup-form">
+      <div>
+        <label for="name-signup" class="block text-sm font-medium">Name</label>
+        <div class="mt-1">
+          <input id="name-signup" type="text" class="px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-gray-light">
+      </div>
+      <div class="mt-6">
+        <label for="email-signup" class="block text-sm font-medium text-slate-700">Email</label>
+        <div class="mt-1">
+          <input type="email" id="email-signup"
+            class="px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-gray-light">
+        </div>
+      </div>
+      <div class="mt-6">
+        <label for="password-signup" class="block text-sm font-medium text-slate-700">Password</label>
+        <div class="mt-1">
+          <input type="password" id="password-signup"
+            class="px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-gray-light">
+        </div>
+      </div>
+      <div class="mt-6 text-right">
+        <button class="bg-gray px-5 py-2.5 text-md leading-5 rounded-md font-semibold text-white" type="submit">Sign Up</button>
+      </div>
+    </form>
 
 <script src="./js/login.js"></script>
