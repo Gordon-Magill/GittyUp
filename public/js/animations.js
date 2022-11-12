@@ -15,12 +15,13 @@ for (i=0; i<1000; i++) {
 // Animating the background squares
 anime({
   targets: '.backgroundEl',
-  delay: anime.stagger(5),
+  // delay: anime.stagger(5),
   scale: [{value:1.5, easing:'easeInOutSine', duration:6000}],
   rotateZ: 360*5,
   duration: 10000*6,
   loop: true,
   direction: 'alternate',
+  delay: anime.stagger(5, {grid: [100, 10], from: 'center'}),
   // easing: "linear"
   easing: "easeInOutSine"
 })
