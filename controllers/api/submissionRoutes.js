@@ -85,6 +85,7 @@ router.put("/:id", async (req, res) => {
       content: req.body.content,
       date_created: Date.now(),
       user_id: req.session.userID,
+      points: req.body.points
     };
 
     // Log the content to be updated
