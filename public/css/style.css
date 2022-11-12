@@ -26,9 +26,12 @@
     rgba(255, 255, 255, 0) 100%
   );
   border-radius: 10px;
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   margin-left: 10px;
+  margin-bottom: 10px;
 }
+
 
 .titleAccent {
   color: #0055ff;
