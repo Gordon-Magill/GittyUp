@@ -29,3 +29,9 @@
   padding: 10px;
   margin-left: 10px;
 }
+
+.titleAccent {
+  color: #0055ff;
+  font-size: 20px;
+  font-weight: bolder;
+}

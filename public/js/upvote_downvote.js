@@ -1,8 +1,11 @@
 // Upvotes a post
 // Requires that the button for updating the post encodes the associated post ID
 async function upvote(event) {
-    console.log('Upvote event called')
+    // console.log('Upvote event called')
+
+    // Get the button that was clicked
     let clickedButton = event.currentTarget
+    // Get the post information that corresponds to the button
     let associatedPost = clickedButton.getAttribute('data-post-id')
 
     let upvoteRequest = await fetch(`/api/submission/upvote/${associatedPost}`,{

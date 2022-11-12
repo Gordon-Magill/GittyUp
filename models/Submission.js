@@ -2,18 +2,6 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Submission extends Model {
-  upvote() {
-    console.log("\n\n\n Model upvote instance method called \n\n\n")
-    console.log('Current point value:', this.points)
-    
-    this.points = this.points+1
-    console.log('New point value:', this.points)
-  }
-
-  downvote() {
-    this.points--
-  }
-  
 }
 
 Submission.init(

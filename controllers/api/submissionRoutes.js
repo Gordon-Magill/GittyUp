@@ -146,11 +146,6 @@ router.put("/upvote/:id", async (req, res) => {
       }
     })
 
-    // console.log('post: ',post);
-
-    // Instance method to update the point count
-    // post.upvote();
-
     res.status(200).json(updatedPost);
   } catch (err) {
     // Log and send the error
@@ -175,11 +170,6 @@ router.put("/downvote/:id", async (req, res) => {
         id: req.params.id
       }
     })
-
-
-
-    // Instance method to update the point count
-    // post.downvote();
 
     res.status(200).json(updatedPost);
   } catch (err) {
