@@ -807,6 +807,26 @@ select {
   margin-right: auto;
 }
 
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
+.mx-60 {
+  margin-left: 15rem;
+  margin-right: 15rem;
+}
+
+.mx-20 {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.mx-0 {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -833,6 +853,14 @@ select {
 
 .mt-4 {
   margin-top: 1rem;
+}
+
+.mt-60 {
+  margin-top: 15rem;
+}
+
+.mt-20 {
+  margin-top: 5rem;
 }
 
 .block {
@@ -1139,6 +1167,11 @@ select {
 }
 
 @media (min-width: 640px) {
+  .sm\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
   .sm\:h-9 {
     height: 2.25rem;
   }
@@ -1158,12 +1191,25 @@ select {
     order: 1;
   }
 
+  .md\:mx-20 {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+
   .md\:mr-0 {
     margin-right: 0px;
   }
 
   .md\:mt-0 {
     margin-top: 0px;
+  }
+
+  .md\:mt-10 {
+    margin-top: 2.5rem;
+  }
+
+  .md\:mt-60 {
+    margin-top: 15rem;
   }
 
   .md\:flex {
@@ -1203,5 +1249,20 @@ select {
 
   .md\:font-medium {
     font-weight: 500;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:mx-60 {
+    margin-left: 15rem;
+    margin-right: 15rem;
+  }
+
+  .lg\:mt-24 {
+    margin-top: 6rem;
+  }
+
+  .lg\:mt-60 {
+    margin-top: 15rem;
   }
 }
