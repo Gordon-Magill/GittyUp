@@ -1120,12 +1120,26 @@ select {
   background: rgb(255, 255, 255);
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 1) 19%,
+
+    rgba(255, 255, 255, 0.8491771708683473) 57%,
     rgba(255, 255, 255, 0) 100%
   );
   border-radius: 10px;
-  padding: 10px;
-  margin-left: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  text-shadow: 0px 0px 5px white, 0px 0px 5px white, 0px 0px 5px white,
+    0px 0px 5px white;
+  box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.6);
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.titleAccent {
+  color: #0055ff;
+  font-size: 20px;
+  font-weight: bolder;
 }
 
 .hover\:bg-gray-light:hover {

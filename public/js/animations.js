@@ -1,10 +1,12 @@
 // Background rotating squares creation and individual styling
 bgContainer = $('.backgroundBodyGrid')
-for (i=0; i<1000; i++) {
+for (i=0; i<1200; i++) {
   let newEl = $('<div>')
   newEl.addClass('backgroundEl')
   // Pink + teal gradient
-  newEl.css({'background': `rgb(${Math.min(0.5*i,255)},${Math.abs(255-0.5*i)},255,0.25)`})
+  // newEl.css({'background': `rgb(${Math.min(0.5*i,255)},${Math.abs(255-0.5*i)},255,0.25)`})
+  // Pink + teal gradient
+  newEl.css({'background': `rgb(${Math.min(0.25*i,255)},${Math.abs(255-0.25*i)},255,0.25)`})
   // Hot garbage
   // newEl.css({'background': `rgb(${Math.sin(i)*255},${Math.cos(i)*255},${Math.tan(i)*255},0.5)`})
   // Light teals
@@ -12,27 +14,37 @@ for (i=0; i<1000; i++) {
   bgContainer.append(newEl)
 }
 
+// Create a random starting position for the background squares
+anime.set('.backgroundEl', {
+  scale: function() { return anime.random(1, 3); },
+  rotateZ: function() { return anime.random(0, 360); },
+});
+
 // Animating the background squares
 anime({
   targets: '.backgroundEl',
-  delay: anime.stagger(5),
-  scale: [{value:1.5, easing:'easeInOutSine', duration:6000}],
-  rotateZ: 360*5,
-  duration: 10000*5,
+  delay: anime.stagger(3),
+  // scale: [{value:1.9, easing:'easeInOutSine', duration:6000}],
+  rotateZ: 360,
+  duration: 5000,
   loop: true,
   direction: 'alternate',
+  // delay: anime.stagger(5, {grid: [100, 10], from: 'center'}),
+  // easing: "linear"
   easing: "easeInOutSine"
 })
+
+
 
 // Pop in of elements from off screen (homepage)
 anime({
   targets: ".animatedPopIn",
   translateX: [-2000, 0],
   delay: anime.stagger(15),
-  duration: 2000,
+  // duration: 100,
   // loop: true,
   // direction: 'alternate',
-  easing: "easeOutElastic",
+  easing: 'spring(1, 80, 20, 0)',
 }).finished.then(() => {
   anime({
     targets: '.animatedPopIn',
@@ -56,3 +68,13 @@ anime({
 //   easing: "easeInOutSine"
 // })
 
+// Non-functional until stroke width is defined in the SVG
+anime({
+  targets: '.mainLogo',
+  strokeDashoffset: [anime.setDashoffset, 0],
+  easing: 'easeInOutSine',
+  duration: 1500,
+  delay: function(el, i) { return i * 250 },
+  direction: 'alternate',
+  loop: true,
+})
