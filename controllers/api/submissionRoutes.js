@@ -85,7 +85,7 @@ router.put("/:id", async (req, res) => {
       content: req.body.content,
       date_created: Date.now(),
       user_id: req.session.userID,
-      points: req.body.points
+      points: req.body.points,
     };
 
     // Log the content to be updated
@@ -119,6 +119,59 @@ router.delete("/:id", async (req, res) => {
 
     // Send confirmatory info
     res.status(200).json(destroyedSubmission);
+  } catch (err) {
+    // Log and send the error
+    console.log(err);
+    res.status(400).json(err);
+  }
+});
+
+// Increments a post's points value up by one
+router.put("/upvote/:id", async (req, res) => {
+  console.log(
+    "\n**********\n\n**********\n\n**********\nUpvote route called\n**********\n\n**********\n\n**********\n"
+  );
+  try {
+    const post = await Submission.findOne({
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    const updatedPost = Submission.update({
+      points: post.points+1
+    },{
+      where: {
+        id: req.params.id
+      }
+    })
+
+    res.status(200).json(updatedPost);
+  } catch (err) {
+    // Log and send the error
+    console.log(err);
+    res.status(400).json(err);
+  }
+});
+
+// Decrements a post's points value down by one
+router.put("/downvote/:id", async (req, res) => {
+  try {
+    const post = await Submission.findOne({
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    const updatedPost = await Submission.update({
+      points: post.points-1
+    },{
+      where: {
+        id: req.params.id
+      }
+    })
+
+    res.status(200).json(updatedPost);
   } catch (err) {
     // Log and send the error
     console.log(err);

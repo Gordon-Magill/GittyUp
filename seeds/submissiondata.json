@@ -6,7 +6,8 @@
      "content": ".product {\n  display: flex;\n  \/* Align the child elements to the top of the parent *\/\n  align-items: flex-start;\n  width: 90%;\n  margin: 1% auto;\n}",
      "language": "CSS",
      "date_created": 1667682473737,
-     "user_id": 2
+     "user_id": 2,
+     "points": 5
     },
     {
      "id": 2,
@@ -15,7 +16,8 @@
      "content": "* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nhtml {\n  height: 100%;\n}\n\nbody {\n  min-height: 100%;\n  line-height: 1;\n  font-family: sans-serif;\n}\n\nh1, h2, h3, h4, h5, h6 {\n  font-size: 100%;\n}\n\ninput, select, option, optgroup, textarea, button,\npre, code {\n  font-size: 100%;\n  font-family: inherit;\n}\n\nol, ul {\n  list-style: none;\n}",
      "language": "CSS",
      "date_created": 1667682473737,
-     "user_id": 1
+     "user_id": 1,
+     "points": 5
     },
     {
      "id": 3,
@@ -24,7 +26,8 @@
      "content": "<!-- Body -->\n  <main>\n    <!-- Product Cards -->\n    <div class=\"products\">\n      <section class=\"card\">\n        <header>Camera<\/header>\n        <img src=\".\/assets\/images\/camera.jpg\" alt=\"camera\" \/>\n        <p>Price: $300<\/p>\n      <\/section>\n      <section class=\"card\">\n        <header>Tablet<\/header>\n        <img src=\".\/assets\/images\/tablet.jpg\" alt=\"tablet\" \/>\n        <p>Price: $150<\/p>\n      <\/section>\n      <section class=\"card\">\n        <header>Toilet Paper<\/header>\n        <img src=\".\/assets\/images\/toilet-paper.jpg\" alt=\"toilet paper\" \/>\n        <p>Price: $30<\/p>\n      <\/section>\n      <section class=\"card\">\n        <header>Wooden Spoons<\/header>\n        <img src=\".\/assets\/images\/wooden-spoons.jpg\" alt=\"wooden spoons\" \/>\n        <p>Price: $10<\/p>\n      <\/section>\n    <\/div>\n  <\/main>",
      "language": "HTML",
      "date_created": 1667682473737,
-     "user_id": 4
+     "user_id": 4,
+     "points": 5
     },
     {
      "id": 4,
@@ -33,7 +36,8 @@
      "content": "var lastGrade = JSON.parse(localStorage.getItem(\"studentGrade\"));",
      "language": "Javascript",
      "date_created": 1667682473737,
-     "user_id": 4
+     "user_id": 4,
+     "points": 5
     },
     {
      "id": 5,
@@ -42,7 +46,8 @@
      "content": "moviePatrons.forEach(patron => console.log(patron.age));",
      "language": "Javascript",
      "date_created": 1667682473737,
-     "user_id": 5
+     "user_id": 5,
+     "points": 5
     },
     {
      "id": 6,
@@ -51,7 +56,8 @@
      "content": "\/\/ `for .. of` loop to iterate over each song and log it to terminal using the `outputCyanText()` method\nfor (const song of songs) {\n  outputCyanText(song);\n}",
      "language": "Javascript",
      "date_created": 1667682473737,
-     "user_id": 5
+     "user_id": 5,
+     "points": 5
     },
     {
      "id": 7,
@@ -60,7 +66,8 @@
      "content": "module.exports = router;",
      "language": "Javascript",
      "date_created": 1667682473737,
-     "user_id": 1
+     "user_id": 1,
+     "points": 5
     },
     {
      "id": 8,
@@ -69,7 +76,8 @@
      "content": "\/\/ turn on connection to db and server\nsequelize.sync({ force: false }).then(() => {\n  app.listen(PORT, () => console.log('Now listening'));\n});",
      "language": "Javascript",
      "date_created": 1667682473737,
-     "user_id": 3
+     "user_id": 3,
+     "points": 5
     },
     {
      "id": 9,
@@ -78,6 +86,7 @@
      "content": "DROP DATABASE IF EXISTS traveller_db;\nCREATE DATABASE traveller_db;",
      "language": "Javascript",
      "date_created": 1667682473737,
-     "user_id": 1
+     "user_id": 1,
+     "points": 5
     }
    ]

@@ -1,7 +1,8 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Submission extends Model {}
+class Submission extends Model {
+}
 
 Submission.init(
   {
@@ -35,11 +36,10 @@ Submission.init(
         model: 'user',
         key: 'id',
       },
-      points: {
-        type: DataTypes.INTEGER,
-        defaultValue: 0,
-      },
-  
+    },
+    points: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
     },
   },
   {
