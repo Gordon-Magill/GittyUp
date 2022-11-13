@@ -1131,7 +1131,7 @@ select {
   /* border: 1px solid rgba(0, 0, 0, 0.069); */
 }
 
-.animatedPopIn {
+.submission {
   background: rgb(255, 255, 255);
   background: linear-gradient(
     90deg,
@@ -1148,6 +1148,18 @@ select {
   box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.6);
   width: -moz-fit-content;
   width: fit-content;
+}
+
+/* Preparing the body of the post for the animation */
+
+.submissionContent {
+  transition: transform .25s ease;
+}
+
+/* Defining the hover animation */
+
+.submissionContent:hover{
+  transform: translateX(1em);
 }
 
 .titleAccent {

@@ -38,7 +38,7 @@ anime({
 
 // Pop in of elements from off screen (homepage)
 anime({
-  targets: ".animatedPopIn",
+  targets: ".submission",
   translateX: [-2000, 0],
   delay: anime.stagger(15),
   // duration: 100,
@@ -47,7 +47,7 @@ anime({
   easing: 'spring(1, 80, 20, 0)',
 }).finished.then(() => {
   anime({
-    targets: '.animatedPopIn',
+    targets: '.submission',
     translateX: [0, 15],
     delay: anime.stagger(200),
     duration: 4000,
