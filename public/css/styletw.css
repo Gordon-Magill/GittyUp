@@ -1120,6 +1120,7 @@ select {
   background: rgb(255, 255, 255);
   background: linear-gradient(
     90deg,
+
     rgba(255, 255, 255, 0.8491771708683473) 57%,
     rgba(255, 255, 255, 0) 100%
   );
