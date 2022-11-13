@@ -1,27 +1,28 @@
 <!-- Loop over each code submission in the code-submissions array -->
 {{#each submissions as |submission| }}
-
-<div class="mb-4 submission ">
-  <div class="columns-3 animatedPopIn">
-    <div id="sub-info">
+<div class="animatedPopIn">
+  <div class="grid grid-cols-3 auto-cols-max">
+    <div id="col1-name">
       <h2 class="text-lg">
         <a href="/submission/{{submission.id}}">{{submission.name}} ({{submission.points}} Points)</a>
       </h2>
       <p>
         {{submission.description}}
-      </p>
+        </p>
     </div>
-    <div id="sub-user">
+    <div id="col2-user">
       <p>
         Created by {{submission.user.username}} on <br> {{format_date submission.date_created}}
         </p>
     </div>
-    <div id="vote">
+    <div id="col3-vote">
       {{! Voting buttons }}
       <button class="upvoteButton" data-post-id="{{submission.id}}">Upvote<img class="h-10 w-10 rounded-full"
           src="/assets/UpVote.svg" /></button>
       <button class="downvoteButton" data-post-id="{{submission.id}}">Downvote<img class="h-10 w-10 rounded-full"
           src="/assets/DownVote.svg" /></button>
     </div>
+  </div>
 </div>
+
 {{/each}}
