@@ -1,7 +1,7 @@
-<div class="text-center">
+<div class="grid grid-cols-1 place-content-center">
     <h2 class="text-3xl">{{submission.name}}</h2>
     <p class="text-base">{{submission.description}}</p>
-    <p>{{submission.content}}</p>
+    <pre class="bg-gray-dark text-white"><code class="language-{{submission.language}}">{{submission.content}}</code></pre>
     <p>{{submission.language}}</p>
     <p>Submitted by {{submission.user.username}} on {{format_date date_created}}</p>
 
