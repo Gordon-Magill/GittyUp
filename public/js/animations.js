@@ -3,7 +3,7 @@ bgContainer = $('.backgroundBodyGrid')
 
 const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
 const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
-const numSquares = (vw/20)*(vh/20)*1.35 //1.35 is to account for overlap of squares
+const numSquares = (20)*(20)*(vh/vw)*1.35 //1.35 is to account for overlap of squares
 console.log(numSquares)
 
 for (i=0; i<(numSquares); i++) {
