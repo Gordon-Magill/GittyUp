@@ -1,7 +1,8 @@
 <!-- Loop over each code submission in the code-submissions array -->
+
 {{#each submissions as |submission| }}
-<div class="animatedPopIn">
-  <div class="grid grid-cols-3 auto-cols-max">
+<div class="submissionContainer">
+  <div class="grid grid-cols-3 auto-cols-max submission">
     <div class="m-3" id="col1-name">
       <h2 class="text-lg">
         <a href="/submission/{{submission.id}}">{{submission.name}} ({{submission.points}} Points)</a>
