@@ -1,30 +1,38 @@
 <!-- Loop over each code submission in the code-submissions array -->
-{{#each submissions as |submission| }}
+{{#each submissions as |submission|}}
 
-<div class="mb-4 submission ">
-  <div class="columns-2 animatedPopIn">
-
-    <div class="">
-      <h2 class="text-lg">
-        <a href="/submission/{{submission.id}}">{{submission.name}} ({{submission.points}} Points)</a>
+{{!-- submissionContainer class needed for initial animations --}}
+  <div class="mb-4 submissionContainer">
+    {{!-- submission class needed for hover animations--}}
+    <div class="columns-2 submission">
+        <div class="">
+          <h2 class="text-lg">
+            <a href="/submission/{{submission.id}}">{{submission.name}}
+              ({{submission.points}}
+              Points)</a>
             {{! Voting buttons }}
-              <button
-        class="upvoteButton"
-        data-post-id="{{submission.id}}"
-      >Upvote</button>
-      <button
-        class="downvoteButton"
-        data-post-id="{{submission.id}}"
-      >Downvote</button>
-      </h2>
-      <p>
-        {{submission.description}}
-        </p>
-    </div>
-    <div>
-      <p>
-        Created by {{submission.user.username}} on <br> {{format_date submission.date_created}}
-        </p>
+            <button
+              class="upvoteButton"
+              data-post-id="{{submission.id}}"
+            >Upvote</button>
+            <button
+              class="downvoteButton"
+              data-post-id="{{submission.id}}"
+            >Downvote</button>
+          </h2>
+          <p>
+            {{submission.description}}
+          </p>
+        </div>
+        <div>
+          <p>
+            Created by
+            {{submission.user.username}}
+            on
+            <br />
+            {{format_date submission.date_created}}
+          </p>
+        </div>
     </div>
   </div>
 {{/each}}
