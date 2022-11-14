@@ -907,6 +907,10 @@ select {
   height: 5rem;
 }
 
+.h-auto {
+  height: auto;
+}
+
 .w-full {
   width: 100%;
 }
@@ -919,6 +923,10 @@ select {
   width: 1.5rem;
 }
 
+.w-20 {
+  width: 5rem;
+}
+
 .max-w-6xl {
   max-width: 72rem;
 }
@@ -929,6 +937,10 @@ select {
 
 .resize {
   resize: both;
+}
+
+.columns-2 {
+  columns: 2;
 }
 
 .auto-cols-max {
@@ -1148,6 +1160,10 @@ select {
   font-weight: 600;
 }
 
+.font-bold {
+  font-weight: 700;
+}
+
 .leading-5 {
   line-height: 1.25rem;
 }
@@ -1285,6 +1301,10 @@ select {
 .selection\:text-base::selection {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+.file\:m-3::file-selector-button {
+  margin: 0.75rem;
 }
 
 .hover\:bg-gray-light:hover {

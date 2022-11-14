@@ -3,8 +3,9 @@
 {{#each submissions as |submission|}}
   <div class="submissionContainer">
     <div class="grid grid-cols-3 auto-cols-max submission">
-      <div class="m-3" id="col1-name">
-        <h2 class="text-lg">
+      <div class="columns-2 m-3" id="col1-name">
+        <img class= "w-20 h-auto" src="/assets/lang-icons/{{submission.language}}.svg"/>
+        <h2 class="font-bold text-lg">
           <a href="/submission/{{submission.id}}">{{submission.name}}
             (<span
               class="pointCounter"
@@ -18,7 +19,7 @@
       <div class="m-3" id="col2-user">
         <p>
           Created by
-          {{submission.user.username}}
+          <span class="font-semibold">{{submission.user.username}}</span>
           on
           <br />
           {{format_date submission.date_created}}
