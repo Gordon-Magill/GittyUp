@@ -1,14 +1,16 @@
 const router = require("express").Router();
 
+const session = require("express-session");
 const { Comment } = require("../../models/index");
 
 router.post("/create", async (req, res) => {
     try {
       const commentBody = {
-        author: req.body.author,
-        content: req.body.content,
+        author: req.session.username,
+        content: req.body.commentBody,
         date_created: Date.now(),
-        user_id: req.session.user_id,
+        author_id: req.session.userID,
+        post_id: req.body.postID,
       };
   
       console.log("commentBody: ", commentBody);

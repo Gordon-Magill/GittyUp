@@ -2,18 +2,19 @@ const commentSubmit = async (event) => {
     event.preventDefault();
     console.log("commentSubmit event occured")
     const commentBody = document.querySelector('#comment-body').value.trim();
+    const postID = document.querySelector('#comment-submit').getAttribute('data-post');
+    // console.log(postID)
 
     if(commentBody){
         const response = await fetch(`/api/comment/create`,{
         method: "POST",
-        body: JSON.stringify({commentBody}),
+        body: JSON.stringify({commentBody, postID}),
         headers:{
             "Content-Type": "application/json",
         },
     });
 
         if(response.ok){
-            // add comment to list
             console.log("Bing Bong")
         } else {
             alert("Failed to add comment");
