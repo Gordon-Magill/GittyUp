@@ -11,6 +11,7 @@ router.post("/create", async (req, res) => {
       name: req.body.name,
       description: req.body.description,
       content: req.body.content,
+      language: req.body.language,
       date_created: Date.now(),
       user_id: req.session.userID,
     };
