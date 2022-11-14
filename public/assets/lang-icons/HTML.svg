@@ -1,8 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-	<title>HTML5 Logo</title>
-	<path d="M108.4 0h23v22.8h21.2V0h23v69h-23V46h-21v23h-23.2M206 23h-20.3V0h63.7v23H229v46h-23M259.5 0h24.1l14.8 24.3L313.2 0h24.1v69h-23V34.8l-16.1 24.8l-16.1-24.8v34.2h-22.6M348.7 0h23v46.2h32.6V69h-55.6"/>
-	<path fill="#e44d26" d="M107.6 471l-33-370.4h362.8l-33 370.2L255.7 512"/>
-	<path fill="#f16529" d="M256 480.5V131H404.3L376 447"/>
-	<path fill="#ebebeb" d="M142 176.3h114v45.4h-64.2l4.2 46.5h60v45.3H154.4M156.4 336.3H202l3.2 36.3 50.8 13.6v47.4l-93.2-26"/>
-	<path fill="#fff" d="M369.6 176.3H255.8v45.4h109.6M361.3 268.2H255.8v45.4h56l-5.3 59-50.7 13.6v47.2l93-25.8"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#E44D26;}
+	.st1{fill:#F16529;}
+	.st2{fill:#EBEBEB;}
+	.st3{fill:#FFFFFF;}
+</style>
+<g>
+	<path d="M63.7,0.4h13.4v13.3h12.4V0.4H103v40.3H89.6V27.2H77.3v13.4H63.7 M120.8,13.8h-11.9V0.4h37.2v13.4h-11.9v26.9h-13.4
+		 M152,0.4h14.1l8.7,14.2l8.7-14.2h14.1v40.3h-13.4v-20l-9.4,14.5l-9.4-14.5v20H152 M204.2,0.4h13.4v27h19.1v13.3h-32.5"/>
+	<path class="st0" d="M63.3,275.7L44,59.2H256l-19.3,216.4l-86.9,24.1"/>
+	<path class="st1" d="M150,281.2V76.9h86.7l-16.5,184.7"/>
+	<path class="st2" d="M83.4,103.4H150V130h-37.5l2.5,27.2H150v26.5H90.6 M91.8,196.9h26.7l1.9,21.2l29.7,7.9v27.7l-54.5-15.2"/>
+	<path class="st3" d="M216.4,103.4h-66.5V130h64.1 M211.6,157.1h-61.7v26.5h32.7l-3.1,34.5l-29.6,7.9v27.6l54.4-15.1"/>
+</g>
 </svg>
