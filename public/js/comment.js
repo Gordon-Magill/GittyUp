@@ -15,7 +15,6 @@ const commentSubmit = async (event) => {
     });
 
         if(response.ok){
-            // add comment to list
             console.log("Bing Bong")
         } else {
             alert("Failed to add comment");
