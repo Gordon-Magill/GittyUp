@@ -24,14 +24,16 @@
       </div>
       <div class="m-3" id="col3-vote">
         {{! Voting buttons }}
-        <button class="upvoteButton" data-post-id="{{submission.id}}"><img
-            class="h-10 w-10 rounded-full"
-            src="/assets/UpVote.svg"
-          /></button>
-        <button class="downvoteButton" data-post-id="{{submission.id}}"><img
-            class="h-10 w-10 rounded-full"
-            src="/assets/DownVote.svg"
-          /></button>
+        <img
+          class="h-10 w-10 rounded-full upvoteButton"
+          data-post-id="{{submission.id}}"
+          src="/assets/UpVote.svg"
+        />
+        <img
+          class="h-10 w-10 rounded-full downvoteButton"
+          data-post-id="{{submission.id}}"
+          src="/assets/DownVote.svg"
+        />
       </div>
     </div>
   </div>

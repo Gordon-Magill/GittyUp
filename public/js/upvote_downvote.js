@@ -15,6 +15,7 @@ async function upvote(event) {
     if (upvoteRequest.ok) {
         // Disable the button
         clickedButton.disabled=true
+        clickedButton.setAttribute('src','/assets/D-UpVote.svg')
     } else {
         alert('Upvote attempt failed:\n', JSON.stringify(upvoteRequest.json()))
     }
@@ -37,6 +38,7 @@ async function downvote(event) {
     if (downvoteRequest.ok) {
         // Disable the button
         clickedButton.disabled=true
+        clickedButton.setAttribute('src','/assets/D-DownVote.svg')
     } else {
         alert('Downvote attempt failed:\n', JSON.stringify(upvoteRequest.json()))
     }
