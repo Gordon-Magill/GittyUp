@@ -75,8 +75,14 @@ router.get("/submission/:id", async (req, res) => {
     include: [{ model: User }, {model: Comment}],
   });
 
+  // Get comments associated with submission
+
+ //////// const allComments = await Comment.findByPk(req.params.id)
+
   // Strip out extra sequelize content
   const submission = singleSubmission.get({ plain: true });
+
+ //////// const comment = allComments.get({plain:true})
 
   // Diagnostic logs of what's actually going to be rendered
   console.log("submission: ", submission);
@@ -86,7 +92,7 @@ router.get("/submission/:id", async (req, res) => {
   res.render("submission", {
     session: req.session,
     submission,
-  });
+  })
 });
 
 // 404 Page

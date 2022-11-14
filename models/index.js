@@ -9,7 +9,7 @@ User.hasMany(Submission, {
 
 // TODO: integrate comments
 User.hasMany(Comment, {
-    foreignKey: 'user_id',
+    foreignKey: 'author_id',
     onDelete: 'CASCADE'
 });
 
@@ -19,11 +19,11 @@ Submission.belongsTo(User, {
 
 // TODO: integrate comments
 Comment.belongsTo(Submission, {
-    foreignKey: 'user_id'
+    foreignKey: 'post_id'
 });
 
 Submission.hasMany(Comment, {
-    foreignKey: 'user_id',
+    foreignKey: 'post_id',
     onDelete: 'CASCADE'
 });
 
