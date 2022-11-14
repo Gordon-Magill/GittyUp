@@ -4,23 +4,24 @@
 <div class="submissionContainer">
   <div class="grid grid-cols-3 auto-cols-max submission">
     <div class="m-3" id="col1-name">
-      <h2 class="text-lg">
-        <a href="/submission/{{submission.id}}">{{submission.name}} ({{submission.points}} Points)</a>
+      <h2 class="font-semibold text-lg">
+        <a href="/submission/{{submission.id}}">{{submission.name}}</a>
       </h2>
-      <p>
+      <p class="text-sm truncate ...">
         {{submission.description}}
         </p>
     </div>
     <div class="m-3" id="col2-user">
       <p>
-        Created by {{submission.user.username}} on <br> {{format_date submission.date_created}}
+        Created by <span class="font-semibold">{{submission.user.username}}</span> <br> <span class="text-sm"> on {{format_date submission.date_created}}</span>
       </p>
     </div>
     <div class="m-3" id="col3-vote">
       {{! Voting buttons }}
-      <button class="upvoteButton" data-post-id="{{submission.id}}">Upvote<img class="h-10 w-10 rounded-full"
+      <h3>({{submission.points}} Points)</h3>
+      <button class="upvoteButton" data-post-id="{{submission.id}}"><img class="h-10 w-10 rounded-full"
           src="/assets/UpVote.svg" /></button>
-      <button class="downvoteButton" data-post-id="{{submission.id}}">Downvote<img class="h-10 w-10 rounded-full"
+      <button class="downvoteButton" data-post-id="{{submission.id}}"><img class="h-10 w-10 rounded-full"
           src="/assets/DownVote.svg" /></button>
     </div>
   </div>
