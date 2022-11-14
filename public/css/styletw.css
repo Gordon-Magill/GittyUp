@@ -1126,16 +1126,16 @@ select {
 }
 
 .backgroundEl {
-  width: 5vw;
-  height: 5vw;
-  /* border: 1px solid rgba(0, 0, 0, 0.069); */
+  width: 20px;
+  height: 20px;
+  /* border: 1px solid rgba(0, 0, 0, 0.02); */
 }
 
 .submission {
   background: rgb(255, 255, 255);
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.8491771708683473) 57%,
+    rgba(255, 255, 255, 0.7) 57%,
     rgba(255, 255, 255, 0) 100%
   );
   border-radius: 10px;
@@ -1145,22 +1145,29 @@ select {
   margin-bottom: 10px;
   text-shadow: 0px 0px 5px white, 0px 0px 5px white, 0px 0px 5px white,
     0px 0px 5px white;
-  box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.6);
-  width: -moz-fit-content;
-  width: fit-content;
+  /* width: fit-content; */
+  /* box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.6); */
+  /* Transition scale needed on both submission and submission:hover */
+  transition: scale 0.25s ease-in-out;
+}
+
+.submission:hover {
+  box-shadow: 0px 0px 10px black;
+  transition: scale 0.25s ease-in-out;
+  scale: 1.02;
 }
 
 /* Preparing the body of the post for the animation */
 
-.submissionContent {
+/* .submissionContent {
   transition: transform .25s ease;
-}
+} */
 
 /* Defining the hover animation */
 
-.submissionContent:hover{
+/* .submissionContent:hover {
   transform: translateX(1em);
-}
+} */
 
 .titleAccent {
   color: #0055ff;
