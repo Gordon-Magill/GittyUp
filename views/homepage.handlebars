@@ -6,8 +6,10 @@
       <div class="m-3" id="col1-name">
         <h2 class="text-lg">
           <a href="/submission/{{submission.id}}">{{submission.name}}
-            ({{submission.points}}
-            Points)</a>
+            (<span
+              class="pointCounter"
+              data-post-id="{{submission.id}}"
+            >{{submission.points}}</span>)</a>
         </h2>
         <p>
           {{submission.description}}
@@ -24,16 +26,17 @@
       </div>
       <div class="m-3" id="col3-vote">
         {{! Voting buttons }}
-        <img
-          class="h-10 w-10 rounded-full upvoteButton"
-          data-post-id="{{submission.id}}"
-          src="/assets/UpVote.svg"
-        />
-        <img
-          class="h-10 w-10 rounded-full downvoteButton"
-          data-post-id="{{submission.id}}"
-          src="/assets/DownVote.svg"
-        />
+        <button class="upvoteButton disabled:opacity-25" data-post-id="{{submission.id}}">
+          <img
+            class="h-10 w-10 rounded-full"
+            src="/assets/UpVote.svg"
+          />
+        </button><br>
+
+        <button class="downvoteButton disabled:opacity-25" data-post-id="{{submission.id}}">
+          <img class="h-10 w-10 rounded-full" src="/assets/DownVote.svg" />
+
+        </button>
       </div>
     </div>
   </div>
