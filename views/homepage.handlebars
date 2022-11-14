@@ -2,7 +2,7 @@
 {{#each submissions as |submission| }}
 <div class="animatedPopIn">
   <div class="grid grid-cols-3 auto-cols-max">
-    <div id="col1-name">
+    <div class="m-3" id="col1-name">
       <h2 class="text-lg">
         <a href="/submission/{{submission.id}}">{{submission.name}} ({{submission.points}} Points)</a>
       </h2>
@@ -10,12 +10,12 @@
         {{submission.description}}
         </p>
     </div>
-    <div id="col2-user">
+    <div class="m-3" id="col2-user">
       <p>
         Created by {{submission.user.username}} on <br> {{format_date submission.date_created}}
-        </p>
+      </p>
     </div>
-    <div id="col3-vote">
+    <div class="m-3" id="col3-vote">
       {{! Voting buttons }}
       <button class="upvoteButton" data-post-id="{{submission.id}}">Upvote<img class="h-10 w-10 rounded-full"
           src="/assets/UpVote.svg" /></button>
