@@ -10,10 +10,6 @@ async function upvote(event) {
 
     let upvoteRequest = await fetch(`/api/submission/upvote/${associatedPost}`,{
         method: 'PUT',
-        // body: JSON.stringify({}),
-        // headers:{
-        //     "Content-Type": "application/json",
-        // }
     })
 
     if (upvoteRequest.ok) {
