@@ -11,9 +11,9 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    author: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    author:{
+      type:DataTypes.STRING,
+      allowNull:false,
     },
     content: {
       type: DataTypes.TEXT('long'),
@@ -23,11 +23,18 @@ Comment.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    user_id: {
+    author_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
         key: 'id',
+      },
+    },
+    post_id:{
+      type:DataTypes.INTEGER,
+      references:{
+        model:'submission',
+        key:'id',
       },
     },
   },

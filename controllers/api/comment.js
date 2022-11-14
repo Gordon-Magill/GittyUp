@@ -9,7 +9,8 @@ router.post("/create", async (req, res) => {
         author: req.session.username,
         content: req.body.commentBody,
         date_created: Date.now(),
-        user_id: req.session.userID,
+        author_id: req.session.userID,
+        post_id: req.body.postID,
       };
   
       console.log("commentBody: ", commentBody);

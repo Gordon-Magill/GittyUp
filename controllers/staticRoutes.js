@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Submission } = require("../models/index");
+const { User, Submission, Comment } = require("../models/index");
 const auth = require("../utils/auth");
 
 // Homepage / browse
@@ -72,7 +72,7 @@ router.get("/submission/:id", async (req, res) => {
     where: {
       id: req.params.id,
     },
-    include: [{ model: User }],
+    include: [{ model: User }, {model: Comment}],
   });
 
   // Strip out extra sequelize content
