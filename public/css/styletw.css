@@ -825,6 +825,21 @@ select {
   margin-right: auto;
 }
 
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.mx-60 {
+  margin-left: 15rem;
+  margin-right: 15rem;
+}
+
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
 .mt-10 {
   margin-top: 2.5rem;
 }
@@ -886,6 +901,10 @@ select {
 
 .h-6 {
   height: 1.5rem;
+}
+
+.h-20 {
+  height: 5rem;
 }
 
 .w-full {
@@ -1116,6 +1135,11 @@ select {
   line-height: 2.25rem;
 }
 
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .font-medium {
   font-weight: 500;
 }
@@ -1243,6 +1267,26 @@ select {
   font-weight: bolder;
 }
 
+.selection\:text-base *::-moz-selection {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.selection\:text-base *::selection {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.selection\:text-base::-moz-selection {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.selection\:text-base::selection {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .hover\:bg-gray-light:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(126 126 123 / var(--tw-bg-opacity));
@@ -1251,6 +1295,17 @@ select {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus\:ring-1:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 
 .disabled\:opacity-25:disabled {
@@ -1263,6 +1318,11 @@ select {
     margin-right: 0px;
   }
 
+  .sm\:mx-5 {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+  }
+
   .sm\:h-9 {
     height: 2.25rem;
   }
@@ -1270,6 +1330,11 @@ select {
   .sm\:px-4 {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .sm\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 }
 
@@ -1287,6 +1352,21 @@ select {
   .md\:mx-20 {
     margin-left: 5rem;
     margin-right: 5rem;
+  }
+
+  .md\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .md\:mx-5 {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+  }
+
+  .md\:mx-1 {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
   }
 
   .md\:mr-0 {
@@ -1350,5 +1430,10 @@ select {
   .xl\:mx-60 {
     margin-left: 15rem;
     margin-right: 15rem;
+  }
+
+  .xl\:mx-40 {
+    margin-left: 10rem;
+    margin-right: 10rem;
   }
 }

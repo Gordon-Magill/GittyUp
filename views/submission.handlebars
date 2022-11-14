@@ -1,28 +1,30 @@
-<div class="grid grid-cols-1 place-content-center">
+<div class="mx-5 grid grid-cols-1 place-content-center">
     <h2 class="text-3xl">{{submission.name}}</h2>
     <p class="text-base">{{submission.description}}</p>
     <pre class="bg-gray-dark text-white"><code class="language-{{submission.language}}">{{submission.content}}</code></pre>
-    <p>{{submission.language}}</p>
-    <p>Submitted by {{submission.user.username}} on {{format_date date_created}}</p>
-
-
-<!-- Comment Section -->
-
-    <h2>Comment on this code:</h2>
-
+    <p class="my-2 text-base"><span class="font-semibold">Language: </span> {{submission.language}}</p>
+    <p class="my-2 text-base"><span class="font-semibold">Submitted by: </span>{{submission.user.username}} on
+        {{format_date date_created}}
+    </p>
 
 <!--Comment box form-->
-    <div class="w-full">
-        <form class="form">
-            <div class="form-group">
-                <label for="comment-body">test</label>
-                <input class="form-input" type="text" id="comment-body" name="comment-body" />
-            </div>
-
-            <div class="form-group">
-                <button type="submit" id="comment-submit" class="btn btn-primary" data-post="{{submission.id}}" >Submit</button>
-            </div>
-        </form>
+<div class="mt-10 mx-5" id="comment-form">
+    <h2 class="text-2xl">Comment on This CodeShare:</h2>
+    <form class="form new-comment-form">
+        <!--Comment Content-->
+        <div class="mt-6">
+            <label for="comment-body" class="block text-sm font-medium">
+                <textarea id="comment-body"
+                    class="w-full h-20 p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1"
+                    name="comment" placeholder="Write your comment here. No profanity please!"></textarea>
+            </label>
+        </div>
+    <!--Comment Button-->
+    <div class="mt-6">
+        <button id="comment-submit" class="bg-gray px-5 py-2.5 text-md leading-5 rounded-md font-semibold text-white"
+            type="submit" data-post="{{submission.id}}">Submit</button>
+    </div>
+    </form>
     </div>
 
 <!-- List of submitted comments -->
