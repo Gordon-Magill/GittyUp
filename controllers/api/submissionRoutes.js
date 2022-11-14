@@ -4,6 +4,7 @@ const { Submission } = require("../../models/index");
 
 // Create new submission
 router.post("/create", async (req, res) => {
+  console.log('\n**********\n\n**********\n\n**********\nPost creation route\n**********\n\n**********\n\n**********\n')
   try {
     // Get the info needed for the new submission
     const submissionBody = {

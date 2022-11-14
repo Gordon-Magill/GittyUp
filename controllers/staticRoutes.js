@@ -34,7 +34,7 @@ router.get("/dashboard", auth, async (req, res) => {
   // Get all submissions from the logged in user
   const userSubmissions = await Submission.findAll({
     where: {
-      id: req.session.userID,
+      user_id: req.session.userID,
     },
     include: [{ model: User }],
   });
