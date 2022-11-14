@@ -8,7 +8,7 @@
 <div class="grid grid-cols-2">
 
   <div class="mt-10 mx-10" id="submission-form">
-    <h2 class="text-xl">Create a New Code Share:</h2>
+    <h2 class="text-xl font-semibold">Create a New Code Share:</h2>
     <form class="form new-submission-form">
       <!--Submission Name-->
       <div class="mt-6">
@@ -58,15 +58,16 @@
 
   <div class="mx-10 mt-10">
     <div class="col-md-6 submission-list">
-      <h2 class="text-xl">Your Code Shares:</h2>
+      <h2 class="mb-8 text-xl font-semibold">Your Code Shares:</h2>
       {{#if submissions.length}}
         {{#each submissions as |submission|}}
-          <div class="row mb-2">
-            <div class="col-md-8">
+          <div class="columns-2 mb-2">
+            <div class="">
               <h4><a href="/submission/{{submission.id}}">{{submission.name}}</a></h4>
             </div>
-            <div class="col-md-4">
-              <button class="btn btn-sm btn-danger" data-id="{{submission.id}}">DELETE</button>
+            <div>
+              <button class="bg-pink px-5 py-2.5 text-md leading-5 rounded-md font-semibold text-white"
+                data-id="{{submission.id}}">DELETE</button>
             </div>
           </div>
         {{/each}}
