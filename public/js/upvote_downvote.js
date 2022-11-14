@@ -10,15 +10,12 @@ async function upvote(event) {
 
     let upvoteRequest = await fetch(`/api/submission/upvote/${associatedPost}`,{
         method: 'PUT',
-        // body: JSON.stringify({}),
-        // headers:{
-        //     "Content-Type": "application/json",
-        // }
     })
 
     if (upvoteRequest.ok) {
         // Disable the button
         clickedButton.disabled=true
+        clickedButton.setAttribute('src','/assets/D-UpVote.svg')
     } else {
         alert('Upvote attempt failed:\n', JSON.stringify(upvoteRequest.json()))
     }
@@ -41,6 +38,7 @@ async function downvote(event) {
     if (downvoteRequest.ok) {
         // Disable the button
         clickedButton.disabled=true
+        clickedButton.setAttribute('src','/assets/D-DownVote.svg')
     } else {
         alert('Downvote attempt failed:\n', JSON.stringify(upvoteRequest.json()))
     }
