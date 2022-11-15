@@ -1615,6 +1615,10 @@ select {
     margin-right: 0px;
   }
 
+  .sm\:mt-4 {
+    margin-top: 1rem;
+  }
+
   .sm\:block {
     display: block;
   }
