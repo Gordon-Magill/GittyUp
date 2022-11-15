@@ -40,18 +40,18 @@
   </div>
 
   <!-- List of submitted comments -->
-  {{#each submission.comments as |comment|}}
+  {{#each submission.Comments as |comment|}}
     {{! Container }}
     <div class="container flex p-2 m-2 max-w-md bg-white rounded border-solid border-gray">
 
       {{! Left side metadata }}
-      <div class="m-1 block">
-        <p>{{comment.author}}</p>
-        <p>{{format_date comment.date_created}}</p>
+      <div class="m-1 block text-xs">
+        <p class="font-bold">{{comment.author}}</p>
+        <p class="font-light">{{format_date comment.date_created}}</p>
       </div>
 
       {{! Right side comment content }}
-      <div class="p-2 m-2 text-justify bg-gray-light">
+      <div class="p-2 my-1 mx-2 text-left bg-gray-light bg-opacity-25 w-full rounded-sm">
         <p>{{comment.content}}</p>
       </div>
     </div>

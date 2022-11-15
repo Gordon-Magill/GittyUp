@@ -2,10 +2,10 @@
 
 {{#each submissions as |submission|}}
   <div class="submissionContainer">
-    <div class="grid grid-cols-3 auto-cols-max submission">
+    <div class="flex submission">
 
       {{! Voting buttons and points }}
-      <div class="m-2 p-2 block" id="col3-vote">
+      <div class="m-2 p-2 flex flex-col items-center" id="col3-vote">
         {{! Upvote }}
         <button
           class="upvoteButton disabled:opacity-25"
@@ -31,14 +31,14 @@
       </div>
 
       {{! Post title and icon }}
-      <div class="p-2 block w-50 my-auto" id="col1-name">
+      <div class="p-2 flex flex-col items-center my-auto" id="col1-name">
         <div class="m-1">
-          <h2 class="font-bold text-base md:text-large">
+          <h2 class="font-bold text-base md:text-large text-center">
             <a href="/submission/{{submission.id}}">{{submission.name}}</a>
           </h2>
-          <p class="text-sm hidden sm:block">
+          {{!-- <p class="text-sm hidden sm:block">
             {{submission.description}}
-          </p>
+          </p> --}}
         </div>
         <img
           class="mx-auto w-10 h-10 justify-center"
@@ -49,9 +49,7 @@
       {{! Metadata }}
       <div class="mx-auto my-auto w-auto" id="col2-user">
         <p class="text-small md:text-base">
-          Created by
           <span class="font-semibold">{{submission.user.username}}</span>
-          on
           <br />
           {{format_date submission.date_created}}
         </p>
