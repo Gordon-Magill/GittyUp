@@ -765,6 +765,10 @@ select {
   margin: 0.25rem;
 }
 
+.m-auto {
+  margin: auto;
+}
+
 .mx-10 {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
@@ -883,6 +887,10 @@ select {
 
 .h-3 {
   height: 0.75rem;
+}
+
+.h-auto {
+  height: auto;
 }
 
 .w-full {
@@ -1052,6 +1060,10 @@ select {
   border-bottom-width: 1px;
 }
 
+.border-r {
+  border-right-width: 1px;
+}
+
 .border-solid {
   border-style: solid;
 }
@@ -1059,6 +1071,11 @@ select {
 .border-gray {
   --tw-border-opacity: 1;
   border-color: rgb(37 36 35 / var(--tw-border-opacity));
+}
+
+.border-pink {
+  --tw-border-opacity: 1;
+  border-color: rgb(235 63 103 / var(--tw-border-opacity));
 }
 
 .bg-white {
@@ -1084,6 +1101,11 @@ select {
 .bg-gray-light {
   --tw-bg-opacity: 1;
   background-color: rgb(126 126 123 / var(--tw-bg-opacity));
+}
+
+.bg-pink {
+  --tw-bg-opacity: 1;
+  background-color: rgb(235 63 103 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-50 {
@@ -1112,6 +1134,10 @@ select {
 
 .p-4 {
   padding: 1rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
 }
 
 .px-3 {
@@ -1147,6 +1173,16 @@ select {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 .pr-4 {
@@ -1227,6 +1263,10 @@ select {
 
 .font-light {
   font-weight: 300;
+}
+
+.font-extrabold {
+  font-weight: 800;
 }
 
 .leading-5 {

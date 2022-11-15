@@ -79,7 +79,10 @@
       {{#if submissions.length}}
         {{#each submissions as |submission|}}
             <div class="submissionContainer w-fit">
-    <div class="flex submission max-w-md">
+              <div class="flex submission max-w-md">
+                <div class="p-1 m-auto">
+                  <div class="border-black border-solid border-pink bg-pink rounded p-2 h-10 text-center font-extrabold" data-id="{{submission.id}}">DELETE</div>
+                </div>
 
       {{! Post title and icon }}
       <div class="p-2 flex flex-col items-center my-auto w-40" id="col1-name">
