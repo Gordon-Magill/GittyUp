@@ -1,0 +1,82 @@
+[
+    {
+     "id": 1,
+     "author": "Sparks McGee",
+     "content": "Cool!",
+     "date_created": 1667682473737,
+     "author_id": 1,
+     "post_id": 1
+    },
+    {
+     "id": 2,
+     "author": "Pendleton Goomba",
+     "content": "Yeah, this is kinda awesome.",
+     "date_created": 1667682473737,
+     "author_id": 2,
+     "post_id": 1
+    },
+    {
+     "id": 3,
+     "author": "Darius Kombucha",
+     "content": "Why though??",
+     "date_created": 1667682473737,
+     "author_id": 3,
+     "post_id": 3
+    },
+    {
+     "id": 4,
+     "author": "A dude",
+     "content": "I guess it's cool...",
+     "date_created": 1667682473737,
+     "author_id": 4,
+     "post_id": 4
+    },
+    {
+     "id": 5,
+     "author": "Princess Consuela",
+     "content": "But my brain no can haz understand",
+     "date_created": 1667682473737,
+     "author_id": 5,
+     "post_id": 2
+    },
+    {
+     "id": 6,
+     "author": "Sparks McGee",
+     "content": "Wow....okay",
+     "date_created": 1667682473737,
+     "author_id": 1,
+     "post_id": 2
+    },
+    {
+     "id": 7,
+     "author": "Pendleton Goomba",
+     "content": "Dude....",
+     "date_created": 1667682473737,
+     "author_id": 2,
+     "post_id": 5
+    },
+    {
+     "id": 8,
+     "author": "Darius Kombucha",
+     "content": "Sick!",
+     "date_created": 1667682473737,
+     "author_id": 3,
+     "post_id": 6
+    },
+    {
+     "id": 9,
+     "author": "A dude",
+     "content": "Love it!",
+     "date_created": 1667682473737,
+     "author_id": 4,
+     "post_id": 7
+    },
+    {
+     "id": 10,
+     "author": "Princess Consuela",
+     "content": "Hmmmmmmmmmmm.................",
+     "date_created": 1667682473737,
+     "author_id": 5,
+     "post_id": 8
+    }
+   ]
