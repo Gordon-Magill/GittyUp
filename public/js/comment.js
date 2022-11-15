@@ -1,5 +1,5 @@
 const commentSubmit = async (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     console.log("commentSubmit event occured")
     const commentBody = document.querySelector('#comment-body').value.trim();
     const postID = document.querySelector('#comment-submit').getAttribute('data-post');
@@ -43,7 +43,7 @@ const commentSubmit = async (event) => {
 }
 
 const commentDelete = async (event) => {
- //todo: all of this lol
+ //todo: eventually
 }
 
 document
