@@ -1,82 +1,82 @@
 [
     {
      "id": 1,
-     "author": "Bruce",
+     "author": "Sparks McGee",
      "content": "Cool!",
-     "date_created": "1667682473737",
+     "date_created": 1667682473737,
      "author_id": 1,
      "post_id": 1
     },
     {
      "id": 2,
-     "author": "Diana",
+     "author": "Pendleton Goomba",
      "content": "Yeah, this is kinda awesome.",
-     "date_created": "1667682473737",
+     "date_created": 1667682473737,
      "author_id": 2,
      "post_id": 1
     },
     {
      "id": 3,
-     "author": "Clark",
+     "author": "Darius Kombucha",
      "content": "Why though??",
-     "date_created": "1667682473737",
+     "date_created": 1667682473737,
      "author_id": 3,
      "post_id": 3
     },
     {
      "id": 4,
-     "author": "Hal",
+     "author": "A dude",
      "content": "I guess it's cool...",
-     "date_created": "1667682473737",
+     "date_created": 1667682473737,
      "author_id": 4,
      "post_id": 4
     },
     {
      "id": 5,
-     "author": "Arthur",
+     "author": "Princess Consuela",
      "content": "But my brain no can haz understand",
-     "date_created": "1667682473737",
+     "date_created": 1667682473737,
      "author_id": 5,
      "post_id": 2
     },
     {
      "id": 6,
-     "author": "Damian",
+     "author": "Sparks McGee",
      "content": "Wow....okay",
-     "date_created": "1667682473737",
-     "author_id": 6,
+     "date_created": 1667682473737,
+     "author_id": 1,
      "post_id": 2
     },
     {
      "id": 7,
-     "author": "Grayman",
+     "author": "Pendleton Goomba",
      "content": "Dude....",
-     "date_created": "1667682473737",
-     "author_id": 7,
+     "date_created": 1667682473737,
+     "author_id": 2,
      "post_id": 5
     },
     {
      "id": 8,
-     "author": "A.Dent",
+     "author": "Darius Kombucha",
      "content": "Sick!",
-     "date_created": "1667682473737",
-     "author_id": 8,
+     "date_created": 1667682473737,
+     "author_id": 3,
      "post_id": 6
     },
     {
      "id": 9,
-     "author": "Lamp",
+     "author": "A dude",
      "content": "Love it!",
-     "date_created": "1667682473737",
-     "author_id": 9,
+     "date_created": 1667682473737,
+     "author_id": 4,
      "post_id": 7
     },
     {
      "id": 10,
-     "author": "Beeeeer",
+     "author": "Princess Consuela",
      "content": "Hmmmmmmmmmmm.................",
-     "date_created": "1667682473737",
-     "author_id": 10,
+     "date_created": 1667682473737,
+     "author_id": 5,
      "post_id": 8
     }
-]
+   ]
