@@ -1,25 +1,34 @@
 const router = require("express").Router();
 const { User, Submission, Comment } = require("../models/index");
 const auth = require("../utils/auth");
+const sequelize = require('sequelize')
 
 // Homepage / browse
 router.get("/", async (req, res) => {
   // Get all submissions from all users, including associated users
   const allSubmissions = await Submission.findAll({
     include: [{ model: User }],
+    order: [['id', 'DESC']]
   });
 
   // Strip out the extra sequelize content
   const submissions = allSubmissions.map((row) => row.get({ plain: true }));
 
+  const pointSorted = submissions.slice()
+  pointSorted.sort((a,b) => (a.points>b.points) ? -1 : 1)
+  const topThree = pointSorted.slice(0,3)
+  
+  // console.log('topThree:',topThree)
+
   // Diagnostic logs of what's actually going to be rendered
-  console.log("submissions: ", submissions);
-  console.log("session: ", req.session);
+  // console.log("submissions: ", submissions);
+  // console.log("session: ", req.session);
 
   // Render the page with data needed for the handlebars template
   res.render("homepage", {
     session: req.session,
     submissions,
+    topThree
   });
 });
 

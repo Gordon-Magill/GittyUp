@@ -1,47 +1,134 @@
 <!-- Loop over each code submission in the code-submissions array -->
-{{#each submissions as |submission|}}
-<div class="submissionContainer w-fit">
-  <div class="flex submission max-w-md">
+<div class="md:flex sm:block">
 
-    {{! Voting buttons and points }}
-    <div class="m-2 p-2 flex flex-col items-center" id="col3-vote">
-      {{! Upvote }}
-      <button class="upvoteButton disabled:opacity-25" data-post-id="{{submission.id}}">
-        <img class="h-10 w-10 rounded-full" src="/assets/UpVote.svg" />
-      </button>
+  <div class="flex flex-col mx-auto">
+    <p class="popIn font-extrabold text-2xl mb-2">Recent posts:</p>
+    {{#each submissions as |submission|}}
+      <div class="popInSway w-fit">
+        <div class="flex submission max-w-md">
 
-      {{! Points }}
-      <span class="pointCounter" data-post-id="{{submission.id}}">{{submission.points}}</span>
+          {{! Voting buttons and points }}
+          <div class="m-2 p-2 flex flex-col items-center" id="col3-vote">
+            {{! Upvote }}
+            <button
+              class="upvoteButton disabled:opacity-25"
+              data-post-id="{{submission.id}}"
+            >
+              <img class="h-10 w-10 rounded-full" src="/assets/UpVote.svg" />
+            </button>
 
-      {{! Downvote }}
-      <button class="downvoteButton disabled:opacity-25" data-post-id="{{submission.id}}">
-        <img class="h-10 w-10 rounded-full" src="/assets/DownVote.svg" />
+            {{! Points }}
+            <span
+              class="pointCounter"
+              data-post-id="{{submission.id}}"
+            >{{submission.points}}</span>
 
-      </button>
-    </div>
+            {{! Downvote }}
+            <button
+              class="downvoteButton disabled:opacity-25"
+              data-post-id="{{submission.id}}"
+            >
+              <img class="h-10 w-10 rounded-full" src="/assets/DownVote.svg" />
 
-    {{! Post title and icon }}
-    <div class="p-2 flex flex-col items-center my-auto w-40" id="col1-name">
-      <div class="m-1">
-        <h2 class="font-bold text-base md:text-large text-center">
-          <a href="/submission/{{submission.id}}">{{submission.name}}</a>
-        </h2>
-        <p class="text-sm sm:block">
-          {{textSummary submission.description}}
-        </p>
+            </button>
+          </div>
+
+          {{! Post title and icon }}
+          <div
+            class="p-2 flex flex-col items-center my-auto w-40"
+            id="col1-name"
+          >
+            <div class="m-1">
+              <h2 class="font-bold text-base md:text-large text-center">
+                <a href="/submission/{{submission.id}}">{{submission.name}}</a>
+              </h2>
+              <p class="text-sm sm:block">
+                {{textSummary submission.description}}
+              </p>
+            </div>
+            <img
+              class="mx-auto w-10 h-10 justify-center"
+              src="/assets/lang-icons/{{submission.language}}.svg"
+            />
+          </div>
+
+          {{! Metadata }}
+          <div class="p-2 my-auto" id="col2-user">
+            <p class="text-small md:text-base">
+              <span class="font-semibold">{{submission.user.username}}</span>
+              <br />
+              {{format_date submission.date_created}}
+            </p>
+          </div>
+        </div>
       </div>
-      <img class="mx-auto w-10 h-10 justify-center" src="/assets/lang-icons/{{submission.language}}.svg" />
-    </div>
-
-    {{! Metadata }}
-    <div class="p-2 my-auto" id="col2-user">
-      <p class="text-small md:text-base">
-        <span class="font-semibold">{{submission.user.username}}</span>
-        <br />
-        {{format_date submission.date_created}}
-      </p>
-    </div>
+    {{/each}}
   </div>
-</div>
 
-{{/each}}
+  <div class="flex flex-col mx-auto">
+    <p class="popIn font-extrabold text-2xl mb-2 sm:mt-4 md:mt-0">Top posts of all time:</p>
+    {{#each topThree as |submission2|}}
+      <div class="popInSway2 w-fit">
+        <div class="flex submission max-w-md">
+
+          {{! Voting buttons and points }}
+          <div class="m-2 p-2 flex flex-col items-center" id="col3-vote">
+            {{! Upvote }}
+            <button
+              class="upvoteButton disabled:opacity-25"
+              data-post-id="{{submission2.id}}"
+            >
+              <img class="h-10 w-10 rounded-full" src="/assets/UpVote.svg" />
+            </button>
+
+            {{! Points }}
+            <span
+              class="pointCounter"
+              data-post-id="{{submission2.id}}"
+            >{{submission2.points}}</span>
+
+            {{! Downvote }}
+            <button
+              class="downvoteButton disabled:opacity-25"
+              data-post-id="{{submission2.id}}"
+            >
+              <img class="h-10 w-10 rounded-full" src="/assets/DownVote.svg" />
+
+            </button>
+          </div>
+
+          {{! Post title and icon }}
+          <div
+            class="p-2 flex flex-col items-center my-auto w-40"
+            id="col1-name"
+          >
+            <div class="m-1">
+              <h2 class="font-bold text-base md:text-large text-center">
+                <a
+                  href="/submission2/{{submission2.id}}"
+                >{{submission2.name}}</a>
+              </h2>
+              <p class="text-sm sm:block">
+                {{textSummary submission2.description}}
+              </p>
+            </div>
+            <img
+              class="mx-auto w-10 h-10 justify-center"
+              src="/assets/lang-icons/{{submission2.language}}.svg"
+            />
+          </div>
+
+          {{! Metadata }}
+          <div class="p-2 my-auto" id="col2-user">
+            <p class="text-small md:text-base">
+              <span class="font-semibold">{{submission2.user.username}}</span>
+              <br />
+              {{format_date submission2.date_created}}
+            </p>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+
+</div>
