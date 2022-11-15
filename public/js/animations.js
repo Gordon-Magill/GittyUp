@@ -59,24 +59,56 @@ anime({
 
 // Pop in of elements from off screen (homepage/dashboard)
 anime({
-  targets: ".popIn",
+  targets: ".popInSway",
   translateX: [-2000, 0],
-  delay: anime.stagger(15),
+  delay: anime.stagger(30),
   // duration: 100,
   // loop: true,
   // direction: 'alternate',
   easing: "spring(1, 80, 20, 0)",
 }).finished.then(() => {
   anime({
-    targets: ".popIn",
+    targets: ".popInSway",
     translateX: [0, 15],
-    delay: anime.stagger(200),
+    delay: anime.stagger(400, {from: 'center'}),
+    duration: 4000,
+    loop: true,
+    direction: "alternate",
+    easing: "easeInOutQuad",
+    // easing: "linear",
+  });
+});
+
+anime({
+  targets: ".popInSway2",
+  translateX: [-2000, 0],
+  delay: anime.stagger(30),
+  // duration: 100,
+  // loop: true,
+  // direction: 'alternate',
+  easing: "spring(1, 80, 20, 0)",
+}).finished.then(() => {
+  anime({
+    targets: ".popInSway2",
+    translateX: [0, 15],
+    delay: anime.stagger(500),
     duration: 4000,
     loop: true,
     direction: "alternate",
     easing: "easeInOutSine",
+    // easing: "linear",
   });
 });
+
+anime({
+  targets: ".popIn",
+  translateX: [-2000, 0],
+  delay: anime.stagger(30),
+  // duration: 100,
+  // loop: true,
+  // direction: 'alternate',
+  easing: "spring(1, 80, 20, 0)",
+})
 
 // Non-functional until stroke width is defined in the SVG
 // anime({
