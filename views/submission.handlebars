@@ -12,6 +12,7 @@
     {{format_date date_created}}
   </p>
 
+{{#if session.loggedIn}}
   <!--Comment box form-->
   <div class="mt-10 mx-5" id="comment-form">
     <h2 class="text-2xl">Comment on This CodeShare:</h2>
@@ -38,6 +39,11 @@
       </div>
     </form>
   </div>
+{{else}}
+    <div class="mt-10 mx-5" id="comment-form">
+        <h2 class="text-2xl">Log in to comment on this CodeShare!</h2>
+    </div>
+{{/if}}
 
   <!-- List of submitted comments -->
   {{#each submission.Comments as |comment|}}

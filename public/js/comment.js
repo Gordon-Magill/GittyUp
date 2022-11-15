@@ -36,6 +36,7 @@ const commentSubmit = async (event) => {
         if(response.ok){
             console.log("Submission updated")
             success_flag = 0;
+            document.location.replace('')
         } else {
             alert("Failed to add comment");
         }
@@ -43,7 +44,7 @@ const commentSubmit = async (event) => {
 }
 
 const commentDelete = async (event) => {
- //todo: all of this lol
+ //todo: eventually
 }
 
 document
