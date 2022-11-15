@@ -46,8 +46,7 @@ const commentSubmit = async (event) => {
         }
 
     }
-  }
-};
+  };
 
 const commentDelete = async (event) => {
 
