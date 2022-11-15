@@ -1,10 +1,10 @@
-const sequelize = require('../config/connection');
-const { User, Submission, Comment } = require('../models');
+const sequelize = require("../config/connection");
+const { User, Submission, Comment } = require("../models");
 
 // Import data from JSON
-const userData = require('./userData.json');
-const submissionData = require('./submissionData.json');
-const commentsData = require('./commentsData.json');
+const userData = require("./userData.json");
+const submissionData = require("./submissionData.json");
+const commentsData = require("./commentsData.json");
 
 // Seed models
 const seedDatabase = async () => {
@@ -28,7 +28,7 @@ const seedDatabase = async () => {
   // Seed comments
   for (const comment of commentsData) {
     await Comment.create({
-      ...comment
+      ...comment,
     });
   }
 

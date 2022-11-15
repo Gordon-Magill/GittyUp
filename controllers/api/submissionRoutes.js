@@ -4,7 +4,9 @@ const { Submission } = require("../../models/index");
 
 // Create new submission
 router.post("/create", async (req, res) => {
-  console.log('\n**********\n\n**********\n\n**********\nPost creation route\n**********\n\n**********\n\n**********\n')
+  console.log(
+    "\n**********\n\n**********\n\n**********\nPost creation route\n**********\n\n**********\n\n**********\n"
+  );
   try {
     // Get the info needed for the new submission
     const submissionBody = {
@@ -140,13 +142,16 @@ router.put("/upvote/:id", async (req, res) => {
       },
     });
 
-    const updatedPost = Submission.update({
-      points: post.points+1
-    },{
-      where: {
-        id: req.params.id
+    const updatedPost = Submission.update(
+      {
+        points: post.points + 1,
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
       }
-    })
+    );
 
     res.status(200).json(updatedPost);
   } catch (err) {
@@ -165,13 +170,16 @@ router.put("/downvote/:id", async (req, res) => {
       },
     });
 
-    const updatedPost = await Submission.update({
-      points: post.points-1
-    },{
-      where: {
-        id: req.params.id
+    const updatedPost = await Submission.update(
+      {
+        points: post.points - 1,
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
       }
-    })
+    );
 
     res.status(200).json(updatedPost);
   } catch (err) {

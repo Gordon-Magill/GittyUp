@@ -5,7 +5,7 @@ const newFormHandler = async (event) => {
   //   "\n**********\n\n**********\n\n**********\nNew post request activated\n**********\n\n**********\n\n**********\n"
   // );
 
-// Get post information from page elements
+  // Get post information from page elements
   const name = document.querySelector("#submission-name").value.trim();
   const description = document.querySelector("#submission-desc").value.trim();
   const content = document.querySelector("#submission-content").value.trim();
@@ -13,7 +13,6 @@ const newFormHandler = async (event) => {
 
   // If the user filled in all the required fields...
   if (name && content && description && language) {
-
     // Call the API route to make the post
     const response = await fetch(`/api/submission/create`, {
       method: "POST",
@@ -56,8 +55,6 @@ const delButtonHandler = async (event) => {
 };
 
 // Adding event handlers
-$("#form-submit")
-  .on("click", newFormHandler);
+$("#form-submit").on("click", newFormHandler);
 
-$(".submission-list")
-  .on("click", delButtonHandler);
+$(".submission-list").on("click", delButtonHandler);

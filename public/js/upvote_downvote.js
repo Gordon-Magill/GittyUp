@@ -21,7 +21,6 @@ function updatePostCount(postID, incValue) {
 // Upvotes a post
 // Requires that the button for updating the post encodes the associated post ID
 async function upvote(event) {
-
   // Get the button that was clicked
   let clickedButton = event.currentTarget;
 
