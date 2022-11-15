@@ -1,5 +1,5 @@
 const commentSubmit = async (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     console.log("commentSubmit event occured")
     const commentBody = document.querySelector('#comment-body').value.trim();
     const postID = document.querySelector('#comment-submit').getAttribute('data-post');
@@ -36,6 +36,7 @@ const commentSubmit = async (event) => {
         if(response.ok){
             console.log("Submission updated")
             success_flag = 0;
+            document.location.replace('')
         } else {
             alert("Failed to add comment");
         }
