@@ -1,6 +1,7 @@
 const router = require("express").Router();
 
 const session = require("express-session");
+const sequelize = require("../../config/connection");
 const { Comment } = require("../../models/index");
 const { Submission } = require("../../models/index");
 const { update } = require("../../models/User");
@@ -34,18 +35,11 @@ router.post("/create", async (req, res) => {
 router.put("/create", async(req, res) => {
   console.log("********************\n\n\nComment Count Incrementer Called\n\n\n*********************")
   try{
-    const updateCounter = {
-
-      //this is probably wrong
-      comment_count: comment_count += 1,
-    };
-
-    Submission.update(updateCounter, {
-      where:{
-        // this may be wrong too
-        id: req.params.id
-      },
-    });
+      Submission.update({
+        comment_count: sequelize.literal('comment_count + 1')},
+        {where: {id:req.body.postID}
+      })
+      res.status(200).json()
   } catch (err) {
     // Log and send the error
     console.log(err);
