@@ -1,60 +1,47 @@
 <!-- Loop over each code submission in the code-submissions array -->
-
 {{#each submissions as |submission|}}
-  <div class="submissionContainer">
-    <div class="flex submission">
+<div class="submissionContainer w-fit">
+  <div class="flex submission max-w-md">
 
-      {{! Voting buttons and points }}
-      <div class="m-2 p-2 flex flex-col items-center" id="col3-vote">
-        {{! Upvote }}
-        <button
-          class="upvoteButton disabled:opacity-25"
-          data-post-id="{{submission.id}}"
-        >
-          <img class="h-10 w-10 rounded-full" src="/assets/UpVote.svg" />
-        </button>
+    {{! Voting buttons and points }}
+    <div class="m-2 p-2 flex flex-col items-center" id="col3-vote">
+      {{! Upvote }}
+      <button class="upvoteButton disabled:opacity-25" data-post-id="{{submission.id}}">
+        <img class="h-10 w-10 rounded-full" src="/assets/UpVote.svg" />
+      </button>
 
-        {{! Points }}
-        <span
-          class="pointCounter"
-          data-post-id="{{submission.id}}"
-        >{{submission.points}}</span>
+      {{! Points }}
+      <span class="pointCounter" data-post-id="{{submission.id}}">{{submission.points}}</span>
 
-        {{! Downvote }}
-        <button
-          class="downvoteButton disabled:opacity-25"
-          data-post-id="{{submission.id}}"
-        >
-          <img class="h-10 w-10 rounded-full" src="/assets/DownVote.svg" />
+      {{! Downvote }}
+      <button class="downvoteButton disabled:opacity-25" data-post-id="{{submission.id}}">
+        <img class="h-10 w-10 rounded-full" src="/assets/DownVote.svg" />
 
-        </button>
-      </div>
+      </button>
+    </div>
 
-      {{! Post title and icon }}
-      <div class="p-2 flex flex-col items-center my-auto" id="col1-name">
-        <div class="m-1">
-          <h2 class="font-bold text-base md:text-large text-center">
-            <a href="/submission/{{submission.id}}">{{submission.name}}</a>
-          </h2>
-          {{!-- <p class="text-sm hidden sm:block">
-            {{submission.description}}
-          </p> --}}
-        </div>
-        <img
-          class="mx-auto w-10 h-10 justify-center"
-          src="/assets/lang-icons/{{submission.language}}.svg"
-        />
-      </div>
-
-      {{! Metadata }}
-      <div class="mx-auto my-auto w-auto" id="col2-user">
-        <p class="text-small md:text-base">
-          <span class="font-semibold">{{submission.user.username}}</span>
-          <br />
-          {{format_date submission.date_created}}
+    {{! Post title and icon }}
+    <div class="p-2 flex flex-col items-center my-auto w-40" id="col1-name">
+      <div class="m-1">
+        <h2 class="font-bold text-base md:text-large text-center">
+          <a href="/submission/{{submission.id}}">{{submission.name}}</a>
+        </h2>
+        <p class="text-sm sm:block">
+          {{textSummary submission.description}}
         </p>
       </div>
+      <img class="mx-auto w-10 h-10 justify-center" src="/assets/lang-icons/{{submission.language}}.svg" />
+    </div>
+
+    {{! Metadata }}
+    <div class="p-2 my-auto" id="col2-user">
+      <p class="text-small md:text-base">
+        <span class="font-semibold">{{submission.user.username}}</span>
+        <br />
+        {{format_date submission.date_created}}
+      </p>
     </div>
   </div>
+</div>
 
 {{/each}}

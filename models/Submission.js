@@ -1,8 +1,7 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
-class Submission extends Model {
-}
+class Submission extends Model {}
 
 Submission.init(
   {
@@ -23,7 +22,7 @@ Submission.init(
       type: DataTypes.STRING,
     },
     content: {
-      type: DataTypes.TEXT('long'),
+      type: DataTypes.TEXT("long"),
     },
     date_created: {
       type: DataTypes.DATE,
@@ -33,13 +32,17 @@ Submission.init(
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
-        key: 'id',
+        model: "user",
+        key: "id",
       },
     },
     points: {
       type: DataTypes.INTEGER,
       defaultValue: 0,
+    },
+    comments_count:{
+      type: DataTypes.INTEGER,
+      defaultValue:0,
     },
   },
   {
@@ -47,7 +50,7 @@ Submission.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Submission',
+    modelName: "Submission",
   }
 );
 
