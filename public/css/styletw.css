@@ -724,10 +724,6 @@ select {
   border-width: 0;
 }
 
-.invisible {
-  visibility: hidden;
-}
-
 .static {
   position: static;
 }
@@ -845,10 +841,6 @@ select {
   height: 100%;
 }
 
-.h-auto {
-  height: auto;
-}
-
 .h-10 {
   height: 2.5rem;
 }
@@ -883,10 +875,6 @@ select {
 
 .resize {
   resize: both;
-}
-
-.columns-2 {
-  columns: 2;
 }
 
 .auto-cols-max {
@@ -954,10 +942,6 @@ select {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-}
-
-.overflow-hidden {
-  overflow: hidden;
 }
 
 .scroll-smooth {
@@ -1259,14 +1243,6 @@ select {
 }
 
 @media (min-width: 640px) {
-  .sm\:visible {
-    visibility: visible;
-  }
-
-  .sm\:invisible {
-    visibility: hidden;
-  }
-
   .sm\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
@@ -1276,10 +1252,6 @@ select {
     display: block;
   }
 
-  .sm\:hidden {
-    display: none;
-  }
-
   .sm\:h-9 {
     height: 2.25rem;
   }
@@ -1287,11 +1259,6 @@ select {
   .sm\:px-4 {
     padding-left: 1rem;
     padding-right: 1rem;
-  }
-
-  .sm\:text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
   }
 }
 
@@ -1351,14 +1318,14 @@ select {
     padding: 0px;
   }
 
-  .md\:text-sm {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-
   .md\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
+  }
+
+  .md\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 
   .md\:font-medium {
