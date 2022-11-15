@@ -40,18 +40,22 @@ const delButtonHandler = async (event) => {
   if (event.target.hasAttribute("data-id")) {
     const id = event.target.getAttribute("data-id");
 
+    // Call the API route to delete the offending post
     const response = await fetch(`/api/submission/${id}`, {
       method: "DELETE",
     });
 
     if (response.ok) {
+      // Reload the page to update the posts
       document.location.replace("/dashboard");
     } else {
+      // Indicate the error
       alert("Failed to delete submission");
     }
   }
 };
 
+// Adding event handlers
 $("#form-submit")
   .on("click", newFormHandler);
 
