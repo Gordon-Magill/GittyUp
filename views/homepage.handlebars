@@ -3,21 +3,51 @@
 {{#each submissions as |submission|}}
   <div class="submissionContainer">
     <div class="grid grid-cols-3 auto-cols-max submission">
-      <div class="grid grid-cols-2 m-3" id="col1-name">
-        <div>
-          <img class="w-10 h-full" src="/assets/lang-icons/{{submission.language}}.svg" />
-        </div>
-        <div>
-          <h2 class="font-bold text-base md:text-large">
-            <a href="/submission/{{submission.id}}">{{submission.name}}
-              (<span class="pointCounter" data-post-id="{{submission.id}}">{{submission.points}}</span>)</a>
-              </h2>
-              <p class="text-sm hidden sm:block">
-                {{submission.description}}
-              </p>
-        </div>
+
+      {{! Voting buttons and points }}
+      <div class="m-2 p-2 block" id="col3-vote">
+        {{! Upvote }}
+        <button
+          class="upvoteButton disabled:opacity-25"
+          data-post-id="{{submission.id}}"
+        >
+          <img class="h-10 w-10 rounded-full" src="/assets/UpVote.svg" />
+        </button>
+
+        {{! Points }}
+        <span
+          class="pointCounter"
+          data-post-id="{{submission.id}}"
+        >{{submission.points}}</span>
+
+        {{! Downvote }}
+        <button
+          class="downvoteButton disabled:opacity-25"
+          data-post-id="{{submission.id}}"
+        >
+          <img class="h-10 w-10 rounded-full" src="/assets/DownVote.svg" />
+
+        </button>
       </div>
-      <div class="m-3" id="col2-user">
+
+      {{! Post title and icon }}
+      <div class="p-2 block w-50 my-auto" id="col1-name">
+        <div class="m-1">
+          <h2 class="font-bold text-base md:text-large">
+            <a href="/submission/{{submission.id}}">{{submission.name}}</a>
+          </h2>
+          <p class="text-sm hidden sm:block">
+            {{submission.description}}
+          </p>
+        </div>
+        <img
+          class="mx-auto w-10 h-10 justify-center"
+          src="/assets/lang-icons/{{submission.language}}.svg"
+        />
+      </div>
+
+      {{! Metadata }}
+      <div class="mx-auto my-auto w-auto" id="col2-user">
         <p class="text-small md:text-base">
           Created by
           <span class="font-semibold">{{submission.user.username}}</span>
@@ -25,20 +55,6 @@
           <br />
           {{format_date submission.date_created}}
         </p>
-      </div>
-      <div class="m-3" id="col3-vote">
-        {{! Voting buttons }}
-        <button class="upvoteButton disabled:opacity-25" data-post-id="{{submission.id}}">
-          <img
-            class="h-10 w-10 rounded-full"
-            src="/assets/UpVote.svg"
-          />
-        </button><br>
-
-        <button class="downvoteButton disabled:opacity-25" data-post-id="{{submission.id}}">
-          <img class="h-10 w-10 rounded-full" src="/assets/DownVote.svg" />
-
-        </button>
       </div>
     </div>
   </div>

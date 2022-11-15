@@ -790,6 +790,11 @@ select {
   margin-right: auto;
 }
 
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .mt-10 {
   margin-top: 2.5rem;
 }
@@ -858,6 +863,10 @@ select {
   height: 1.5rem;
 }
 
+.h-3 {
+  height: 0.75rem;
+}
+
 .w-full {
   width: 100%;
 }
@@ -868,6 +877,14 @@ select {
 
 .w-6 {
   width: 1.5rem;
+}
+
+.w-3 {
+  width: 0.75rem;
+}
+
+.w-auto {
+  width: auto;
 }
 
 .max-w-6xl {
@@ -916,6 +933,10 @@ select {
 
 .items-center {
   align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .justify-between {
