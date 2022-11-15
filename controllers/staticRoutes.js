@@ -75,8 +75,6 @@ router.get("/submission/:id", async (req, res) => {
     include: [{ model: User }, {model: Comment}],
   });
 
-  
-
   // Strip out extra sequelize content
   const submission = singleSubmission.get({ plain: true });
 

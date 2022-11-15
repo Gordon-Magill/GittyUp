@@ -7,7 +7,6 @@ User.hasMany(Submission, {
     onDelete: 'CASCADE'
 });
 
-// TODO: integrate comments
 User.hasMany(Comment, {
     foreignKey: 'author_id',
     onDelete: 'CASCADE'
@@ -17,7 +16,6 @@ Submission.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-// TODO: integrate comments
 Comment.belongsTo(Submission, {
     foreignKey: 'post_id'
 });
