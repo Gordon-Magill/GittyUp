@@ -89,6 +89,17 @@ router.get("/submission/:id", async (req, res) => {
   });
 });
 
+// About Page
+router.get("/about", async (req, res) => {
+  // Diagnostic logs of what's actually going to be rendered
+  console.log("session: ", req.session);
+
+  // Render the page with data needed for the handlebars template
+  res.render("about", {
+    session: req.session,
+  });
+});
+
 // 404 Page
 router.get("/404", async (req, res) => {
   // Diagnostic logs of what's actually going to be rendered
