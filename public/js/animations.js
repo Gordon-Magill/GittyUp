@@ -59,7 +59,7 @@ anime({
 
 // Pop in of elements from off screen (homepage/dashboard)
 anime({
-  targets: ".submissionContainer",
+  targets: ".popIn",
   translateX: [-2000, 0],
   delay: anime.stagger(15),
   // duration: 100,
@@ -68,7 +68,7 @@ anime({
   easing: "spring(1, 80, 20, 0)",
 }).finished.then(() => {
   anime({
-    targets: ".submissionContainer",
+    targets: ".popIn",
     translateX: [0, 15],
     delay: anime.stagger(200),
     duration: 4000,
