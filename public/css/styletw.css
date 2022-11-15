@@ -81,7 +81,8 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 */
 
 abbr:where([title]) {
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
 }
 
 /*
@@ -350,8 +351,7 @@ textarea {
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
 
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
+input::-moz-placeholder, textarea::-moz-placeholder {
   opacity: 1;
   /* 1 */
   color: #9ca3af;
@@ -449,7 +449,7 @@ video {
   border-color: #2563eb;
 }
 
-input:-ms-input-placeholder,textarea:-ms-input-placeholder {
+input::-moz-placeholder, textarea::-moz-placeholder {
   color: #6b7280;
   opacity: 1;
 }
@@ -478,7 +478,8 @@ select {
   background-repeat: no-repeat;
   background-size: 1.5em 1.5em;
   padding-right: 2.5rem;
-  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
 }
 
 [multiple] {
@@ -487,7 +488,8 @@ select {
   background-repeat: unset;
   background-size: initial;
   padding-right: 0.75rem;
-  print-color-adjust: unset;
+  -webkit-print-color-adjust: unset;
+          print-color-adjust: unset;
 }
 
 [type='checkbox'],[type='radio'] {
@@ -495,16 +497,15 @@ select {
      -moz-appearance: none;
           appearance: none;
   padding: 0;
-  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
   display: inline-block;
   vertical-align: middle;
   background-origin: border-box;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
+  flex-shrink: 0;
   height: 1rem;
   width: 1rem;
   color: #2563eb;
@@ -749,12 +750,19 @@ select {
 }
 
 .col-auto {
-  -ms-grid-column: auto;
-      grid-column: auto;
+  grid-column: auto;
 }
 
 .m-3 {
   margin: 0.75rem;
+}
+
+.m-2 {
+  margin: 0.5rem;
+}
+
+.m-1 {
+  margin: 0.25rem;
 }
 
 .mx-10 {
@@ -819,17 +827,14 @@ select {
 }
 
 .flex {
-  display: -ms-flexbox;
   display: flex;
 }
 
 .inline-flex {
-  display: -ms-inline-flexbox;
   display: inline-flex;
 }
 
 .grid {
-  display: -ms-grid;
   display: grid;
 }
 
@@ -869,6 +874,10 @@ select {
   max-width: 72rem;
 }
 
+.max-w-md {
+  max-width: 28rem;
+}
+
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -882,28 +891,23 @@ select {
 }
 
 .grid-cols-2 {
-  -ms-grid-columns: (minmax(0, 1fr))[2];
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .grid-cols-3 {
-  -ms-grid-columns: (minmax(0, 1fr))[3];
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .grid-cols-1 {
-  -ms-grid-columns: (minmax(0, 1fr))[1];
-      grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .flex-col {
-  -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
 }
 
 .flex-wrap {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .place-content-center {
@@ -911,13 +915,11 @@ select {
 }
 
 .items-center {
-  -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
 }
 
 .justify-between {
-  -ms-flex-pack: justify;
-      justify-content: space-between;
+  justify-content: space-between;
 }
 
 .space-x-7 > :not([hidden]) ~ :not([hidden]) {
@@ -939,9 +941,7 @@ select {
 }
 
 .self-center {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
 }
 
 .scroll-smooth {
@@ -994,6 +994,11 @@ select {
 .bg-blue {
   --tw-bg-opacity: 1;
   background-color: rgb(0 255 210 / var(--tw-bg-opacity));
+}
+
+.bg-gray-light {
+  --tw-bg-opacity: 1;
+  background-color: rgb(126 126 123 / var(--tw-bg-opacity));
 }
 
 .p-2 {
@@ -1049,6 +1054,10 @@ select {
 
 .text-center {
   text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
 }
 
 .text-4xl {
@@ -1112,7 +1121,7 @@ select {
   color: rgb(37 36 35 / var(--tw-text-opacity));
 }
 
-.placeholder-gray-light:-ms-input-placeholder {
+.placeholder-gray-light::-moz-placeholder {
   --tw-placeholder-opacity: 1;
   color: rgb(126 126 123 / var(--tw-placeholder-opacity));
 }
@@ -1144,9 +1153,9 @@ select {
 }
 
 .transition {
-  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1156,10 +1165,8 @@ select {
 }
 
 .backgroundBodyGrid {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   position: fixed;
   top: -5%;
   left: -5%;
@@ -1264,13 +1271,11 @@ select {
 
 @media (min-width: 768px) {
   .md\:order-2 {
-    -ms-flex-order: 2;
-        order: 2;
+    order: 2;
   }
 
   .md\:order-1 {
-    -ms-flex-order: 1;
-        order: 1;
+    order: 1;
   }
 
   .md\:mx-20 {
@@ -1287,7 +1292,6 @@ select {
   }
 
   .md\:flex {
-    display: -ms-flexbox;
     display: flex;
   }
 
@@ -1300,8 +1304,7 @@ select {
   }
 
   .md\:flex-row {
-    -ms-flex-direction: row;
-        flex-direction: row;
+    flex-direction: row;
   }
 
   .md\:space-x-8 > :not([hidden]) ~ :not([hidden]) {

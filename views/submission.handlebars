@@ -1,33 +1,60 @@
 <div class="mx-5 grid grid-cols-1 place-content-center">
-    <h2 class="text-3xl">{{submission.name}}</h2>
-    <p class="text-base">{{submission.description}}</p>
-    <pre class="bg-gray-dark text-white"><code class="language-{{submission.language}}">{{submission.content}}</code></pre>
-    <p class="my-2 text-base"><span class="font-semibold">Language: </span> {{submission.language}}</p>
-    <p class="my-2 text-base"><span class="font-semibold">Submitted by: </span>{{submission.user.username}} on
-        {{format_date date_created}}
-    </p>
+  <h2 class="text-3xl">{{submission.name}}</h2>
+  <p class="text-base">{{submission.description}}</p>
+  <pre class="bg-gray-dark text-white"><code
+      class="language-{{submission.language}}"
+    >{{submission.content}}</code></pre>
+  <p class="my-2 text-base"><span class="font-semibold">Language: </span>
+    {{submission.language}}</p>
+  <p class="my-2 text-base"><span class="font-semibold">Submitted by:
+    </span>{{submission.user.username}}
+    on
+    {{format_date date_created}}
+  </p>
 
-<!--Comment box form-->
-<div class="mt-10 mx-5" id="comment-form">
+  <!--Comment box form-->
+  <div class="mt-10 mx-5" id="comment-form">
     <h2 class="text-2xl">Comment on This CodeShare:</h2>
     <form class="form new-comment-form">
-        <!--Comment Content-->
-        <div class="mt-6">
-            <label for="comment-body" class="block text-sm font-medium">
-                <textarea id="comment-body"
-                    class="w-full h-20 p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1"
-                    name="comment" placeholder="Write your comment here."></textarea>
-            </label>
-        </div>
-    <!--Comment Button-->
-    <div class="mt-6">
-        <button id="comment-submit" class="bg-gray px-5 py-2.5 text-md leading-5 rounded-md font-semibold text-white"
-            type="submit" data-post="{{submission.id}}">Submit</button>
-    </div>
+      <!--Comment Content-->
+      <div class="mt-6">
+        <label for="comment-body" class="block text-sm font-medium">
+          <textarea
+            id="comment-body"
+            class="w-full h-20 p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1"
+            name="comment"
+            placeholder="Write your comment here."
+          ></textarea>
+        </label>
+      </div>
+      <!--Comment Button-->
+      <div class="mt-6">
+        <button
+          id="comment-submit"
+          class="bg-gray px-5 py-2.5 text-md leading-5 rounded-md font-semibold text-white"
+          type="submit"
+          data-post="{{submission.id}}"
+        >Submit</button>
+      </div>
     </form>
-    </div>
+  </div>
 
-<!-- List of submitted comments -->
-    <p>{{comment.content}}</p>
+  <!-- List of submitted comments -->
+  {{#each submission.comments as |comment|}}
+    {{! Container }}
+    <div class="container flex p-2 m-2 max-w-md bg-white rounded">
+
+      {{! Left side metadata }}
+      <div class="m-1 block">
+        <p>{{comment.author}}</p>
+        <p>{{format_date comment.date_created}}</p>
+      </div>
+
+      {{! Right side comment content }}
+      <div class="p-2 m-2 text-justify bg-gray-light">
+        <p>{{comment.content}}</p>
+      </div>
+    </div>
+  {{/each}}
 
 </div>
