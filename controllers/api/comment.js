@@ -35,8 +35,11 @@ router.post("/create", async (req, res) => {
 router.put("/create", async(req, res) => {
   console.log("********************\n\n\nComment Count Incrementer Called\n\n\n*********************")
   try{
-      Submission.update({
-        comment_count: sequelize.literal('comment_count + 1')},
+      const targetedSubmission = await Submission.findOne({where:{id:req.body.postID}})  
+      const plainSub = targetedSubmission.get({plain:true})
+
+    Submission.update({
+        comments_count: plainSub.comments_count+1},
         {where: {id:req.body.postID}
       })
       res.status(200).json()
