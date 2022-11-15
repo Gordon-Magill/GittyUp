@@ -41,6 +41,10 @@ Submission.init(
       type: DataTypes.INTEGER,
       defaultValue: 0,
     },
+    comments_count:{
+      type: DataTypes.INTEGER,
+      defaultValue:0,
+    },
   },
   {
     sequelize,
