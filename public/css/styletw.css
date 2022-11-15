@@ -81,8 +81,7 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 */
 
 abbr:where([title]) {
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
 /*
@@ -351,7 +350,8 @@ textarea {
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
 
-input::-moz-placeholder, textarea::-moz-placeholder {
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
   opacity: 1;
   /* 1 */
   color: #9ca3af;
@@ -449,7 +449,7 @@ video {
   border-color: #2563eb;
 }
 
-input::-moz-placeholder, textarea::-moz-placeholder {
+input:-ms-input-placeholder,textarea:-ms-input-placeholder {
   color: #6b7280;
   opacity: 1;
 }
@@ -478,8 +478,7 @@ select {
   background-repeat: no-repeat;
   background-size: 1.5em 1.5em;
   padding-right: 2.5rem;
-  -webkit-print-color-adjust: exact;
-          print-color-adjust: exact;
+  print-color-adjust: exact;
 }
 
 [multiple] {
@@ -488,8 +487,7 @@ select {
   background-repeat: unset;
   background-size: initial;
   padding-right: 0.75rem;
-  -webkit-print-color-adjust: unset;
-          print-color-adjust: unset;
+  print-color-adjust: unset;
 }
 
 [type='checkbox'],[type='radio'] {
@@ -497,15 +495,16 @@ select {
      -moz-appearance: none;
           appearance: none;
   padding: 0;
-  -webkit-print-color-adjust: exact;
-          print-color-adjust: exact;
+  print-color-adjust: exact;
   display: inline-block;
   vertical-align: middle;
   background-origin: border-box;
   -webkit-user-select: none;
      -moz-user-select: none;
+      -ms-user-select: none;
           user-select: none;
-  flex-shrink: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   height: 1rem;
   width: 1rem;
   color: #2563eb;
@@ -741,16 +740,6 @@ select {
   position: relative;
 }
 
-.inset-x-auto {
-  left: auto;
-  right: auto;
-}
-
-.inset-y-auto {
-  top: auto;
-  bottom: auto;
-}
-
 .top-0 {
   top: 0px;
 }
@@ -759,112 +748,13 @@ select {
   left: 0px;
 }
 
-.top-auto {
-  top: auto;
-}
-
-.top-10 {
-  top: 2.5rem;
-}
-
-.top-8 {
-  top: 2rem;
-}
-
-.top-7 {
-  top: 1.75rem;
-}
-
-.top-6 {
-  top: 1.5rem;
-}
-
-.top-5 {
-  top: 1.25rem;
-}
-
-.left-1 {
-  left: 0.25rem;
-}
-
-.right-2 {
-  right: 0.5rem;
-}
-
-.left-auto {
-  left: auto;
-}
-
-.-top-0 {
-  top: -0px;
-}
-
-.bottom-10 {
-  bottom: 2.5rem;
-}
-
-.bottom-0 {
-  bottom: 0px;
-}
-
-.-bottom-10 {
-  bottom: -2.5rem;
-}
-
-.-bottom-20 {
-  bottom: -5rem;
-}
-
-.right-10 {
-  right: 2.5rem;
-}
-
-.left-10 {
-  left: 2.5rem;
-}
-
-.-left-10 {
-  left: -2.5rem;
-}
-
-.-left-5 {
-  left: -1.25rem;
-}
-
-.-left-0 {
-  left: -0px;
-}
-
-.-bottom-0 {
-  bottom: -0px;
-}
-
-.-bottom-12 {
-  bottom: -3rem;
-}
-
-.-bottom-14 {
-  bottom: -3.5rem;
-}
-
 .z-20 {
   z-index: 20;
 }
 
-.z-0 {
-  z-index: 0;
-}
-
-.z-10 {
-  z-index: 10;
-}
-
-.z-30 {
-  z-index: 30;
-}
-
 .col-auto {
-  grid-column: auto;
+  -ms-grid-column: auto;
+      grid-column: auto;
 }
 
 .m-20 {
@@ -972,18 +862,6 @@ select {
   margin-right: 0.75rem;
 }
 
-.mb-auto {
-  margin-bottom: auto;
-}
-
-.mb-5 {
-  margin-bottom: 1.25rem;
-}
-
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-
 .block {
   display: block;
 }
@@ -993,14 +871,17 @@ select {
 }
 
 .flex {
+  display: -ms-flexbox;
   display: flex;
 }
 
 .inline-flex {
+  display: -ms-inline-flexbox;
   display: inline-flex;
 }
 
 .grid {
+  display: -ms-grid;
   display: grid;
 }
 
@@ -1026,10 +907,6 @@ select {
 
 .h-6 {
   height: 1.5rem;
-}
-
-.h-auto {
-  height: auto;
 }
 
 .w-5\/6 {
@@ -1061,18 +938,6 @@ select {
   width: 1.5rem;
 }
 
-.w-20 {
-  width: 5rem;
-}
-
-.w-80 {
-  width: 20rem;
-}
-
-.w-60 {
-  width: 15rem;
-}
-
 .max-w-md {
   max-width: 28rem;
 }
@@ -1085,11 +950,6 @@ select {
   max-width: 72rem;
 }
 
-.max-w-fit {
-  max-width: -moz-fit-content;
-  max-width: fit-content;
-}
-
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -1099,27 +959,23 @@ select {
 }
 
 .grid-cols-1 {
-  grid-template-columns: repeat(1, minmax(0, 1fr));
+  -ms-grid-columns: (minmax(0, 1fr))[1];
+      grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.flex-row {
-  flex-direction: row;
+  -ms-grid-columns: (minmax(0, 1fr))[2];
+      grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .flex-col {
-  flex-direction: column;
+  -ms-flex-direction: column;
+      flex-direction: column;
 }
 
 .flex-wrap {
-  flex-wrap: wrap;
-}
-
-.flex-nowrap {
-  flex-wrap: nowrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .place-content-center {
@@ -1127,23 +983,33 @@ select {
 }
 
 .items-start {
-  align-items: flex-start;
+  -ms-flex-align: start;
+      align-items: flex-start;
 }
 
 .items-center {
-  align-items: center;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+.justify-start {
+  -ms-flex-pack: start;
+      justify-content: flex-start;
 }
 
 .justify-center {
-  justify-content: center;
+  -ms-flex-pack: center;
+      justify-content: center;
 }
 
 .justify-between {
-  justify-content: space-between;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
 }
 
 .justify-around {
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .space-x-7 > :not([hidden]) ~ :not([hidden]) {
@@ -1165,7 +1031,9 @@ select {
 }
 
 .self-center {
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .overflow-hidden {
@@ -1419,7 +1287,7 @@ select {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.placeholder-gray-light::-moz-placeholder {
+.placeholder-gray-light:-ms-input-placeholder {
   --tw-placeholder-opacity: 1;
   color: rgb(109 109 109 / var(--tw-placeholder-opacity));
 }
@@ -1427,30 +1295,6 @@ select {
 .placeholder-gray-light::placeholder {
   --tw-placeholder-opacity: 1;
   color: rgb(109 109 109 / var(--tw-placeholder-opacity));
-}
-
-.opacity-5 {
-  opacity: 0.05;
-}
-
-.opacity-10 {
-  opacity: 0.1;
-}
-
-.opacity-20 {
-  opacity: 0.2;
-}
-
-.opacity-60 {
-  opacity: 0.6;
-}
-
-.opacity-50 {
-  opacity: 0.5;
-}
-
-.opacity-100 {
-  opacity: 1;
 }
 
 .shadow-md {
@@ -1481,9 +1325,9 @@ select {
 }
 
 .transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1495,8 +1339,10 @@ select {
 /* Styles the background grid container to be fixed in the background */
 
 .backgroundBodyGrid {
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   position: fixed;
   top: -5%;
   left: -5%;
@@ -1585,38 +1431,10 @@ select {
   opacity: 0.25;
 }
 
-.group:hover .group-hover\:scale-100 {
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:hover .group-hover\:scale-50 {
-  --tw-scale-x: .5;
-  --tw-scale-y: .5;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:hover .group-hover\:scale-150 {
-  --tw-scale-x: 1.5;
-  --tw-scale-y: 1.5;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:hover .group-hover\:scale-125 {
-  --tw-scale-x: 1.25;
-  --tw-scale-y: 1.25;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 @media (min-width: 640px) {
   .sm\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
-  }
-
-  .sm\:mt-4 {
-    margin-top: 1rem;
   }
 
   .sm\:block {
@@ -1639,11 +1457,13 @@ select {
 
 @media (min-width: 768px) {
   .md\:order-2 {
-    order: 2;
+    -ms-flex-order: 2;
+        order: 2;
   }
 
   .md\:order-1 {
-    order: 1;
+    -ms-flex-order: 1;
+        order: 1;
   }
 
   .md\:mx-20 {
@@ -1660,6 +1480,7 @@ select {
   }
 
   .md\:flex {
+    display: -ms-flexbox;
     display: flex;
   }
 
@@ -1672,7 +1493,8 @@ select {
   }
 
   .md\:flex-row {
-    flex-direction: row;
+    -ms-flex-direction: row;
+        flex-direction: row;
   }
 
   .md\:space-x-8 > :not([hidden]) ~ :not([hidden]) {
@@ -1709,10 +1531,6 @@ select {
     margin-left: 10rem;
     margin-right: 10rem;
   }
-
-  .lg\:block {
-    display: block;
-  }
 }
 
 @media (min-width: 1280px) {
@@ -1722,7 +1540,8 @@ select {
   }
 
   .xl\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    -ms-grid-columns: (minmax(0, 1fr))[3];
+        grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .xl\:text-4xl {
