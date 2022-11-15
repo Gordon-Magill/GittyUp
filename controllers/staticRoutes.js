@@ -67,15 +67,13 @@ router.get("/login", async (req, res) => {
 // Single submission page
 router.get("/submission/:id", async (req, res) => {
   // Get specified submission based on the req params
-  console.log('\n**********\nsubmission rendering page called\n**********\n')
+  console.log("\n**********\nsubmission rendering page called\n**********\n");
   const singleSubmission = await Submission.findOne({
     where: {
       id: req.params.id,
     },
-    include: [{ model: User }, {model: Comment}],
+    include: [{ model: User }, { model: Comment }],
   });
-
-  
 
   // Strip out extra sequelize content
   const submission = singleSubmission.get({ plain: true });
@@ -88,7 +86,7 @@ router.get("/submission/:id", async (req, res) => {
   res.render("submission", {
     session: req.session,
     submission,
-  })
+  });
 });
 
 // 404 Page

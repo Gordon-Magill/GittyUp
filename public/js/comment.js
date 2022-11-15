@@ -1,6 +1,10 @@
+// Create a new comment
 const commentSubmit = async (event) => {
+  // Prevent premature page reload
     event.preventDefault();
     console.log("commentSubmit event occured")
+    
+      // Get comment information from page elements
     const commentBody = document.querySelector('#comment-body').value.trim();
     const postID = document.querySelector('#comment-submit').getAttribute('data-post');
     let success_flag = 0;
@@ -40,13 +44,17 @@ const commentSubmit = async (event) => {
         } else {
             alert("Failed to add comment");
         }
+
     }
-}
+  }
+};
 
 const commentDelete = async (event) => {
+
  //todo: eventually
 }
 
+
 document
-.querySelector('#comment-submit')
-.addEventListener('click', commentSubmit);
+  .querySelector("#comment-submit")
+  .addEventListener("click", commentSubmit);
