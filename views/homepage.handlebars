@@ -3,20 +3,24 @@
 {{#each submissions as |submission|}}
   <div class="submissionContainer">
     <div class="grid grid-cols-3 auto-cols-max submission">
-      <div class="m-3" id="col1-name">
-        <h2 class="text-lg">
-          <a href="/submission/{{submission.id}}">{{submission.name}}
-            ({{submission.points}}
-            Points)</a>
-        </h2>
-        <p>
-          {{submission.description}}
-        </p>
+      <div class="grid grid-cols-2 m-3" id="col1-name">
+        <div>
+          <img class="w-10 h-full" src="/assets/lang-icons/{{submission.language}}.svg" />
+        </div>
+        <div>
+          <h2 class="font-bold text-base md:text-large">
+            <a href="/submission/{{submission.id}}">{{submission.name}}
+              (<span class="pointCounter" data-post-id="{{submission.id}}">{{submission.points}}</span>)</a>
+              </h2>
+              <p class="text-sm hidden sm:block">
+                {{submission.description}}
+              </p>
+        </div>
       </div>
       <div class="m-3" id="col2-user">
-        <p>
+        <p class="text-small md:text-base">
           Created by
-          {{submission.user.username}}
+          <span class="font-semibold">{{submission.user.username}}</span>
           on
           <br />
           {{format_date submission.date_created}}
@@ -24,16 +28,17 @@
       </div>
       <div class="m-3" id="col3-vote">
         {{! Voting buttons }}
-        <img
-          class="h-10 w-10 rounded-full upvoteButton"
-          data-post-id="{{submission.id}}"
-          src="/assets/UpVote.svg"
-        />
-        <img
-          class="h-10 w-10 rounded-full downvoteButton"
-          data-post-id="{{submission.id}}"
-          src="/assets/DownVote.svg"
-        />
+        <button class="upvoteButton disabled:opacity-25" data-post-id="{{submission.id}}">
+          <img
+            class="h-10 w-10 rounded-full"
+            src="/assets/UpVote.svg"
+          />
+        </button><br>
+
+        <button class="downvoteButton disabled:opacity-25" data-post-id="{{submission.id}}">
+          <img class="h-10 w-10 rounded-full" src="/assets/DownVote.svg" />
+
+        </button>
       </div>
     </div>
   </div>

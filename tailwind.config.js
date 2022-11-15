@@ -12,7 +12,9 @@ module.exports = {
       'yellow': 'rgb(248,238,0)',
       'gray-dark': 'rgb(13,13,12)',
       'gray': 'rgb(37,36,35)',
-      'gray-light': 'rgb(126,126,123)'
+      'gray-light': 'rgb(126,126,123)',
+      'alt-blue': 'rgb(113,206,255)',
+      'alt-pink': 'rgb(252,128,254)'
     },
     extend: {},
   },
