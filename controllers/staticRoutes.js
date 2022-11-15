@@ -75,7 +75,7 @@ router.get("/submission/:id", async (req, res) => {
     include: [{ model: User }, {model: Comment}],
   });
 
-  
+
 
   // Strip out extra sequelize content
   const submission = singleSubmission.get({ plain: true });
@@ -89,6 +89,17 @@ router.get("/submission/:id", async (req, res) => {
     session: req.session,
     submission,
   })
+});
+
+// About Page
+router.get("/about", async (req, res) => {
+  // Diagnostic logs of what's actually going to be rendered
+  console.log("session: ", req.session);
+
+  // Render the page with data needed for the handlebars template
+  res.render("about", {
+    session: req.session,
+  });
 });
 
 // 404 Page
