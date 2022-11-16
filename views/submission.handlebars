@@ -58,7 +58,7 @@
       </div>
       {{else}}
       <div class="mt-10 mx-5" id="comment-form">
-        <h2 class="text-2xl">Log in to comment on this CodeShare!</h2>
+        <h2 class="text-2xl">Log in to comment on this submission!</h2>
       </div>
       {{/if}}
     </div>
@@ -67,7 +67,7 @@
     <div class="mt-5 md:ml-2">
       {{#each submission.Comments as |comment|}}
       {{! Container }}
-      <div class="container flex m-2 ml-0 p-1 max-w-md bg-white rounded border-solid border-gray popInSway">
+      <div class="container flex m-2 ml-0 p-1 w-80 bg-white rounded border-solid border-gray popInSway">
         {{! Left side metadata }}
         <div class="m-1 block text-xs w-1/4">
           <p class="font-bold">{{comment.author}}</p>
