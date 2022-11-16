@@ -25,7 +25,7 @@ for (i = 0; i < numSquares; i++) {
   // Pink + teal gradient
   newEl.css({
     background: `rgb(${Math.min(
-      (0.25 / (numSquares / 1200)) * i,
+      (0.17 / (numSquares / 1200)) * i,
       255
     )},${Math.abs(255 - (0.25 * i) / (numSquares / 1200))},255,0.25)`,
   });
@@ -112,6 +112,7 @@ anime({
   translateX: [-300, 0],
   opacity: [0 , 1],
   delay: anime.stagger(30),
+  duration: '1000',
   easing: "spring(1, 80, 20, 0)",
 })
 
