@@ -987,6 +987,10 @@ select {
   align-items: center;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -1411,6 +1415,10 @@ select {
     width: 66.666667%;
   }
 
+  .sm\:self-center {
+    align-self: center;
+  }
+
   .sm\:px-4 {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -1432,6 +1440,10 @@ select {
 
   .md\:mr-0 {
     margin-right: 0px;
+  }
+
+  .md\:block {
+    display: block;
   }
 
   .md\:flex {
