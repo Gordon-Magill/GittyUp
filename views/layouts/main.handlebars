@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="/css/styletw.css">
 </head>
 
-<body class="scroll-smooth sm:mx-0 md:mx-20 lg:mx-40 xl:mx-60">
+<body class="bg-gray-light scroll-smooth">
   {{!-- jQuery --}}
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -30,7 +30,7 @@
   {{> nav}}
 
   <div class="mt-24">
-    <main class="container">
+    <main>
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
@@ -48,6 +48,9 @@
 
   {{!--Prism JS for Code Highlighting--}}
   <script src="/js/prism.js"></script>
+
+  {{!--Tailwind Elements--}}
+  <script src="./js/index.min.js"></script>
 
   {{!-- Anime.js --}}
   <script src="/js/anime.min.js"></script>

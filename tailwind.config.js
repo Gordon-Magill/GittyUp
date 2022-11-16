@@ -1,7 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  mode: 'jit',
   content: ["./views/**/*.{handlebars,html,js}", "./public/**/*.{html,js}"],
   theme: {
+    fontFamily: {
+      'body': 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"'
+    },
     colors: {
       'white': 'rgb(255,255,255)',
       'blue': 'rgb(0,255,210)',
@@ -19,5 +23,7 @@ module.exports = {
     },
     extend: {},
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [
+    require('@tailwindcss/forms')
+  ]
 }
