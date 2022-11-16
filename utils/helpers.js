@@ -8,6 +8,9 @@ function format_date(date) {
 
 // Cutting off excessively long text for card rendering purposes
 function textSummary(text) {
+  if (!text) {
+    return;
+  }
   if (text.length < 50) {
     return text;
   } else {
@@ -17,6 +20,9 @@ function textSummary(text) {
 
 // Cutting off excessively long text for dashboard cards, but not as strict
 function dashSummary(text) {
+  if (!text) {
+    return;
+  }
   if (text.length < 50) {
     return text;
   } else {
