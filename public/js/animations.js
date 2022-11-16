@@ -112,6 +112,7 @@ anime({
   translateX: [-300, 0],
   opacity: [0 , 1],
   delay: anime.stagger(30),
+  duration: '1000',
   easing: "spring(1, 80, 20, 0)",
 })
 
