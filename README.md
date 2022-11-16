@@ -1,11 +1,13 @@
-# CodeShare
+# GittyUp
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ![Screenshot](./assets/deployed_screenshot.png)<br>
 
 ## Description
 
-A website for sharing your code, get it? The website acts largely as a forum for sharing code snippets that others can comment and vote on. Browse highly ranked code for a language of your choice to see what functionaility others have made and what you may want ot include in your next project!
+A website for sharing your code, get it? Git it? Oh well, we like puns...
+
+ The website acts largely as a forum for sharing code snippets that others can comment and vote on. Browse highly ranked code for a language of your choice to see what functionaility others have made and what you may want ot include in your next project!
 
 Deployed project: https://tranquil-eyrie-15534.herokuapp.com/
 
