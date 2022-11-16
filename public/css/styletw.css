@@ -1272,16 +1272,6 @@ select {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-alt-pink {
-  --tw-text-opacity: 1;
-  color: rgb(224 28 234 / var(--tw-text-opacity));
-}
-
-.text-alt-blue {
-  --tw-text-opacity: 1;
-  color: rgb(48 207 220 / var(--tw-text-opacity));
-}
-
 .text-alt-blue\/70 {
   color: rgb(48 207 220 / 0.7);
 }
