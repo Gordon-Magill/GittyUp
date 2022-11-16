@@ -971,10 +971,6 @@ select {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.flex-row {
-  flex-direction: row;
-}
-
 .flex-col {
   flex-direction: column;
 }
@@ -997,14 +993,6 @@ select {
 
 .justify-between {
   justify-content: space-between;
-}
-
-.self-start {
-  align-self: flex-start;
-}
-
-.self-end {
-  align-self: flex-end;
 }
 
 .self-center {
@@ -1049,10 +1037,6 @@ select {
 
 .border {
   border-width: 1px;
-}
-
-.border-t-4 {
-  border-top-width: 4px;
 }
 
 .border-b {
@@ -1180,27 +1164,18 @@ select {
   padding-bottom: 1.25rem;
 }
 
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
 
-.pb-6 {
-  padding-bottom: 1.5rem;
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-.pb-4 {
-  padding-bottom: 1rem;
+.pb-6 {
+  padding-bottom: 1.5rem;
 }
 
 .pr-4 {
@@ -1287,10 +1262,6 @@ select {
   line-height: 1.25rem;
 }
 
-.tracking-widest {
-  letter-spacing: 0.1em;
-}
-
 .text-gray {
   --tw-text-opacity: 1;
   color: rgb(37 36 35 / var(--tw-text-opacity));
@@ -1307,10 +1278,6 @@ select {
 
 .text-alt-pink\/70 {
   color: rgb(224 28 234 / 0.7);
-}
-
-.no-underline {
-  text-decoration-line: none;
 }
 
 .placeholder-gray-light::-moz-placeholder {
@@ -1332,12 +1299,6 @@ select {
 .shadow-sm {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow {
-  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -1413,72 +1374,6 @@ select {
   font-weight: bolder;
 } */
 
-/* custom non-Tailwind CSS */
-
-@media (min-width: 577px) {
-  .pt-scroll {
-    padding-top: 51px;
-  }
-
-  .nav-sticky {
-    position: fixed!important;
-    min-width: 100%;
-    top: 0;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
-    transition: all .25s ease-in;
-    z-index: 1;
-  }
-}
-
-/* HAMBURGER MENU */
-
-.hamburger {
-  cursor: pointer;
-  width: 48px;
-  height: 48px;
-  transition: all 0.25s;
-}
-
-.hamburger__top-bun,
-.hamburger__bottom-bun {
-  content: '';
-  position: absolute;
-  width: 24px;
-  height: 2px;
-  background: #000;
-  transform: rotate(0);
-  transition: all 0.5s;
-}
-
-.hamburger:hover [class*="-bun"] {
-  background: #333;
-}
-
-.hamburger__top-bun {
-  transform: translateY(-5px);
-}
-
-.hamburger__bottom-bun {
-  transform: translateY(3px);
-}
-
-.open {
-  transform: rotate(90deg);
-  transform: translateY(-1px);
-}
-
-.open .hamburger__top-bun {
-  transform:
-  rotate(45deg)
-  translateY(0px);
-}
-
-.open .hamburger__bottom-bun {
-  transform:
-  rotate(-45deg)
-  translateY(0px);
-}
-
 .hover\:bg-gray-light:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(109 109 109 / var(--tw-bg-opacity));
@@ -1508,14 +1403,6 @@ select {
     display: block;
   }
 
-  .sm\:flex {
-    display: flex;
-  }
-
-  .sm\:hidden {
-    display: none;
-  }
-
   .sm\:h-9 {
     height: 2.25rem;
   }
@@ -1524,58 +1411,9 @@ select {
     width: 66.666667%;
   }
 
-  .sm\:w-auto {
-    width: auto;
-  }
-
-  .sm\:flex-none {
-    flex: none;
-  }
-
-  .sm\:flex-row {
-    flex-direction: row;
-  }
-
-  .sm\:self-center {
-    align-self: center;
-  }
-
-  .sm\:px-6 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
-  .sm\:py-0 {
-    padding-top: 0px;
-    padding-bottom: 0px;
-  }
-
-  .sm\:py-1 {
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
-  }
-
   .sm\:px-4 {
     padding-left: 1rem;
     padding-right: 1rem;
-  }
-
-  .sm\:pb-0 {
-    padding-bottom: 0px;
-  }
-
-  .sm\:pr-4 {
-    padding-right: 1rem;
-  }
-
-  .sm\:pt-2 {
-    padding-top: 0.5rem;
-  }
-
-  .sm\:shadow-none {
-    --tw-shadow: 0 0 #0000;
-    --tw-shadow-colored: 0 0 #0000;
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 }
 

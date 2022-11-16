@@ -1,6 +1,7 @@
+<!--Desktop Nav Menu-->
 <nav id="menu"
   class="bg-gray px-2 sm:px-4 py-2.5 dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
-  <div class="container flex flex-wrap justify-between items-center mx-auto">
+  <div class="flex flex-wrap justify-between items-center mx-auto">
   <a href="/" class="flex items-center">
     <img src="/assets/CodeShareIcon.svg" class="mr-3 h-6 sm:h-9 mainLogo" alt="CodeShare Logo">
     <span class="self-center text-xl font-semibold whitespace-nowrap text-white">CodeShare / Git<span class="text-alt-blue/70">t</span><span class="text-alt-pink/70">y</span>Up</span>
@@ -16,7 +17,7 @@
         class="text-gray bg-blue hover:bg-gray-light font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0"><a href="/login">Log
         In</a></button>
     {{/if}}
-    <button data-collapse-toggle="navbar-sticky" type="button"
+    <button onClick="document.getElementById('hamMenu').classList.toggle('hidden')" type="button"
       class="inline-flex items-center p-2 text-sm rounded-lg md:hidden text-white"
       aria-controls="navbar-sticky" aria-expanded="false">
       <span class="sr-only">Open main menu</span>
@@ -41,5 +42,23 @@
         </li>
       </ul>
   </div>
-  </div>
+</div>
+<!--Mobile Hamburger Menu-->
+<div id="hamMenu" class="">
+  <ul
+    class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
+    <li>
+      <a href="/" class="block py-2 pr-4 pl-3 text-white">Home</a>
+    </li>
+    <li>
+      <a href="/about" class="block py-2 pr-4 pl-3 text-white">About</a>
+    </li>
+    <li>
+      <a href="/dashboard" class="block py-2 pr-4 pl-3 text-white">Dashboard</a>
+    </li>
+  </ul>
+</div>
 </nav>
+<script>
+
+</script>
