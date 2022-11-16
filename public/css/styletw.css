@@ -749,10 +749,6 @@ select {
   left: 0px;
 }
 
-.z-50 {
-  z-index: 50;
-}
-
 .z-20 {
   z-index: 20;
 }
@@ -945,6 +941,10 @@ select {
 
 .w-10 {
   width: 2.5rem;
+}
+
+.w-screen {
+  width: 100vw;
 }
 
 .w-6 {
