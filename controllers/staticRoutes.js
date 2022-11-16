@@ -19,9 +19,9 @@ router.get("/", async (req, res) => {
   const topThree = pointSorted.slice(0, 3);
 
   // Diagnostic logs of what's actually going to be rendered
-  // console.log('topThree:',topThree)
-  // console.log("submissions: ", submissions);
-  // console.log("session: ", req.session);
+  console.log('topThree:',topThree);
+  console.log("submissions: ", submissions);
+  console.log("session: ", req.session);
 
   // Render the page with data needed for the handlebars template
   res.render("homepage", {

@@ -24,8 +24,14 @@ function dashSummary(text) {
   }
 }
 
+// Logs things sent to handlebars
+function logIt(arg) {
+  console.log('Handlebars got arg:',arg)
+}
+
 module.exports = {
   format_date,
   textSummary,
   dashSummary,
+  logIt
 };
