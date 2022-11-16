@@ -64,6 +64,7 @@ anime({
 anime({
   targets: ".popInSway",
   translateX: [-2000, 0],
+  opacity: [0 , 1],
   delay: anime.stagger(30),
   // duration: 100,
   // loop: true,
@@ -86,6 +87,7 @@ anime({
 anime({
   targets: ".popInSway2",
   translateX: [-2000, 0],
+  opacity: [0 , 1],
   delay: anime.stagger(30),
   // duration: 100,
   // loop: true,
@@ -108,10 +110,8 @@ anime({
 anime({
   targets: ".popIn",
   translateX: [-2000, 0],
+  opacity: [0 , 1],
   delay: anime.stagger(30),
-  // duration: 100,
-  // loop: true,
-  // direction: 'alternate',
   easing: "spring(1, 80, 20, 0)",
 })
 
