@@ -18,8 +18,8 @@ module.exports = {
       'gray': 'rgb(37,36,35)',
       'gray-light': 'rgb(109,109,109)',
       'gray-lighter': 'rgb(201,201,201)',
-      'alt-blue': 'rgb(113,206,255)',
-      'alt-pink': 'rgb(252,128,254)'
+      'alt-blue': 'rgb(48,207,220)',
+      'alt-pink': 'rgb(224,28,234)'
     },
     extend: {},
   },
