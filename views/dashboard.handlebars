@@ -65,7 +65,7 @@
       </div>
 
       {{!-- Codepen embed --}}
-<div class="popIn my-5">
+<div class="hidden sm:block popIn my-5">
   <h3 class="font-semibold text-center text-white my-5 text-lg">Want to test your code before submitting?</h3>
   <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="gOKRwyb"
     data-editable="true" data-user="arielle-elak"
@@ -89,20 +89,20 @@
   <div class="popIn mx-10 mt-5">
     <div class="gsubmission-list">
       <h2 class="text-left py-5 text-2xl font-bold text-gray">Your Code Shares:</h2>
-  
+
       <div class="">
         {{!-- Loop over all submissions and make a card for each --}}
         {{#if submissions.length}}
           {{#each submissions as |submission|}}
             <div class="submissionContainer w-fit">
               <div class="flex submission max-w-md">
-  
+
                 {{!-- Delete button --}}
                 <div class="p-1 m-auto">
                   <div class="border-black border-solid border-pink bg-pink rounded p-2 h-10 text-center font-bold"
                     data-id="{{submission.id}}">DELETE</div>
                 </div>
-  
+
                 {{! Post title and icon }}
                 <div class="p-2 flex flex-col items-center my-auto w-40" id="col1-name">
                   <div class="m-1">
@@ -115,12 +115,12 @@
                   </div>
                   <img class="mx-auto w-10 h-10 justify-center" src="/assets/lang-icons/{{submission.language}}.svg" />
                 </div>
-  
+
                 {{!-- Description --}}
                 <div class="m-2 p-2 border-gray rounded bg-gray-light bg-opacity-10 w-fit max-w-sm">
                   <p>{{submission.content}}</p>
                 </div>
-  
+
               </div>
             </div>
           {{/each}}
