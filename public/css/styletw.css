@@ -773,6 +773,14 @@ select {
   margin: 0.5rem;
 }
 
+.m-5 {
+  margin: 1.25rem;
+}
+
+.m-3 {
+  margin: 0.75rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -866,6 +874,10 @@ select {
   margin-right: 0.75rem;
 }
 
+.ml-0 {
+  margin-left: 0px;
+}
+
 .block {
   display: block;
 }
@@ -951,6 +963,30 @@ select {
   width: 1.5rem;
 }
 
+.w-auto {
+  width: auto;
+}
+
+.w-1\/2 {
+  width: 50%;
+}
+
+.w-2\/3 {
+  width: 66.666667%;
+}
+
+.w-3\/4 {
+  width: 75%;
+}
+
+.w-1 {
+  width: 0.25rem;
+}
+
+.w-1\/4 {
+  width: 25%;
+}
+
 .max-w-md {
   max-width: 28rem;
 }
@@ -1009,6 +1045,10 @@ select {
 
 .whitespace-nowrap {
   white-space: nowrap;
+}
+
+.break-words {
+  overflow-wrap: break-word;
 }
 
 .rounded {
@@ -1099,6 +1139,18 @@ select {
   background-color: rgb(109 109 109 / 0.4);
 }
 
+.bg-white\/50 {
+  background-color: rgb(255 255 255 / 0.5);
+}
+
+.bg-alt-blue\/75 {
+  background-color: rgb(48 207 220 / 0.75);
+}
+
+.bg-alt-pink\/75 {
+  background-color: rgb(224 28 234 / 0.75);
+}
+
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
 }
@@ -1126,6 +1178,10 @@ select {
 
 .p-4 {
   padding: 1rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
 }
 
 .px-6 {
