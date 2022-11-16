@@ -10,10 +10,11 @@ const vh = Math.max(
   document.documentElement.clientHeight || 0,
   window.innerHeight || 0
 );
-const numSquares = 20 * 20 * (vh / vw) * 1.35; //1.35 is to account for overlap of squares
+const numSquares = 20 * (20 * (vh / vw)) * 1.35; //1.35 is to help account for overlap of squares
 // console.log(numSquares)
-console.log('vw:', vw)
-console.log('vh:', vh)
+// console.log('vw:', vw)
+// console.log('vh:', vh)
+// console.log('vh/vw:', vh/vw)
 
 // Generate and style each square to achieve the color gradient
 for (i = 0; i < numSquares; i++) {
@@ -41,14 +42,14 @@ anime.set(".backgroundEl", {
     return anime.random(1, 3);
   },
   rotateZ: function () {
-    return anime.random(0, 360);
+    return anime.random(0, 90);
   },
 });
 
 // Animating the background squares
 anime({
   targets: ".backgroundEl",
-  delay: anime.stagger(3),
+  delay: anime.stagger(200, {grid: [20,numSquares/20], from:'center'}),
   // scale: [{value:1.9, easing:'easeInOutSine', duration:6000}],
   rotateZ: 720,
   duration: 10000,
@@ -81,6 +82,7 @@ anime({
   });
 });
 
+// Animation for the top posts (offset from main posts)
 anime({
   targets: ".popInSway2",
   translateX: [-2000, 0],
@@ -102,6 +104,7 @@ anime({
   });
 });
 
+// Pop-in of title elements on homepage
 anime({
   targets: ".popIn",
   translateX: [-2000, 0],
