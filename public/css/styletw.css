@@ -1310,6 +1310,16 @@ select {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-gray-light {
+  --tw-text-opacity: 1;
+  color: rgb(109 109 109 / var(--tw-text-opacity));
+}
+
+.text-gray-lighter {
+  --tw-text-opacity: 1;
+  color: rgb(201 201 201 / var(--tw-text-opacity));
+}
+
 .placeholder-gray-light::-moz-placeholder {
   --tw-placeholder-opacity: 1;
   color: rgb(109 109 109 / var(--tw-placeholder-opacity));
