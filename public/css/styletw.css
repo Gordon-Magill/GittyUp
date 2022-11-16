@@ -1500,6 +1500,10 @@ select {
     margin-right: 0.5rem;
   }
 
+  .md\:ml-2 {
+    margin-left: 0.5rem;
+  }
+
   .md\:flex {
     display: flex;
   }
