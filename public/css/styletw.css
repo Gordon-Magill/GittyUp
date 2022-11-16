@@ -866,6 +866,22 @@ select {
   margin-right: 0.75rem;
 }
 
+.mr-5 {
+  margin-right: 1.25rem;
+}
+
+.mr-10 {
+  margin-right: 2.5rem;
+}
+
+.mr-20 {
+  margin-right: 5rem;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
 .block {
   display: block;
 }
@@ -1352,8 +1368,6 @@ select {
   margin-bottom: 10px;
   text-shadow: 0px 0px 5px white, 0px 0px 5px white, 0px 0px 5px white,
     0px 0px 5px white;
-  /* width: fit-content; */
-  /* box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.6); */
   /* Transition scale needed on both submission and submission:hover */
   transition: scale 0.25s ease-in-out;
 }
@@ -1365,24 +1379,6 @@ select {
   transition: scale 0.25s ease-in-out;
   scale: 1.02;
 }
-
-/* Preparing the body of the post for the animation */
-
-/* .submissionContent {
-  transition: transform .25s ease;
-} */
-
-/* Defining the hover animation */
-
-/* .submissionContent:hover {
-  transform: translateX(1em);
-} */
-
-/* .titleAccent {
-  color: #0055ff;
-  font-size: 20px;
-  font-weight: bolder;
-} */
 
 .hover\:bg-gray-light:hover {
   --tw-bg-opacity: 1;
@@ -1462,6 +1458,10 @@ select {
 
   .md\:mr-0 {
     margin-right: 0px;
+  }
+
+  .md\:mr-2 {
+    margin-right: 0.5rem;
   }
 
   .md\:flex {
