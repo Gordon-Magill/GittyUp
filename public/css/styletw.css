@@ -1017,6 +1017,12 @@ select {
   margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.space-x-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(2rem * var(--tw-space-x-reverse));
+  margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .self-center {
   align-self: center;
 }
@@ -1106,6 +1112,7 @@ select {
 
 .bg-white\/50 {
   background-color: rgb(255 255 255 / 0.5);
+
 }
 
 .bg-gray-dark {
@@ -1115,6 +1122,7 @@ select {
 
 .bg-gray-light\/40 {
   background-color: rgb(109 109 109 / 0.4);
+
 }
 
 .bg-opacity-10 {
@@ -1203,6 +1211,11 @@ select {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .pb-6 {
@@ -1454,6 +1467,10 @@ select {
     display: block;
   }
 
+  .sm\:hidden {
+    display: none;
+  }
+
   .sm\:h-9 {
     height: 2.25rem;
   }
@@ -1533,6 +1550,10 @@ select {
 @media (min-width: 1024px) {
   .lg\:flex {
     display: flex;
+  }
+
+  .lg\:hidden {
+    display: none;
   }
 
   .lg\:grid-cols-2 {
