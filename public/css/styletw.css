@@ -753,6 +753,10 @@ select {
   z-index: 20;
 }
 
+.z-50 {
+  z-index: 50;
+}
+
 .m-20 {
   margin: 5rem;
 }

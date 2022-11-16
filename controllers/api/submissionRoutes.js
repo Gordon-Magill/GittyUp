@@ -141,9 +141,9 @@ router.delete("/:id", async (req, res) => {
 
 // Increments a post's points value up by one
 router.put("/upvote/:id", async (req, res) => {
-  // console.log(
-  //   "\n**********\n\n**********\n\n**********\nUpvote route called\n**********\n\n**********\n\n**********\n"
-  // );
+  console.log(
+    "\n**********\n\n**********\n\n**********\nUpvote route called\n**********\n\n**********\n\n**********\n"
+  );
   try {
     // Get the submission by the id
     const post = await Submission.findOne({

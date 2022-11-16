@@ -21,6 +21,7 @@ function updatePostCount(postID, incValue) {
 // Upvotes a post
 // Requires that the button for updating the post encodes the associated post ID
 async function upvote(event) {
+  console.log('Upvote function called')
   // Get the button that was clicked
   let clickedButton = event.currentTarget;
 
@@ -45,6 +46,7 @@ async function upvote(event) {
 
 // Add event handlers
 const upvoteButtons = $(".upvoteButton");
+console.log(upvoteButtons)
 upvoteButtons.on("click", upvote);
 
 // Downvotes a post
