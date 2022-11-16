@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const withAuth = require('../../utils/auth')
 // Pull in model info from parent index file in models to descure depencencies' definitions
 const { Submission, Comment } = require("../../models/index");
 
@@ -168,7 +169,7 @@ router.put("/upvote/:id", async (req, res) => {
 });
 
 // Decrements a post's points value down by one
-router.put("/downvote/:id", async (req, res) => {
+router.put("/downvote/:id", withAuth, async (req, res) => {
   try {
     const post = await Submission.findOne({
       where: {

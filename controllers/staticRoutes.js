@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { User, Submission, Comment } = require("../models/index");
-const auth = require("../utils/auth");
-const sequelize = require('sequelize')
+const withAuth = require("../utils/auth");
+// const sequelize = require('sequelize')
 
 // Homepage / browse
 router.get("/", async (req, res) => {
@@ -33,12 +33,12 @@ router.get("/", async (req, res) => {
 });
 
 // Dashboard for posting new content + seeing stats
-router.get("/dashboard", auth, async (req, res) => {
+router.get("/dashboard", withAuth, async (req, res) => {
   // If the user isn't logged in, send them to the login page
-  if (!req.session.loggedIn) {
-    res.status(304).redirect("/login");
-    return;
-  }
+  // if (!req.session.loggedIn) {
+  //   res.status(304).redirect("/login");
+  //   return;
+  // }
 
   // Get all submissions from the logged in user
   const userSubmissions = await Submission.findAll({
@@ -109,15 +109,15 @@ router.get("/about", async (req, res) => {
   });
 });
 
-// 404 Page
-router.get("/404", async (req, res) => {
-  // Diagnostic logs of what's actually going to be rendered
-  console.log("session: ", req.session);
+// Unused 404 Page
+// router.get("/404", async (req, res) => {
+//   // Diagnostic logs of what's actually going to be rendered
+//   console.log("session: ", req.session);
 
-  // Render the page with data needed for the handlebars template
-  res.render("404", {
-    session: req.session,
-  });
-});
+//   // Render the page with data needed for the handlebars template
+//   res.render("404", {
+//     session: req.session,
+//   });
+// });
 
 module.exports = router;
