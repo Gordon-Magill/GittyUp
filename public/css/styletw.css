@@ -749,6 +749,10 @@ select {
   left: 0px;
 }
 
+.-top-5 {
+  top: -1.25rem;
+}
+
 .z-20 {
   z-index: 20;
 }
@@ -761,12 +765,12 @@ select {
   margin: 2.5rem;
 }
 
-.m-auto {
-  margin: auto;
-}
-
 .m-1 {
   margin: 0.25rem;
+}
+
+.m-auto {
+  margin: auto;
 }
 
 .m-2 {
@@ -866,6 +870,22 @@ select {
   margin-right: 0.75rem;
 }
 
+.mr-5 {
+  margin-right: 1.25rem;
+}
+
+.mr-10 {
+  margin-right: 2.5rem;
+}
+
+.mr-20 {
+  margin-right: 5rem;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
 .block {
   display: block;
 }
@@ -898,12 +918,12 @@ select {
   height: 100%;
 }
 
-.h-10 {
-  height: 2.5rem;
-}
-
 .h-5 {
   height: 1.25rem;
+}
+
+.h-10 {
+  height: 2.5rem;
 }
 
 .h-20 {
@@ -935,12 +955,16 @@ select {
   width: 10rem;
 }
 
+.w-5 {
+  width: 1.25rem;
+}
+
 .w-10 {
   width: 2.5rem;
 }
 
-.w-5 {
-  width: 1.25rem;
+.w-screen {
+  width: 100vw;
 }
 
 .w-6 {
@@ -951,8 +975,8 @@ select {
   max-width: 28rem;
 }
 
-.max-w-sm {
-  max-width: 24rem;
+.max-w-full {
+  max-width: 100%;
 }
 
 .transform {
@@ -977,10 +1001,6 @@ select {
 
 .flex-wrap {
   flex-wrap: wrap;
-}
-
-.place-content-center {
-  place-content: center;
 }
 
 .items-center {
@@ -1077,13 +1097,8 @@ select {
   background-color: rgb(235 63 103 / var(--tw-bg-opacity));
 }
 
-.bg-gray-light {
-  --tw-bg-opacity: 1;
-  background-color: rgb(109 109 109 / var(--tw-bg-opacity));
-}
-
-.bg-white\/50 {
-  background-color: rgb(255 255 255 / 0.5);
+.bg-alt-blue\/50 {
+  background-color: rgb(48 207 220 / 0.5);
 }
 
 .bg-gray-dark {
@@ -1091,12 +1106,17 @@ select {
   background-color: rgb(13 13 12 / var(--tw-bg-opacity));
 }
 
-.bg-gray-light\/40 {
-  background-color: rgb(109 109 109 / 0.4);
+.bg-alt-pink\/50 {
+  background-color: rgb(224 28 234 / 0.5);
 }
 
-.bg-opacity-10 {
-  --tw-bg-opacity: 0.1;
+.bg-gray-light {
+  --tw-bg-opacity: 1;
+  background-color: rgb(109 109 109 / var(--tw-bg-opacity));
+}
+
+.bg-gray-light\/40 {
+  background-color: rgb(109 109 109 / 0.4);
 }
 
 .bg-opacity-25 {
@@ -1112,12 +1132,12 @@ select {
   padding: 2.5rem;
 }
 
-.p-1 {
-  padding: 0.25rem;
-}
-
 .p-2 {
   padding: 0.5rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
 }
 
 .p-5 {
@@ -1352,8 +1372,6 @@ select {
   margin-bottom: 10px;
   text-shadow: 0px 0px 5px white, 0px 0px 5px white, 0px 0px 5px white,
     0px 0px 5px white;
-  /* width: fit-content; */
-  /* box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.6); */
   /* Transition scale needed on both submission and submission:hover */
   transition: scale 0.25s ease-in-out;
 }
@@ -1365,24 +1383,6 @@ select {
   transition: scale 0.25s ease-in-out;
   scale: 1.02;
 }
-
-/* Preparing the body of the post for the animation */
-
-/* .submissionContent {
-  transition: transform .25s ease;
-} */
-
-/* Defining the hover animation */
-
-/* .submissionContent:hover {
-  transform: translateX(1em);
-} */
-
-/* .titleAccent {
-  color: #0055ff;
-  font-size: 20px;
-  font-weight: bolder;
-} */
 
 .hover\:bg-gray-light:hover {
   --tw-bg-opacity: 1;
@@ -1462,6 +1462,10 @@ select {
 
   .md\:mr-0 {
     margin-right: 0px;
+  }
+
+  .md\:mr-2 {
+    margin-right: 0.5rem;
   }
 
   .md\:flex {

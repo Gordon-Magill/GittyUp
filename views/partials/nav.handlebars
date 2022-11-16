@@ -1,21 +1,21 @@
 <!--Desktop Nav Menu-->
 <nav id="menu"
-  class="bg-gray px-2 sm:px-4 py-2.5 dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
+  class="bg-gray px-2 sm:px-4 py-2.5 dark:bg-gray-900 fixed z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600 w-screen">
   <div class="flex flex-wrap justify-between items-center mx-auto">
   <a href="/" class="flex items-center">
     <img src="/assets/CodeShareIcon.svg" class="mr-3 h-6 sm:h-9 mainLogo" alt="CodeShare Logo">
-    <span class="self-center text-xl font-semibold whitespace-nowrap text-white">CodeShare / Git<span class="text-alt-blue/70">t</span><span class="text-alt-pink/70">y</span>Up</span>
+    <span class="self-center text-xl font-semibold whitespace-nowrap text-white">Git<span class="text-alt-blue/70">t</span><span class="text-alt-pink/70">y</span>Up</span>
   </a>
   <div class="flex md:order-2">
     {{#if session.loggedIn}}
     <p class="hidden sm:block self-center text-sm font-semibold whitespace-nowrap text-white px-4">Hi, {{session.username}}
     </p>
     <button id="logout" type="button"
-        class="text-gray bg-blue hover:bg-gray-light hover:text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0"><a href="/logout">Log
+        class="text-gray bg-blue hover:bg-gray-light hover:text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center md:mr-2"><a href="/logout">Log
         Out</a></button>
     {{else}}
       <button id="login" type="button"
-        class="text-gray bg-blue hover:bg-gray-light hover:text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0"><a href="/login">Log
+        class="text-gray bg-blue hover:bg-gray-light hover:text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center  md:mr-2"><a href="/login">Log
         In</a></button>
     {{/if}}
     <button onClick="document.getElementById('hamMenu').classList.toggle('hidden')" type="button"

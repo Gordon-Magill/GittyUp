@@ -21,10 +21,7 @@
 </head>
 
 <body class="bg-gray-light/40 scroll-smooth">
-  {{!-- jQuery --}}
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
+
 
   {{!-- Navbar --}}
   {{> nav}}
@@ -38,6 +35,11 @@
 
   {{!-- Background animated elements --}}
   <div class="backgroundBodyGrid"></div>
+
+  {{!-- jQuery --}}
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
 
   <!-- Render script for logged in users only -->
   {{#if session.loggedIn}}

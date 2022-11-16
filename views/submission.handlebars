@@ -1,15 +1,19 @@
 {{! Page container }}
-<div class="mx-5 grid grid-cols-1 place-content-center">
+<div class="mx-5 flex flex-col items-center popIn">
 
-  <div class="rounded-2xl bg-white/50 p-5">
+  {{! Submission container }}
+  <div class="rounded-2xl bg-alt-blue/50 p-5 max-w-full">
     {{! Submission info }}
     <h2 class="text-3xl font-extrabold">{{submission.name}}</h2>
     <p class="text-base">{{submission.description}}</p>
 
     {{! Prism Code Class }}
-    <pre class="bg-gray-dark text-white"><code
+    <pre class="bg-gray-dark text-white">
+      <code
         class="language-{{submission.language}}"
-      >{{submission.content}}</code></pre>
+      >{{submission.content}}
+      </code>
+      </pre>
 
     {{! Post information }}
     <p class="my-2 text-base"><span class="font-semibold">Language: </span>
@@ -21,68 +25,58 @@
     </p>
   </div>
 
+  {{! Show new comment box if user is logged in }}
   {{#if session.loggedIn}}
-    <div class="rounded-2xl bg-white/50 p-5 mt-5">
-      <!--Comment box form-->
-      <div class="mt-10 mx-5" id="comment-form">
-        <h2 class="text-2xl">Comment on This CodeShare:</h2>
-        <form class="form new-comment-form">
-
-          <!--Comment Content-->
-          <div class="mt-6">
-            <label for="comment-body" class="block text-sm font-medium">
-              <textarea
-                id="comment-body"
-                class="w-full h-20 p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1"
-                name="comment"
-                placeholder="Write your comment here."
-              ></textarea>
-            </label>
-          </div>
-
-          <!--Comment Button-->
-          <div class="mt-6">
-            <button
-              id="comment-submit"
-              class="bg-gray px-5 py-2.5 text-md leading-5 rounded-md font-semibold text-white"
-              type="submit"
-              data-post="{{submission.id}}"
-            >Submit</button>
-          </div>
-        </form>
-      </div>
-
-    </div>
-  {{else}}
+  <div class="rounded-2xl bg-alt-pink/50 p-5 mt-5 popIn">
+    <!--Comment box form-->
     <div class="mt-10 mx-5" id="comment-form">
-      <h2 class="text-2xl">Log in to comment on this CodeShare!</h2>
+      <h2 class="text-2xl">Comment on This CodeShare:</h2>
+      <form class="form new-comment-form">
+
+        <!--Comment Content-->
+        <div class="mt-6">
+          <label for="comment-body" class="block text-sm font-medium">
+            <textarea id="comment-body"
+              class="w-full h-20 p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1" name="comment"
+              placeholder="Write your comment here."></textarea>
+          </label>
+        </div>
+
+        <!--Comment Button-->
+        <div class="mt-6">
+          <button id="comment-submit" class="bg-gray px-5 py-2.5 text-md leading-5 rounded-md font-semibold text-white"
+            type="submit" data-post="{{submission.id}}">Submit</button>
+        </div>
+      </form>
     </div>
+
+  </div>
+  {{else}}
+  <div class="mt-10 mx-5" id="comment-form">
+    <h2 class="text-2xl">Log in to comment on this CodeShare!</h2>
+  </div>
   {{/if}}
 
   <!-- List of submitted comments -->
   {{#each submission.Comments as |comment|}}
-    {{! Container }}
-    <div
-      class="container flex p-2 m-2 max-w-md bg-white rounded border-solid border-gray"
-    >
+  {{! Container }}
+  <div class="container flex p-2 m-2 max-w-md bg-white rounded border-solid border-gray popInSway">
 
-      {{! Left side metadata }}
-      <div class="m-1 block text-xs w-40">
-        <p class="font-bold">{{comment.author}}</p>
-        <p class="font-light">{{format_date comment.date_created}}</p>
-      </div>
-
-      {{! Right side comment content }}
-      <div
-        class="p-2 my-1 mx-2 text-left bg-gray-light bg-opacity-25 w-full rounded-sm"
-      >
-        <p>{{comment.content}}</p>
-      </div>
+    {{! Left side metadata }}
+    <div class="m-1 block text-xs w-40">
+      <p class="font-bold">{{comment.author}}</p>
+      <p class="font-light">{{format_date comment.date_created}}</p>
     </div>
+
+    {{! Right side comment content }}
+    <div class="p-2 my-1 mx-2 text-left bg-gray-light bg-opacity-25 w-full rounded-sm">
+      <p>{{comment.content}}</p>
+    </div>
+  </div>
   {{/each}}
 
 </div>
 
 {{#if session.loggedIn}}
-  <script src="/js/comment.js"></script>
+<script src="/js/comment.js"></script>
 {{/if}}

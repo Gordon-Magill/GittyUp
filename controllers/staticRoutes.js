@@ -23,6 +23,7 @@ router.get("/", async (req, res) => {
   // console.log("submissions: ", submissions);
   // console.log("session: ", req.session);
 
+
   // Render the page with data needed for the handlebars template
   res.render("homepage", {
     session: req.session,
