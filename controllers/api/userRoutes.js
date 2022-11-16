@@ -5,21 +5,25 @@ const { User } = require("../../models/");
 // Create new user
 router.post("/", async (req, res) => {
   try {
+    // Create user from request body
     const dbUserData = await User.create({
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
     });
 
+    // Log the user in and create a session
     req.session.save(() => {
       req.session.loggedIn = true;
       req.session.userID = dbUserData.id;
       req.session.username = req.body.username;
       req.session.userEmail = req.body.email;
 
+      // Send confirmatory info
       res.status(200).json(dbUserData);
     });
   } catch (err) {
+    // Log and send the error
     console.log(err);
     res.status(500).json(err);
   }
@@ -28,21 +32,26 @@ router.post("/", async (req, res) => {
 // Login
 router.post("/login", async (req, res) => {
   try {
+
+    // Find any users that have the supplied email
     const dbUserData = await User.findOne({
       where: {
         email: req.body.email,
       },
     });
 
+    // If there are no users of that email, throw an error
     if (!dbUserData) {
       res
         .status(400)
-        .json({ message: "Incorrect email or password. Please try again!" });
+        .json({ message: "Incorrect email. Please try again!" });
       return;
     }
 
+    // Assuming the email was valid, check the password
     const validPassword = await dbUserData.checkPassword(req.body.password);
 
+    // Reject bad passwords
     if (!validPassword) {
       res
         .status(400)
@@ -50,17 +59,20 @@ router.post("/login", async (req, res) => {
       return;
     }
 
+    // Start a session for the user
     req.session.save(() => {
       req.session.loggedIn = true;
       req.session.userID = dbUserData.id;
       req.session.username = dbUserData.username;
       req.session.userEmail = req.body.email;
 
+      // Send confirmatory info
       res
         .status(200)
         .json({ user: dbUserData, message: "You are now logged in!" });
     });
   } catch (err) {
+    // Log and send the error
     console.log(err);
     res.status(500).json(err);
   }

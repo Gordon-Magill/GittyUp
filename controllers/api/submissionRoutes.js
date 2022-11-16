@@ -115,6 +115,8 @@ router.put("/:id", async (req, res) => {
 // Delete one submission
 router.delete("/:id", async (req, res) => {
   try {
+
+    // Delete any comments associated with the submission
     const delComments = await Comment.destroy({
       where: {
         post_id: parseInt(req.params.id)
@@ -139,16 +141,18 @@ router.delete("/:id", async (req, res) => {
 
 // Increments a post's points value up by one
 router.put("/upvote/:id", async (req, res) => {
-  console.log(
-    "\n**********\n\n**********\n\n**********\nUpvote route called\n**********\n\n**********\n\n**********\n"
-  );
+  // console.log(
+  //   "\n**********\n\n**********\n\n**********\nUpvote route called\n**********\n\n**********\n\n**********\n"
+  // );
   try {
+    // Get the submission by the id
     const post = await Submission.findOne({
       where: {
         id: req.params.id,
       },
     });
 
+    // Update the submission
     const updatedPost = Submission.update(
       {
         points: post.points + 1,
@@ -171,12 +175,14 @@ router.put("/upvote/:id", async (req, res) => {
 // Decrements a post's points value down by one
 router.put("/downvote/:id", withAuth, async (req, res) => {
   try {
+    // Get the post being affected
     const post = await Submission.findOne({
       where: {
         id: req.params.id,
       },
     });
 
+    // Decrement the point value
     const updatedPost = await Submission.update(
       {
         points: post.points - 1,
