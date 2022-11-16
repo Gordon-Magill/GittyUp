@@ -11,7 +11,6 @@
     {{#each submissions as |submission|}}
     <div class="popInSway w-fit">
       <div class="flex submission max-w-md">
-
         {{! Voting buttons and points w/ event handlers}}
         <div class="m-2 p-2 flex flex-col items-center" id="col3-vote">
           {{! Upvote }}
@@ -102,8 +101,8 @@
 
   {{!-- 2nd Column, top posts of all time --}}
   <div class="flex flex-col mx-auto">
-    <p class="popIn font-bold text-2xl mb-2 sm:mt-4 md:mt-0 text-center">Top posts of all
-      time:</p>
+
+    <p class="popIn font-bold text-2xl mb-2 sm:mt-4 md:mt-0 text-center">Top posts of all time:</p>
 
     {{!-- Render a card for the top three (even if redundant) --}}
     {{#each topThree as |submission2|}}
@@ -143,7 +142,6 @@
           {{! Downvote }}
           <button class="disabled:opacity-25" data-post-id="{{submission2.id}}">
             <img class="h-10 w-10 rounded-full" src="/assets/DownVote.svg" />
-
           </button>
         </div>
         {{/if}}
