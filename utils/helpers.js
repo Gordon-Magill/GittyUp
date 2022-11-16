@@ -27,5 +27,5 @@ function dashSummary(text) {
 module.exports = {
   format_date,
   textSummary,
-  dashSummary
+  dashSummary,
 };

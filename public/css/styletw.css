@@ -955,6 +955,35 @@ select {
   max-width: 24rem;
 }
 
+.max-w-2xl {
+  max-width: 42rem;
+}
+
+.max-w-7xl {
+  max-width: 80rem;
+}
+
+.max-w-3xl {
+  max-width: 48rem;
+}
+
+.max-w-6xl {
+  max-width: 72rem;
+}
+
+.max-w-full {
+  max-width: 100%;
+}
+
+.max-w-max {
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+
+.max-w-lg {
+  max-width: 32rem;
+}
+
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -1093,6 +1122,18 @@ select {
 
 .bg-gray-light\/40 {
   background-color: rgb(109 109 109 / 0.4);
+}
+
+.bg-pink\/50 {
+  background-color: rgb(235 63 103 / 0.5);
+}
+
+.bg-alt-pink\/50 {
+  background-color: rgb(224 28 234 / 0.5);
+}
+
+.bg-alt-blue\/50 {
+  background-color: rgb(48 207 220 / 0.5);
 }
 
 .bg-opacity-10 {
