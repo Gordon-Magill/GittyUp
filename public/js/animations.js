@@ -63,7 +63,7 @@ anime({
 // Pop in of elements from off screen (homepage/dashboard)
 anime({
   targets: ".popInSway",
-  translateX: [-200, 0],
+  translateX: [-300, 0],
   opacity: [0 , 1],
   delay: anime.stagger(30),
   // duration: 100,
@@ -86,7 +86,7 @@ anime({
 // Animation for the top posts (offset from main posts)
 anime({
   targets: ".popInSway2",
-  translateX: [-200, 0],
+  translateX: [-300, 0],
   opacity: [0 , 1],
   delay: anime.stagger(30),
   // duration: 100,
@@ -109,7 +109,7 @@ anime({
 // Pop-in of title elements on homepage
 anime({
   targets: ".popIn",
-  translateX: [-200, 0],
+  translateX: [-300, 0],
   opacity: [0 , 1],
   delay: anime.stagger(30),
   easing: "spring(1, 80, 20, 0)",
