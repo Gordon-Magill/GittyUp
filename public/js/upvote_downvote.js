@@ -11,11 +11,24 @@ function updatePostCount(postID, incValue) {
   // Helper function to indicate a post match
   const isMatch = (id) => id === postID;
 
+  let correctCounters = []
+  for (const [i,post] of posts.entries()) {
+    if (isMatch(post)) {
+      correctCounters.push(counterArr[i])
+    }
+  }
+
   // Actually identifying the proper counter that matches the post ID
-  const singleCounter = counterArr[posts.findIndex(isMatch)];
-  // console.log(singleCounter);
+  console.log('correctCounters: ',correctCounters)
+  // const correctCounters = counterArr[posts.findIndex(isMatch)];
+
+  console.log(correctCounters);
   // Update the counter
-  singleCounter.innerHTML = parseInt(singleCounter.innerHTML) + incValue;
+
+  correctCounters.forEach((el) => {
+    el.innerHTML = parseInt(el.innerHTML) + incValue;
+  })
+  
 }
 
 // Upvotes a post
@@ -46,7 +59,7 @@ async function upvote(event) {
 
 // Add event handlers
 const upvoteButtons = $(".upvoteButton");
-console.log(upvoteButtons)
+// console.log(upvoteButtons)
 upvoteButtons.on("click", upvote);
 
 // Downvotes a post
