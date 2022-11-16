@@ -1092,12 +1092,12 @@ select {
 
 .bg-gray {
   --tw-bg-opacity: 1;
-  background-color: rgb(235 63 103 / var(--tw-bg-opacity));
+  background-color: rgb(37 36 35 / var(--tw-bg-opacity));
 }
 
-.bg-gray-light {
+.bg-blue {
   --tw-bg-opacity: 1;
-  background-color: rgb(109 109 109 / var(--tw-bg-opacity));
+  background-color: rgb(0 255 210 / var(--tw-bg-opacity));
 }
 
 .bg-pink {
@@ -1108,24 +1108,21 @@ select {
 .bg-gray-light {
   --tw-bg-opacity: 1;
   background-color: rgb(109 109 109 / var(--tw-bg-opacity));
-
 }
 
-.bg-gray-light\/25 {
-  background-color: rgb(109 109 109 / 0.25);
-}
+.bg-white\/50 {
+  background-color: rgb(255 255 255 / 0.5);
 
-.bg-gray-light\/30 {
-  background-color: rgb(109 109 109 / 0.3);
-}
-
-.bg-gray-light\/40 {
-  background-color: rgb(109 109 109 / 0.4);
 }
 
 .bg-gray-dark {
   --tw-bg-opacity: 1;
   background-color: rgb(13 13 12 / var(--tw-bg-opacity));
+}
+
+.bg-gray-light\/40 {
+  background-color: rgb(109 109 109 / 0.4);
+
 }
 
 .bg-opacity-10 {
