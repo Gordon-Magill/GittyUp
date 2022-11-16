@@ -35,21 +35,17 @@
 
           {{! Post title and icon }}
           <div
-            class="p-2 flex flex-col items-center my-auto w-40"
-            id="col1-name"
-          >
-            <div class="m-1">
-              <h2 class="font-bold text-base md:text-large text-center">
-                <a href="/submission/{{submission.id}}">{{submission.name}}</a>
-              </h2>
+            class="p-2 flex flex-col my-auto w-40"
+            id="col1-name">
+            <div class="text-left m-1">
+                <img class="my-2 w-5 h-5" src="/assets/lang-icons/{{submission.language}}.svg" />
+                <h2 class="font-bold text-lg md:text-large text-left">
+                  <a href="/submission/{{submission.id}}">{{submission.name}}</a>
+                </h2>
               <p class="text-sm sm:block">
                 {{textSummary submission.description}}
               </p>
             </div>
-            <img
-              class="mx-auto w-10 h-10 justify-center"
-              src="/assets/lang-icons/{{submission.language}}.svg"
-            />
           </div>
 
           {{! Metadata }}
@@ -98,25 +94,19 @@
           </div>
 
           {{! Post title and icon }}
-          <div
-            class="p-2 flex flex-col items-center my-auto w-40"
-            id="col1-name"
-          >
-            <div class="m-1">
-              <h2 class="font-bold text-base md:text-large text-center">
-                <a
-                  href="/submission2/{{submission2.id}}"
-                >{{submission2.name}}</a>
+          <div class="p-2 flex flex-col my-auto w-40" id="col1-name">
+            <div class="text-left m-1">
+              <img class="my-2 w-5 h-5" src="/assets/lang-icons/{{submission2.language}}.svg" />
+              <h2 class="font-bold text-lg md:text-large text-left">
+                <a href="/submission2/{{submission2.id}}">{{submission2.name}}</a>
               </h2>
               <p class="text-sm sm:block">
                 {{textSummary submission2.description}}
               </p>
             </div>
-            <img
-              class="mx-auto w-10 h-10 justify-center"
-              src="/assets/lang-icons/{{submission2.language}}.svg"
-            />
           </div>
+
+
 
           {{! Metadata }}
           <div class="p-2 my-auto" id="col2-user">

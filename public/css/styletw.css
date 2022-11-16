@@ -783,9 +783,9 @@ select {
   margin-right: 0.25rem;
 }
 
-.mx-10 {
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
 }
 
 .my-5 {
@@ -793,14 +793,14 @@ select {
   margin-bottom: 1.25rem;
 }
 
+.mx-10 {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
-}
-
-.mx-5 {
-  margin-left: 1.25rem;
-  margin-right: 1.25rem;
 }
 
 .my-2 {
@@ -854,6 +854,10 @@ select {
   margin-top: 1rem;
 }
 
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
 .mt-24 {
   margin-top: 6rem;
 }
@@ -901,6 +905,10 @@ select {
   height: 2.5rem;
 }
 
+.h-5 {
+  height: 1.25rem;
+}
+
 .h-20 {
   height: 5rem;
 }
@@ -934,8 +942,16 @@ select {
   width: 2.5rem;
 }
 
+.w-5 {
+  width: 1.25rem;
+}
+
 .w-6 {
   width: 1.5rem;
+}
+
+.w-2\/3 {
+  width: 66.666667%;
 }
 
 .max-w-md {
@@ -958,6 +974,10 @@ select {
   resize: both;
 }
 
+.columns-2 {
+  columns: 2;
+}
+
 .grid-cols-1 {
   -ms-grid-columns: (minmax(0, 1fr))[1];
       grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -966,6 +986,11 @@ select {
 .grid-cols-2 {
   -ms-grid-columns: (minmax(0, 1fr))[2];
       grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.flex-row {
+  -ms-flex-direction: row;
+      flex-direction: row;
 }
 
 .flex-col {
@@ -990,11 +1015,6 @@ select {
 .items-center {
   -ms-flex-align: center;
       align-items: center;
-}
-
-.justify-start {
-  -ms-flex-pack: start;
-      justify-content: flex-start;
 }
 
 .justify-center {
@@ -1406,6 +1426,73 @@ select {
   font-weight: bolder;
 } */
 
+.before\:block::before {
+  content: var(--tw-content);
+  display: block;
+}
+
+.before\:text-4xl::before {
+  content: var(--tw-content);
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.before\:font-bold::before {
+  content: var(--tw-content);
+  font-weight: 700;
+}
+
+.before\:content-\[\'hello\'\]::before {
+  --tw-content: 'hello';
+  content: var(--tw-content);
+}
+
+.before\:content-\[\'\'\]::before {
+  --tw-content: '';
+  content: var(--tw-content);
+}
+
+.before\:content-\[\'img\'\]::before {
+  --tw-content: 'img';
+  content: var(--tw-content);
+}
+
+.before\:content-\[\'Hello\'\]::before {
+  --tw-content: 'Hello';
+  content: var(--tw-content);
+}
+
+.after\:my-2::after {
+  content: var(--tw-content);
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.after\:capitalize::after {
+  content: var(--tw-content);
+  text-transform: capitalize;
+}
+
+.after\:content-\[\]::after {
+  --tw-content: ;
+  content: var(--tw-content);
+}
+
+.after\:content-\[\'\'\]::after {
+  --tw-content: '';
+  content: var(--tw-content);
+}
+
+.after\:content-\[\'\{\{submission\.language\}\}\'\]::after {
+  --tw-content: '{{submission.language}}';
+  content: var(--tw-content);
+}
+
+.after\:content-\[\'JAVA\'\]::after {
+  --tw-content: 'JAVA';
+  content: var(--tw-content);
+}
+
 .hover\:bg-gray-light:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(109 109 109 / var(--tw-bg-opacity));
@@ -1435,6 +1522,10 @@ select {
   .sm\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
+  }
+
+  .sm\:mt-4 {
+    margin-top: 1rem;
   }
 
   .sm\:block {
@@ -1471,12 +1562,12 @@ select {
     margin-right: 5rem;
   }
 
-  .md\:mr-0 {
-    margin-right: 0px;
-  }
-
   .md\:mt-0 {
     margin-top: 0px;
+  }
+
+  .md\:mr-0 {
+    margin-right: 0px;
   }
 
   .md\:flex {
