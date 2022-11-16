@@ -57,4 +57,4 @@ const delButtonHandler = async (event) => {
 // Adding event handlers
 $("#form-submit").on("click", newFormHandler);
 
-$(".submission-list").on("click", delButtonHandler);
+$(".delButton").on("click", delButtonHandler);

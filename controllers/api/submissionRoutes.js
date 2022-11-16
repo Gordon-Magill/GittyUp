@@ -1,6 +1,6 @@
 const router = require("express").Router();
 // Pull in model info from parent index file in models to descure depencencies' definitions
-const { Submission } = require("../../models/index");
+const { Submission, Comment } = require("../../models/index");
 
 // Create new submission
 router.post("/create", async (req, res) => {
@@ -114,6 +114,12 @@ router.put("/:id", async (req, res) => {
 // Delete one submission
 router.delete("/:id", async (req, res) => {
   try {
+    const delComments = await Comment.destroy({
+      where: {
+        post_id: parseInt(req.params.id)
+      }
+    })
+
     // Destroy the designated submission
     const destroyedSubmission = Submission.destroy({
       where: {

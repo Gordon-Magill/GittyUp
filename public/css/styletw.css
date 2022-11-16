@@ -1095,6 +1095,10 @@ select {
   background-color: rgb(13 13 12 / var(--tw-bg-opacity));
 }
 
+.bg-gray-light\/40 {
+  background-color: rgb(109 109 109 / 0.4);
+}
+
 .bg-opacity-10 {
   --tw-bg-opacity: 0.1;
 }
