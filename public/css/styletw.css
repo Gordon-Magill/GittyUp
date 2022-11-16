@@ -1017,6 +1017,12 @@ select {
   margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.space-x-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(2rem * var(--tw-space-x-reverse));
+  margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .self-center {
   align-self: center;
 }
@@ -1086,12 +1092,12 @@ select {
 
 .bg-gray {
   --tw-bg-opacity: 1;
-  background-color: rgb(37 36 35 / var(--tw-bg-opacity));
+  background-color: rgb(235 63 103 / var(--tw-bg-opacity));
 }
 
-.bg-blue {
+.bg-gray-light {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 255 210 / var(--tw-bg-opacity));
+  background-color: rgb(109 109 109 / var(--tw-bg-opacity));
 }
 
 .bg-pink {
@@ -1102,19 +1108,7 @@ select {
 .bg-gray-light {
   --tw-bg-opacity: 1;
   background-color: rgb(109 109 109 / var(--tw-bg-opacity));
-}
 
-.bg-white\/50 {
-  background-color: rgb(255 255 255 / 0.5);
-}
-
-.bg-gray-dark {
-  --tw-bg-opacity: 1;
-  background-color: rgb(13 13 12 / var(--tw-bg-opacity));
-}
-
-.bg-gray-light\/50 {
-  background-color: rgb(109 109 109 / 0.5);
 }
 
 .bg-gray-light\/25 {
@@ -1127,6 +1121,11 @@ select {
 
 .bg-gray-light\/40 {
   background-color: rgb(109 109 109 / 0.4);
+}
+
+.bg-gray-dark {
+  --tw-bg-opacity: 1;
+  background-color: rgb(13 13 12 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-10 {
@@ -1215,6 +1214,11 @@ select {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .pb-6 {
@@ -1466,6 +1470,10 @@ select {
     display: block;
   }
 
+  .sm\:hidden {
+    display: none;
+  }
+
   .sm\:h-9 {
     height: 2.25rem;
   }
@@ -1545,6 +1553,10 @@ select {
 @media (min-width: 1024px) {
   .lg\:flex {
     display: flex;
+  }
+
+  .lg\:hidden {
+    display: none;
   }
 
   .lg\:grid-cols-2 {
