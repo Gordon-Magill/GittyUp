@@ -749,6 +749,10 @@ select {
   left: 0px;
 }
 
+.-top-5 {
+  top: -1.25rem;
+}
+
 .z-20 {
   z-index: 20;
 }
