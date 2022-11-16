@@ -1,11 +1,12 @@
 const router = require("express").Router();
-
-const session = require("express-session");
-const sequelize = require("../../config/connection");
+// const session = require("express-session");
+// const sequelize = require("../../config/connection");
 const { Comment } = require("../../models/index");
 const { Submission } = require("../../models/index");
-const { update } = require("../../models/User");
+// const { update } = require("../../models/User");
 
+
+// Create a new comment
 router.post("/create", async (req, res) => {
 
   try {
@@ -33,8 +34,7 @@ router.post("/create", async (req, res) => {
 });
 
 
-  //update Submission.comments_count
-
+//update Submission.comments_count
 router.put("/create", async(req, res) => {
   console.log("********************\n\n\nComment Count Incrementer Called\n\n\n*********************")
   try{

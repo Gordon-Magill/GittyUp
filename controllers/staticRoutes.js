@@ -1,26 +1,25 @@
 const router = require("express").Router();
 const { User, Submission, Comment } = require("../models/index");
-const auth = require("../utils/auth");
-const sequelize = require('sequelize')
+const withAuth = require("../utils/auth");
+// const sequelize = require('sequelize')
 
 // Homepage / browse
 router.get("/", async (req, res) => {
   // Get all submissions from all users, including associated users
   const allSubmissions = await Submission.findAll({
     include: [{ model: User }],
-    order: [['id', 'DESC']]
+    order: [["id", "DESC"]],
   });
 
   // Strip out the extra sequelize content
   const submissions = allSubmissions.map((row) => row.get({ plain: true }));
 
-  const pointSorted = submissions.slice()
-  pointSorted.sort((a,b) => (a.points>b.points) ? -1 : 1)
-  const topThree = pointSorted.slice(0,3)
-  
-  // console.log('topThree:',topThree)
+  const pointSorted = submissions.slice();
+  pointSorted.sort((a, b) => (a.points > b.points ? -1 : 1));
+  const topThree = pointSorted.slice(0, 3);
 
   // Diagnostic logs of what's actually going to be rendered
+  // console.log('topThree:',topThree)
   // console.log("submissions: ", submissions);
   // console.log("session: ", req.session);
 
@@ -28,18 +27,12 @@ router.get("/", async (req, res) => {
   res.render("homepage", {
     session: req.session,
     submissions,
-    topThree
+    topThree,
   });
 });
 
 // Dashboard for posting new content + seeing stats
-router.get("/dashboard", auth, async (req, res) => {
-  // If the user isn't logged in, send them to the login page
-  if (!req.session.loggedIn) {
-    res.status(304).redirect("/login");
-    return;
-  }
-
+router.get("/dashboard", withAuth, async (req, res) => {
   // Get all submissions from the logged in user
   const userSubmissions = await Submission.findAll({
     where: {
@@ -109,15 +102,15 @@ router.get("/about", async (req, res) => {
   });
 });
 
-// 404 Page
-router.get("/404", async (req, res) => {
-  // Diagnostic logs of what's actually going to be rendered
-  console.log("session: ", req.session);
+// Unused 404 Page
+// router.get("/404", async (req, res) => {
+//   // Diagnostic logs of what's actually going to be rendered
+//   console.log("session: ", req.session);
 
-  // Render the page with data needed for the handlebars template
-  res.render("404", {
-    session: req.session,
-  });
-});
+//   // Render the page with data needed for the handlebars template
+//   res.render("404", {
+//     session: req.session,
+//   });
+// });
 
 module.exports = router;
