@@ -94,41 +94,43 @@
         {{!-- Loop over all submissions and make a card for each --}}
         {{#if submissions.length}}
           {{#each submissions as |submission|}}
-            <div class="submissionContainer w-fit">
-              <div class="flex submission max-w-md">
+          <div class="popInSway w-fit">
+            <div class="flex submission max-w-md">
 
-                {{!-- Delete button --}}
+          {{! Post title and icon }}
+          <div class="p-2 flex flex-col my-auto w-40" id="col1-name">
+            <div class="text-left m-1">
+              <img class="my-2 w-5 h-5" src="/assets/lang-icons/{{submission.language}}.svg" />
+              <h2 class="font-bold text-lg md:text-large text-left">
+                <a href="/submission/{{submission.id}}">{{submission.name}}</a>
+              </h2>
+              <p class="text-sm sm:block">
+                {{textSummary submission.description}}
+              </p>
+              </div>
+          </div>
+
+          {{! Submission Content }}
+          <div class="p-2 my-auto" id="col2-user">
+                <code>
+                  {{dashSummary submission.content}}
+                </code>
+          </div>
+          {{!-- Delete button --}}
                 <div class="p-1 m-auto">
                   <div class="border-black border-solid border-pink bg-pink rounded p-2 h-10 text-center font-bold delButton"
                     data-id="{{submission.id}}">DELETE</div>
                 </div>
+        </div>
 
-                {{! Post title and icon }}
-                <div class="p-2 flex flex-col items-center my-auto w-40" id="col1-name">
-                  <div class="m-1">
-                    <h2 class="font-bold text-base md:text-large text-center">
-                      <a href="/submission/{{submission.id}}">{{submission.name}}</a>
-                    </h2>
-                    {{!-- <p class="text-sm sm:block">
-                    {{submission.description}}
-                  </p> --}}
-                  </div>
-                  <img class="mx-auto w-10 h-10 justify-center" src="/assets/lang-icons/{{submission.language}}.svg" />
-                </div>
+        </div>
 
-                {{!-- Description --}}
-                <div class="m-2 p-2 border-gray rounded bg-gray-light bg-opacity-10 w-fit max-w-sm">
-                  <p>{{submission.description}}</p>
-                </div>
 
-              </div>
-            </div>
           {{/each}}
         {{else}}
-          <h2 class="font-semibold text-base mt-4">You haven't submitted anything yet! <br> Please use the form to make
-            a
-            new
-            submission.</h2>
+          <h2 class="font-semibold text-base mt-4">You haven't submitted anything yet! <br>
+            Please use the form to make a new submission.
+          </h2>
         {{/if}}
       </div>
     </div>

@@ -15,7 +15,17 @@ function textSummary(text) {
   }
 }
 
+// Cutting off excessively long text for dashboard cards, but not as strict
+function dashSummary(text) {
+  if (text.length < 50) {
+    return text;
+  } else {
+    return text.slice(0, 150) + "...";
+  }
+}
+
 module.exports = {
   format_date,
   textSummary,
+  dashSummary
 };
