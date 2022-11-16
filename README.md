@@ -1,9 +1,13 @@
 # CodeShare
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+![Screenshot](./assets/deployed_screenshot.png)<br>
+
 ## Description
 
 A website for sharing your code, get it? The website acts largely as a forum for sharing code snippets that others can comment and vote on. Browse highly ranked code for a language of your choice to see what functionaility others have made and what you may want ot include in your next project!
+
+Deployed project: https://tranquil-eyrie-15534.herokuapp.com/
 
 ## Table of Contents
 
@@ -17,11 +21,11 @@ A website for sharing your code, get it? The website acts largely as a forum for
 
 ## Installation
 
-Run "npm i" in the project directory after cloning. Set up the mysql db schema (./db/schema). Populated seed data with "npm run seed".
+Run "npm i" in the project directory after cloning. Set up the mysql db schema (./db/schema). Populate seed data with "npm run seed". Execute a safety build of tailwind with "npm run tailwindcss".
 
 ## Usage
 
-Run "node server" to start the server. Navigate to localhost:3001 (if being run locally) to get to the website and browse around.
+Run "node server" to start the server. Navigate to localhost:3001 (if being run locally) to get to the website and browse around. Sign up an account to make new submissions, add comments to submissions, or vote on submissions on the front page.
 
 ## Tests
 
@@ -43,6 +47,6 @@ Licensed under [MIT](https://opensource.org/licenses/MIT).
 
 ## Credits
 
-Gordon Magill
-Arielle Schlickman-Elak
-Christopher Armstrong
+[Gordon Magill](https://github.com/Gordon-Magill)<br>
+[Arielle Schlickman-Elak](https://github.com/arielle-elak/)<br>
+[Chris Armstrong](https://github.com/CArmstrong2)<br>

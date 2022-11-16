@@ -2,7 +2,7 @@
 <div class="mx-5 flex flex-col items-center popIn">
 
   {{! Submission container }}
-  <div class="rounded-2xl bg-alt-blue/50 p-5 max-w-full">
+  <div class="rounded-2xl bg-alt-blue/75 p-5 max-w-full">
     {{! Submission info }}
     <h2 class="text-3xl font-extrabold">{{submission.name}}</h2>
     <p class="text-base">{{submission.description}}</p>
@@ -26,54 +26,63 @@
   </div>
 
   {{! Show new comment box if user is logged in }}
-  {{#if session.loggedIn}}
-  <div class="rounded-2xl bg-alt-pink/50 p-5 mt-5 popIn">
-    <!--Comment box form-->
-    <div class="mt-10 mx-5" id="comment-form">
-      <h2 class="text-2xl">Comment on This CodeShare:</h2>
-      <form class="form new-comment-form">
+  <div class="md:flex sm:block mx-auto w-screen max-w-full justify-center">
 
-        <!--Comment Content-->
-        <div class="mt-6">
-          <label for="comment-body" class="block text-sm font-medium">
-            <textarea id="comment-body"
-              class="w-full h-20 p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1" name="comment"
-              placeholder="Write your comment here."></textarea>
-          </label>
+    {{!-- Comment submission --}}
+    <div class="mt-5 justify-center">
+      {{#if session.loggedIn}}
+      <div class="rounded-2xl bg-alt-pink/75 p-3 popIn">
+        <!--Comment box form-->
+        <div class="m-1" id="comment-form">
+          <h2 class="text-2xl">Comment on This CodeShare:</h2>
+          <form class="form new-comment-form">
+
+            <!--Comment Content-->
+            <div class="mt-6">
+              <label for="comment-body" class="block text-sm font-medium">
+                <textarea id="comment-body"
+                  class="w-full h-20 p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1"
+                  name="comment" placeholder="Write your comment here."></textarea>
+              </label>
+            </div>
+
+            <!--Comment Button-->
+            <div class="mt-6">
+              <button id="comment-submit"
+                class="bg-gray px-5 py-2.5 text-md leading-5 rounded-md font-semibold text-white" type="submit"
+                data-post="{{submission.id}}">Submit</button>
+            </div>
+          </form>
         </div>
 
-        <!--Comment Button-->
-        <div class="mt-6">
-          <button id="comment-submit" class="bg-gray px-5 py-2.5 text-md leading-5 rounded-md font-semibold text-white"
-            type="submit" data-post="{{submission.id}}">Submit</button>
+      </div>
+      {{else}}
+      <div class="mt-10 mx-5" id="comment-form">
+        <h2 class="text-2xl">Log in to comment on this CodeShare!</h2>
+      </div>
+      {{/if}}
+    </div>
+
+    <!-- List of submitted comments -->
+    <div class="mt-5">
+      {{#each submission.Comments as |comment|}}
+      {{! Container }}
+      <div class="container flex m-2 ml-0 p-1 max-w-md bg-white rounded border-solid border-gray popInSway">
+        {{! Left side metadata }}
+        <div class="m-1 block text-xs w-1/4">
+          <p class="font-bold">{{comment.author}}</p>
+          <p class="font-light">{{format_date comment.date_created}}</p>
         </div>
-      </form>
+
+        {{! Right side comment content }}
+        <div class="p-2 my-1 mx-2 text-left bg-gray-light bg-opacity-25 w-3/4 rounded-sm">
+          <p class="break-words">{{comment.content}}</p>
+        </div>
+      </div>
+      {{/each}}
     </div>
 
   </div>
-  {{else}}
-  <div class="mt-10 mx-5" id="comment-form">
-    <h2 class="text-2xl">Log in to comment on this CodeShare!</h2>
-  </div>
-  {{/if}}
-
-  <!-- List of submitted comments -->
-  {{#each submission.Comments as |comment|}}
-  {{! Container }}
-  <div class="container flex p-2 m-2 max-w-md bg-white rounded border-solid border-gray popInSway">
-
-    {{! Left side metadata }}
-    <div class="m-1 block text-xs w-40">
-      <p class="font-bold">{{comment.author}}</p>
-      <p class="font-light">{{format_date comment.date_created}}</p>
-    </div>
-
-    {{! Right side comment content }}
-    <div class="p-2 my-1 mx-2 text-left bg-gray-light bg-opacity-25 w-full rounded-sm">
-      <p>{{comment.content}}</p>
-    </div>
-  </div>
-  {{/each}}
 
 </div>
 
