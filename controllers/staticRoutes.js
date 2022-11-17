@@ -78,6 +78,12 @@ router.get("/submission/:id", async (req, res) => {
     include: [{ model: User }, { model: Comment }],
   });
 
+  // If no such post exists, go back to the main page
+  if (singleSubmission == null) {
+    res.redirect("/");
+    return;
+  }
+
   // Strip out extra sequelize content
   const submission = singleSubmission.get({ plain: true });
 
