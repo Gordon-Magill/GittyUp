@@ -1,4 +1,15 @@
 // Post creation
+
+// Code Prettifier for Content
+const makeItPretty = (codeInput) => {
+  var codeOutput = codeInput.replace('"', '\"').replace('/', '\/');
+
+  console.log(codeOutput);
+  return codeOutput;
+};
+
+
+
 const newFormHandler = async (event) => {
   event.preventDefault();
   // console.log(
@@ -8,11 +19,12 @@ const newFormHandler = async (event) => {
   // Get post information from page elements
   const name = document.querySelector("#submission-name").value.trim();
   const description = document.querySelector("#submission-desc").value.trim();
-  const content = document.querySelector("#submission-content").value.trim();
+  const content = document.querySelector("#submission-content").value.trim().replace('"', '\"').replace('/', '\/');
   const language = document.querySelector("#submission-language").value.trim();
 
   // If the user filled in all the required fields...
   if (name && content && description && language) {
+
     // Call the API route to make the post
     const response = await fetch(`/api/submission/create`, {
       method: "POST",
